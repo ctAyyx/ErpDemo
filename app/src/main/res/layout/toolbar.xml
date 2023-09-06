@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_height"
+            android:gravity="center_vertical"
+            android:background="@color/title_bg">
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgBack"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/size_14dp"
+                android:paddingRight="@dimen/size_14dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textSize="@dimen/size_18sp"
+                android:textColor="@color/white"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/app_name" />
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearContent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:id="@+id/tvUserName"
+                android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/size_24dp"
+                android:id="@+id/imgSetting"
+                android:layout_height="@dimen/size_24dp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgLogout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/size_14dp"
+                android:paddingRight="@dimen/size_14dp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>
