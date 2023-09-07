@@ -11,4 +11,7 @@
 
     <string name="success_operator">操作成功</string>
     <string name="failed_operator">操作失败，请稍后再试</string>
+
+    <!--QR-->
+    <string name="tips_scan_qr_code">将二维码放入框内，即可自动扫描</string>
 </resources>

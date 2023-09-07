@@ -20,7 +20,8 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * @author <a href="mailto:jenly1314@gmail.com">Jenly</a>
+ * 网络服务注入
+ * AppliesOptions下的所有Options由ConfigModule注入
  */
 @InstallIn(SingletonComponent.class)
 @Module
@@ -29,8 +30,8 @@ public class HttpModule {
 
     @Singleton
     @Provides
-    Retrofit provideRetrofit(Retrofit.Builder builder,@Nullable AppliesOptions.RetrofitOptions options){
-        if(options != null){
+    Retrofit provideRetrofit(Retrofit.Builder builder, @Nullable AppliesOptions.RetrofitOptions options) {
+        if (options != null) {
             options.applyOptions(builder);
         }
         return builder.build();
@@ -38,8 +39,9 @@ public class HttpModule {
 
     @Singleton
     @Provides
-    OkHttpClient provideOkHttpClient(OkHttpClient.Builder builder,@Nullable AppliesOptions.OkHttpClientOptions options){
-        if(options != null) {
+    OkHttpClient provideOkHttpClient(OkHttpClient.Builder builder,
+            @Nullable AppliesOptions.OkHttpClientOptions options) {
+        if (options != null) {
             options.applyOptions(builder);
         }
         return builder.build();
@@ -47,8 +49,8 @@ public class HttpModule {
 
     @Singleton
     @Provides
-    Gson provideGson(GsonBuilder builder,@Nullable AppliesOptions.GsonOptions options){
-        if(options != null){
+    Gson provideGson(GsonBuilder builder, @Nullable AppliesOptions.GsonOptions options) {
+        if (options != null) {
             options.applyOptions(builder);
         }
         return builder.create();
@@ -56,13 +58,12 @@ public class HttpModule {
 
     @Singleton
     @Provides
-    Retrofit.Builder provideRetrofitBuilder(HttpUrl httpUrl, OkHttpClient client, Gson gson,InterceptorConfig config) {
+    Retrofit.Builder provideRetrofitBuilder(HttpUrl httpUrl, OkHttpClient client, Gson gson, InterceptorConfig config) {
         Retrofit.Builder builder = new Retrofit.Builder();
-            builder.baseUrl(httpUrl)
-                    .client(client);
-            if(config.isAddGsonConverterFactory()){
-                builder.addConverterFactory(GsonConverterFactory.create(gson));
-            }
+        builder.baseUrl(httpUrl).client(client);
+        if (config.isAddGsonConverterFactory()) {
+            builder.addConverterFactory(GsonConverterFactory.create(gson));
+        }
 
         return builder;
     }
@@ -76,14 +77,15 @@ public class HttpModule {
 
     @Singleton
     @Provides
-    GsonBuilder provideGsonBuilder(){
+    GsonBuilder provideGsonBuilder() {
         return new GsonBuilder();
     }
 
     @Singleton
     @Provides
-    InterceptorConfig provideInterceptorConfig(InterceptorConfig.Builder builder, @Nullable AppliesOptions.InterceptorConfigOptions options){
-        if(options != null){
+    InterceptorConfig provideInterceptorConfig(InterceptorConfig.Builder builder,
+            @Nullable AppliesOptions.InterceptorConfigOptions options) {
+        if (options != null) {
             options.applyOptions(builder);
         }
         return builder.build();
@@ -91,7 +93,7 @@ public class HttpModule {
 
     @Singleton
     @Provides
-    InterceptorConfig.Builder provideInterceptorConfigBuilder(){
+    InterceptorConfig.Builder provideInterceptorConfigBuilder() {
         return InterceptorConfig.newBuilder();
     }
 

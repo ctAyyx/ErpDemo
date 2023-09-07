@@ -58,6 +58,10 @@ dependencies {
 
     implementation "com.github.GrenderG:Toasty:1.5.2"
 
+    implementation 'com.github.jenly1314:zxing-lite:3.0.0'
+
+
+
     implementation project(':mvvmframe')
     implementation project(':env')
     implementation project(':utils')

@@ -1,5 +1,3 @@
-@file:kotlin.jvm.JvmMultifileClass @file:kotlin.jvm.JvmName("WebtoonFunctionKt")
-
 package com.ct.utils
 
 import android.content.ContentResolver
@@ -121,13 +119,6 @@ fun String?.stringColorToIntOrNull(): Int? {
     }
 }
 
-fun String?.image2xTo1x(): String? {
-    return if (this.isNullOrEmpty()) {
-        this
-    } else {
-        this.replace("/2x/", "/1x/")
-    }
-}
 
 fun Int.getColorWithAlpha(opacity: Float): Int {
     return Color.argb((0xFF * opacity).roundToInt(), Color.red(this), Color.green(this), Color.blue(this))
@@ -135,9 +126,7 @@ fun Int.getColorWithAlpha(opacity: Float): Int {
 
 inline fun <T, reified E : T> Array<T>.findCast(clazz: Class<E>): E? = find { it is E }?.let { clazz.cast(it) }
 
-/**
- * test..
- */
+
 fun Resources.resourceUri(resourceId: Int): Uri =
     Uri.Builder().scheme(ContentResolver.SCHEME_ANDROID_RESOURCE).authority(getResourcePackageName(resourceId))
             .appendPath(getResourceTypeName(resourceId)).appendPath(getResourceEntryName(resourceId)).build()
