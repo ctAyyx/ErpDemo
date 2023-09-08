@@ -1,6 +1,7 @@
 package com.ct.erp
 
 import android.content.Intent
+import android.util.Log
 import androidx.activity.result.contract.ActivityResultContracts
 import com.ct.erp.base.BaseActivity
 import com.ct.erp.databinding.ActivityHomeBinding
@@ -13,11 +14,24 @@ import com.ct.utils.LogUtils
 import com.ct.utils.click
 import com.king.camera.scan.CameraScan
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class HomeActivity : BaseActivity<HomeViewModel, ActivityHomeBinding>() {
 
+    @Inject
+    lateinit var commonPref: CommonPref
+
     override fun getLayoutId(): Int = R.layout.activity_home
+    override fun initView(binding: ActivityHomeBinding) {
+        super.initView(binding)
+
+        LogUtils.e("==>$commonPref")
+        if (LoginManager.getInstance().isLogin()) {
+            //TODO 这里开始刷新Token 如果需要的话
+        }
+    }
+
     override fun bindEvent(binding: ActivityHomeBinding) {
         super.bindEvent(binding)
         viewModel.priceInfo.observe(this) {
