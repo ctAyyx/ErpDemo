@@ -30,8 +30,8 @@ open class BaseViewModel @Inject constructor(application: Application, model: Ba
 
     open val liveDataTag by lazy { SingleLiveEvent<Int>() }
 
-    open fun isSuccess(result: ServiceResult<*>?, showError: Boolean = true): Boolean {
-        if (result?.isSuccess() == true) {
+    open fun isSuccess(result: ServiceResult<*>?, showError: Boolean = true, noResult: Boolean = false): Boolean {
+        if (result?.isSuccess(noResult = noResult) == true) {
             return true
         }
         if (showError) {

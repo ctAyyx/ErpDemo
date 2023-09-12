@@ -1,17 +1,18 @@
 package com.ct.erp
 
-import android.content.Intent
-import android.util.Log
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
+import com.ct.erp.adapter.HomeRvAdapter
 import com.ct.erp.base.BaseActivity
+import com.ct.erp.base.adapter.IsFullViewHolder
+import com.ct.erp.base.adapter.OnItemClickHolder
 import com.ct.erp.databinding.ActivityHomeBinding
-import com.ct.erp.ui.ListActivity
-import com.ct.erp.ui.LoginActivity
-import com.ct.erp.ui.QRCodeScanActivity
 import com.ct.erp.vm.HomeViewModel
-import com.ct.utils.ActivityUtils
+import com.ct.erp.vm.LoginViewModel
+import com.ct.erp.vo.HomeMenuViewData
+import com.ct.utils.LiveDataBus
 import com.ct.utils.LogUtils
-import com.ct.utils.click
 import com.king.camera.scan.CameraScan
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -21,41 +22,81 @@ class HomeActivity : BaseActivity<HomeViewModel, ActivityHomeBinding>() {
 
     @Inject
     lateinit var commonPref: CommonPref
-
+    private var loginViewModel: LoginViewModel? = null
     override fun getLayoutId(): Int = R.layout.activity_home
-    override fun initView(binding: ActivityHomeBinding) {
-        super.initView(binding)
-
-        LogUtils.e("==>$commonPref")
-        if (LoginManager.getInstance().isLogin()) {
-            //TODO 这里开始刷新Token 如果需要的话
-        }
-    }
-
-    override fun bindEvent(binding: ActivityHomeBinding) {
-        super.bindEvent(binding)
-        viewModel.priceInfo.observe(this) {
-            LogUtils.e("==>获取到的数据:${it}")
-        }
-    }
 
     private val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
         val result = it.data?.getStringExtra(CameraScan.SCAN_RESULT)
         LogUtils.e("二维码数据:$result")
     }
 
-    override fun initListener(binding: ActivityHomeBinding) {
-        super.initListener(binding)
-        binding.tvHome.click {
-            viewModel.getOilPriceInfo("402e469d939079d5bb758fc5ca65967d")
-        }
+    private var mAdapter: HomeRvAdapter? = null
 
-        binding.tvHomeQr.click {
-            launcher.launch(Intent(this, QRCodeScanActivity::class.java))
-        }
+    private var menuClickHolder: OnItemClickHolder<HomeMenuViewData>? = object : OnItemClickHolder<HomeMenuViewData> {
+        override fun onItemClick(data: HomeMenuViewData, position: Int) {
 
-        binding.tvHomeList.click {
-            ActivityUtils.startActivity(this, Intent(this, ListActivity::class.java))
         }
     }
+
+    override fun initView(binding: ActivityHomeBinding) {
+        super.initView(binding)
+        if (loginViewModel == null) {
+            loginViewModel = obtainViewModel(LoginViewModel::class.java)
+        }
+        if (LoginManager.getInstance().isLogin()) {
+            loginViewModel?.getUserInfo()
+        }
+
+
+
+        binding.rvHome.apply {
+            mAdapter = HomeRvAdapter(onMenuHolder = menuClickHolder)
+
+            adapter = mAdapter
+            layoutManager = buildLayoutManager()
+//            addItemDecoration()
+        }
+
+    }
+
+    private fun buildLayoutManager(): GridLayoutManager {
+        val layoutManager = GridLayoutManager(this@HomeActivity, Constants.GRID_SPAN_COUNT)
+        layoutManager.spanSizeLookup = object : SpanSizeLookup() {
+            override fun getSpanSize(position: Int): Int {
+                val viewHolder = binding.rvHome.findViewHolderForAdapterPosition(position)
+                return if (viewHolder is IsFullViewHolder && viewHolder.isFullViewHolder()) Constants.GRID_SPAN_COUNT
+                else 1
+            }
+        }
+
+        return layoutManager
+    }
+
+    override fun bindEvent(binding: ActivityHomeBinding) {
+        super.bindEvent(binding)
+        loginViewModel?.loginStatus?.observe(this) {
+
+
+        }
+
+        LiveDataBus.get().with(Constants.BUS_USER_LOGIN, String::class.java).observe(this) {
+            //登录成功
+
+            //退出登录
+            loginViewModel?.getUserInfo()
+        }
+
+        viewModel.homeMenu.observe(this) {
+            mAdapter?.submitList(it)
+        }
+        viewModel.getHomeMenu()
+    }
+
+
+    override fun onDestroy() {
+        super.onDestroy()
+        menuClickHolder = null
+    }
+
+
 }

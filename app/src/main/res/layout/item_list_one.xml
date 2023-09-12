@@ -5,7 +5,7 @@
             xmlns:tools="http://schemas.android.com/tools"
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:padding="@dimen/size_20dp"
+            android:padding="@dimen/dimen_20"
             android:gravity="center_horizontal"
             android:background="#33FF00FF"
             android:layout_height="wrap_content">
@@ -13,8 +13,7 @@
         <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:id="@+id/tvItemListOne"
-                android:textSize="@dimen/size_16sp"
-                android:textColor="@color/black"
+                android:textColor="@color/any_black"
                 android:textStyle="bold"
                 tools:text="名称"
                 android:layout_height="wrap_content" />

@@ -18,23 +18,33 @@ import javax.inject.Inject
 class LoginViewModel @Inject constructor(application: Application, model: BaseModel?) :
     BaseViewModel(application, model) {
 
-    val loginStatus by lazy { MutableLiveData<Boolean>() }
+    val loginStatus by lazy { MutableLiveData<UserViewData>() }
 
     fun login(userName: String, userPwd: String) {
         launch {
-            delay(1000)
-
             val result = serviceApi.login(userName, userPwd)
             if (isSuccess(result)) {
-                loginStatus.value = true
+                LoginManager.getInstance().login(result.data)
+                getUserInfo()
             }
-            LoginManager.getInstance().login(UserViewData("admin", "1111111111111", "123456", isAdmin = true))
+        }
+    }
+
+    fun getUserInfo() {
+        launch {
+            //获取用户详情
+            val userInfo = serviceApi.getUserInfo()
+            if (isSuccess(userInfo)) {
+                LoginManager.getInstance().initUserInfo(user = userInfo.data)
+                loginStatus.value = userInfo.data
+            }
         }
     }
 
     fun logout() {
         launch {
             LoginManager.getInstance().logout()
+            loginStatus.value = null
         }
     }
 

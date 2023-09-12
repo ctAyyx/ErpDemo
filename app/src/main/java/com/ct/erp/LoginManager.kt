@@ -13,18 +13,20 @@ class LoginManager {
     private var _isAdmin: Boolean = false
 
 
+    val token: String
+        get() = _token ?: ""
+
+
+    fun login(userToken: String?) {
+        _token = userToken
+    }
+
     /**
      * @param user 用户信息
      * @param isFromLocal 用户信息是否来自本地缓存
      */
-    fun login(user: UserViewData, isFromLocal: Boolean = false) {
-        _userName = user.userName
-        _token = user.userToken
-        _userId = user.userId
-        _isAdmin = user.isAdmin ?: false
-        if (!isFromLocal) {
-            //TODO 用户登录成功 通知界面
-        }
+    fun initUserInfo(user: UserViewData?, isFromLocal: Boolean = false) {
+        user ?: return
     }
 
     fun logout() {

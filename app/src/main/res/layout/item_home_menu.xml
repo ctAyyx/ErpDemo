@@ -3,26 +3,25 @@
 
     <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
-            android:orientation="horizontal"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
             android:layout_width="match_parent"
-            android:paddingHorizontal="@dimen/dimen_20"
-            android:background="#33F0F00F"
-            android:gravity="center_vertical"
             android:layout_height="wrap_content">
 
 
         <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/imgTwo"
-                android:layout_width="56dp"
-                android:layout_height="56dp" />
+                android:id="@+id/imgItemHomeMenu"
+                android:layout_width="@dimen/dimen_56"
+                android:layout_height="@dimen/dimen_56" />
 
         <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvItemHomeEnumTitle"
+                android:layout_marginTop="@dimen/dimen_6"
                 android:layout_width="wrap_content"
-                android:id="@+id/tvTwoTitle"
-                android:layout_marginStart="@dimen/dimen_20"
+                style="@style/ErpText.Regular"
                 android:textColor="@color/any_black"
-                android:textStyle="bold"
-                tools:text="名称"
+                android:textSize="@dimen/text_14"
+                tools:text="选项菜单"
                 android:layout_height="wrap_content" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>

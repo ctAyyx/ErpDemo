@@ -28,7 +28,6 @@ class ErpApp : Application() {
     private fun loadUserData() {
         val userJson = commonPref.userDataJson
         val userViewData = Gson().fromJson(userJson, UserViewData::class.java)
-        if (userViewData.isAlive())
-            LoginManager.getInstance().login(userViewData, true)
+
     }
 }

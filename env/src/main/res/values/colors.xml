@@ -4,40 +4,78 @@
     <color name="colorPrimaryDark">#0d7fea</color>
     <color name="colorAccent">#0c6aac</color>
 
-    <color name="title_bg">#0d7fea</color>
 
-    <color name="splash_bg">#0d7fea</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
 
-    <color name="default_bg">#f2f3f6</color>
+    <color name="toolbarColor">@color/colorPrimary</color>
 
-    <color name="line">#f2f3f6</color>
+    <!-- 通用颜色模块 黑白模式通用 start   -->
+    <color name="any_black">#000000</color>
+    <color name="any_white">#FFFFFF</color>
+    <color name="any_red">#FF3042</color>
+    <color name="any_blue">#4E9AFA</color>
+    <color name="any_yellow">#FFE76B</color>
+    <color name="any_purple">#7A67EF</color>
+    <color name="any_FFF3B6">#FFF3B6</color>
+    <color name="any_555555">#555555</color>
 
-    <color name="line_divider">#f2f3f6</color>
+    <!-- 通用颜色模块 黑白模式通用 end     -->
+    <!--  基础颜色模块 根据UI设计才调整 添加  start -->
+    <color name="background">#F5F5F5</color>
+    <color name="card">#FFFFFF</color>
+    <color name="weak">#F0F0F0</color>
+    <color name="grey01">#C8C8C8</color>
+    <color name="grey02">#888888</color>
+    <color name="grey03">#444444</color>
+    <color name="grey04">#000000</color>
+    <color name="purple">#6B55F1</color>
+    <color name="red">#EF2233</color>
+    <color name="blue">#3E92FC</color>
+    <color name="gold">#B78D44</color>
+    <color name="guide">#E350A8</color>
+    <color name="green">#00A56F</color>
+    <color name="orange">#F1664B</color>
 
-    <color name="white_pressed">#10000000</color>
+    <!--  基础颜色模块 根据UI设计才调整 添加  end   -->
 
-    <color name="white_7f">#7fffffff</color>
 
-    <color name="white">#ffffffff</color>
-    <color name="black">#ff000000</color>
+    <!-- 扩展模块 对于需要透明度的颜色进行添加 start-->
 
-    <color name="text_default">#666666</color>
+    <color name="card_alpha_0">#00FFFFFF</color>
+    <color name="alpha_0">#00000000</color>
+    <color name="any_white_alpha_5">#0DFFFFFF</color>
+    <color name="any_white_alpha_6">#0FFFFFFF</color>
+    <color name="any_white_alpha_8">#14FFFFFF</color>
+    <color name="any_white_alpha_15">#26FFFFFF</color>
+    <color name="any_white_alpha_20">#33FFFFFF</color>
+    <color name="any_white_alpha_30">#4DFFFFFF</color>
+    <color name="any_white_alpha_50">#7FFFFFFF</color>
+    <color name="any_white_alpha_60">#99FFFFFF</color>
+    <color name="any_white_alpha_85">#D9FFFFFF</color>
 
-    <color name="text_3">#333333</color>
-    <color name="text_6">#666666</color>
-    <color name="text_9">#999999</color>
+    <color name="any_black_alpha_05">#0D000000</color>
+    <color name="any_black_alpha_10">#1A000000</color>
+    <color name="any_black_alpha_15">#26000000</color>
+    <color name="any_black_alpha_20">#33000000</color>
+    <color name="any_black_alpha_30">#4D000000</color>
+    <color name="any_black_alpha_40">#66000000</color>
+    <color name="any_black_alpha_60">#99000000</color>
 
-    <color name="tab_normal">#666666</color>
-    <color name="tab_selected">#0d7fea</color>
 
-    <color name="text_theme">#0d7fea</color>
+    <color name="background_alpha_0">#00F5F5F5</color>
+    <color name="background_alpha_60">#99F5F5F5</color>
+    <color name="background_alpha_70">#B2F5F5F5</color>
+    <color name="background_alpha_80">#CCF5F5F5</color>
+    <color name="red_alpha_20">#33EF2233</color>
+    <color name="red_alpha_50">#7FEF2233</color>
+    <color name="blue_alpha_15">#263E92FC</color>
+    <color name="gold_alpha_15">#26B78D44</color>
+    <color name="grey01_alpha_90">#E61C1C1C</color>
+    <color name="grey04_alpha_6">#0F000000</color>
+    <color name="grey04_alpha_30">#4D000000</color>
+    <color name="grey04_alpha_60">#99000000</color>
+    <!-- 扩展模块 对于需要透明度的颜色进行添加 end  -->
 
-    <color name="home_menu_normal">#999999</color>
-    <color name="home_menu_selected">#A38D59</color>
-
-    <color name="transparent">#00000000</color>
-
-    <color name="btn_bg_normal">#0d7fea</color>
-    <color name="btn_bg_pressed">#0c6aad</color>
 
 </resources>

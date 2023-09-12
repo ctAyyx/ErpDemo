@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CommonButton" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">16sp</item>
+        <item name="lineHeight">19dp</item>
+        <item name="android:lineSpacingExtra">-3sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+    <!--  强按钮  -->
+    <style name="CommonButton.Blue">
+        <item name="android:background">@drawable/selector_common_button_model_blue</item>
+        <item name="android:textColor">@color/common_button_text_model_white</item>
+    </style>
+
+
+    <style name="ErpText" parent="Widget.AppCompat.TextView" />
+
+    <style name="ErpText.Regular" />
+
+    <style name="ErpText.Bold">
+        <item name="android:textStyle">bold</item>
+        <item name="fontStyle">normal</item>
+        <item name="fontWeight">700</item>
+    </style>
+
+
+</resources>

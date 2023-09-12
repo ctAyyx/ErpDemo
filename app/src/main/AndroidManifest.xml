@@ -38,9 +38,6 @@
                 android:exported="false" />
 
 
-        <activity
-                android:name=".ui.ListActivity"
-                android:exported="false" />
 
         <meta-data
                 android:name="com.ct.erp.config.AppConfigModule"

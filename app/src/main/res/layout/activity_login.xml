@@ -1,18 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
 
-    <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:orientation="vertical"
+            android:background="@color/background"
+            android:paddingHorizontal="@dimen/dimen_20"
+            android:paddingVertical="@dimen/dimen_32"
             android:layout_height="match_parent">
 
 
-        <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnLogin"
-                android:layout_width="match_parent"
-                android:text="登录"
-                android:gravity="center"
-                android:layout_height="56dp" />
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgLoginLogo"
+                android:layout_width="@dimen/dimen_56"
+                android:layout_height="@dimen/dimen_56"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:background="@color/any_black"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="96dp"
+                android:textSize="@dimen/text_16"
+                android:textColor="@color/any_black"
+                android:text="用户名"
+                android:maxLines="1"
+                android:id="@+id/tvLoginUserName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgLoginLogo"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etLoginUserName"
+                android:layout_width="0dp"
+                android:textSize="@dimen/text_16"
+                android:textColor="@color/any_black"
+                android:background="@null"
+                android:maxLines="1"
+                android:hint="请输入用户名称"
+                android:ellipsize="end"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvLoginUserName"
+                app:layout_constraintTop_toTopOf="@+id/tvLoginUserName"
+                app:layout_constraintBottom_toBottomOf="@+id/tvLoginUserName"
+                android:layout_height="wrap_content" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="96dp"
+                android:textSize="@dimen/text_16"
+                android:textColor="@color/any_black"
+                android:text="密码"
+                android:maxLines="1"
+                android:id="@+id/tvLoginUserPwd"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLoginUserName"
+                android:layout_marginTop="@dimen/dimen_8"
+                android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etLoginUserPwd"
+                android:layout_width="0dp"
+                android:textSize="@dimen/text_16"
+                android:textColor="@color/any_black"
+                android:background="@null"
+                android:maxLines="1"
+                android:hint="请输入用户密码"
+                android:inputType="textPassword"
+                android:ellipsize="end"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvLoginUserPwd"
+                app:layout_constraintTop_toTopOf="@+id/tvLoginUserPwd"
+                app:layout_constraintBottom_toBottomOf="@+id/tvLoginUserPwd"
+                android:layout_height="wrap_content" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+                style="@style/CommonButton.Blue"
+                android:id="@+id/btnLogin"
+                android:layout_width="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="登录" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

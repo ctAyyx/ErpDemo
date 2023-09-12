@@ -11,38 +11,11 @@
 
         <include layout="@layout/toolbar" />
 
-        <TextView
-                android:id="@+id/tvHome"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="网络请求"
-                android:padding="@dimen/size_16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-                android:id="@+id/tvHomeQr"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="二维码扫描"
-                android:padding="@dimen/size_16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-                android:id="@+id/tvHomeList"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="列表"
-                android:padding="@dimen/size_16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvHome"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
 
     </androidx.appcompat.widget.LinearLayoutCompat>

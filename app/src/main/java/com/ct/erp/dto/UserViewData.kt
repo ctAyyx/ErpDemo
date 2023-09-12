@@ -4,10 +4,61 @@ package com.ct.erp.dto
  * 用户数据类
  *
  */
+
 data class UserViewData(
-    val userName: String?, val userToken: String?, val userId: String?, val isAdmin: Boolean?
-) {
-    fun isAlive(): Boolean {
-        return userName != null && userToken != null && userId != null
-    }
-}
+    val account: String? = null,
+    val age: Any? = null,
+    val avatar: String? = null,
+    val birthday: String? = null,
+    val buttonCodeList: List<String?>? = null,
+    val college: Any? = null,
+    val cultureLevel: Any? = null,
+    val dataScopeList: Any? = null,
+    val degree: Any? = null,
+    val directorId: Any? = null,
+    val eduLength: Any? = null,
+    val education: Any? = null,
+    val email: String? = null,
+    val emergencyAddress: String? = null,
+    val emergencyContact: String? = null,
+    val emergencyPhone: String? = null,
+    val empNo: String? = null,
+    val enabled: Boolean? = null,
+    val entryDate: String? = null,
+    val extJson: Any? = null,
+    val gender: String? = null,
+    val homeAddress: String? = null,
+    val homeTel: Any? = null,
+    val id: String? = null,
+    val idCardNumber: String? = null,
+    val idCardType: String? = null,
+    val lastLoginAddress: Any? = null,
+    val lastLoginDevice: Any? = null,
+    val lastLoginIp: Any? = null,
+    val lastLoginTime: Any? = null,
+    val latestLoginAddress: Any? = null,
+    val latestLoginDevice: Any? = null,
+    val latestLoginIp: String? = null,
+    val latestLoginTime: String? = null,
+    val mailingAddress: String? = null,
+    val mobileButtonCodeList: List<String?>? = null,
+    val name: String? = null,
+    val nation: String? = null,
+    val nativePlace: String? = null,
+    val nickname: String? = null,
+    val officeTel: Any? = null,
+    val orgId: String? = null,
+    val orgName: String? = null,
+    val password: Any? = null,
+    val permissionCodeList: Any? = null,
+    val phone: String? = null,
+    val politicalOutlook: Any? = null,
+    val positionId: String? = null,
+    val positionJson: Any? = null,
+    val positionLevel: String? = null,
+    val positionName: String? = null,
+    val roleCodeList: List<String?>? = null,
+    val signature: String? = null,
+    val sortCode: Int? = null,
+    val userStatus: String? = null
+)

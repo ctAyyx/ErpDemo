@@ -181,7 +181,6 @@ public abstract class BaseActivity<VM extends BaseViewModel, VDB extends ViewDat
         mViewModel.getLoadingEvent().observe(this, new Observer<Boolean>() {
             @Override
             public void onChanged(@Nullable Boolean isLoading) {
-                Log.e("TAG", "registerLoadingEvent:" + isLoading);
                 if (isLoading != null && isLoading) {
                     showLoading();
                 } else {

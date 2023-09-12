@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.appcompat.widget.AppCompatTextView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/tvItemHomeTitle"
+            android:layout_width="match_parent"
+            android:textColor="@color/any_black"
+            android:textSize="@dimen/text_16"
+            tools:text="标题"
+            style="@style/ErpText.Bold"
+            android:paddingHorizontal="@dimen/dimen_20"
+            android:paddingVertical="@dimen/dimen_8"
+            android:layout_height="match_parent">
+
+    </androidx.appcompat.widget.AppCompatTextView>
+</layout>
