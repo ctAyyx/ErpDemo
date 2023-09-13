@@ -4,8 +4,8 @@ package com.ct.erp.base.adapter
 /**
  * 标记当前ViewHolder 是否充满
  */
-interface IsFullViewHolder {
-    fun isFullViewHolder(): Boolean
+interface SpanSizeLookHolder {
+    fun getItemColumnSpan(position: Int, spanCount: Int): Int
 }
 
 /**

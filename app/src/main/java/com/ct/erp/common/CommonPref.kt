@@ -1,4 +1,4 @@
-package com.ct.erp
+package com.ct.erp.common
 
 import android.content.Context
 import androidx.annotation.Keep

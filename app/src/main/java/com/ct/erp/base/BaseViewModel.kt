@@ -5,15 +5,18 @@ import androidx.annotation.StringRes
 import androidx.lifecycle.viewModelScope
 import com.ct.erp.ErpApp
 import com.ct.env.R
+import com.ct.erp.common.Constants
+import com.ct.erp.common.LoginManager
 import com.ct.erp.api.ServiceApi
+import com.ct.erp.common.ErpException
 import com.ct.erp.dto.ServiceResult
+import com.ct.utils.LogUtils
 import com.ct.utils.SystemUtils
 import com.king.frame.mvvmframe.base.BaseModel
 import com.king.frame.mvvmframe.base.DataViewModel
 import com.king.frame.mvvmframe.base.livedata.SingleLiveEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import timber.log.Timber
 import java.net.ConnectException
 import java.net.SocketTimeoutException
 import javax.inject.Inject
@@ -34,6 +37,10 @@ open class BaseViewModel @Inject constructor(application: Application, model: Ba
         if (result?.isSuccess(noResult = noResult) == true) {
             return true
         }
+        if (result?.code == Constants.HTTP_ERROR_TOKEN) {
+            LoginManager.getInstance().logout()
+        }
+
         if (showError) {
             sendMessage(result?.errorMsg ?: getString(R.string.result_failure))
         }
@@ -43,11 +50,12 @@ open class BaseViewModel @Inject constructor(application: Application, model: Ba
 
     fun launch(showLoading: Boolean = true, tag: Int? = null, block: suspend () -> Unit) =
         launch(showLoading, tag, block) {
-            Timber.w(it)
+            LogUtils.e("请求失败:$it")
             if (SystemUtils.isNetWorkActive(getApp())) {
                 when (it) {
                     is SocketTimeoutException -> sendMessage(getString(R.string.result_connect_timeout_error))
                     is ConnectException -> sendMessage(getString(R.string.result_connect_failed_error))
+                    is ErpException -> sendMessage(it.message)
                     else -> sendMessage(getString(R.string.result_error))
                 }
             } else {

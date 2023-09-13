@@ -2,10 +2,9 @@ package com.ct.erp.api
 
 import com.ct.erp.dto.HomeApiData
 import com.ct.erp.dto.ServiceResult
-import com.ct.erp.dto.UserViewData
+import com.ct.erp.dto.LoginApiData
 import retrofit2.http.GET
 import retrofit2.http.POST
-import retrofit2.http.Query
 
 @JvmSuppressWildcards
 interface ServiceApi {
@@ -14,7 +13,7 @@ interface ServiceApi {
     suspend fun login(userName: String, userPwd: String): ServiceResult<String>
 
     @GET("auth/b/getLoginUser")
-    suspend fun getUserInfo(): ServiceResult<UserViewData>
+    suspend fun getUserInfo(): ServiceResult<LoginApiData>
 
 
     @GET("sys/userCenter/loginMobileMenu")

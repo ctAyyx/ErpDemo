@@ -12,7 +12,7 @@
             style="@style/ErpText.Bold"
             android:paddingHorizontal="@dimen/dimen_20"
             android:paddingVertical="@dimen/dimen_8"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
     </androidx.appcompat.widget.AppCompatTextView>
 </layout>

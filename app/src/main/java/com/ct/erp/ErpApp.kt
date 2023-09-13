@@ -2,9 +2,9 @@ package com.ct.erp
 
 import android.app.Application
 import android.content.Context
-import android.hardware.lights.LightsManager
 import androidx.multidex.MultiDex
-import com.ct.erp.dto.UserViewData
+import com.ct.erp.common.CommonPref
+import com.ct.erp.dto.LoginApiData
 import com.google.gson.Gson
 import dagger.hilt.android.HiltAndroidApp
 import javax.inject.Inject
@@ -27,7 +27,7 @@ class ErpApp : Application() {
 
     private fun loadUserData() {
         val userJson = commonPref.userDataJson
-        val userViewData = Gson().fromJson(userJson, UserViewData::class.java)
+        val userViewData = Gson().fromJson(userJson, LoginApiData::class.java)
 
     }
 }

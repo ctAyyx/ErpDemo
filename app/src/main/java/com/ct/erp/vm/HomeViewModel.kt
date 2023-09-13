@@ -2,14 +2,16 @@ package com.ct.erp.vm
 
 import android.app.Application
 import androidx.lifecycle.MutableLiveData
+import com.ct.erp.common.Constants
+import com.ct.erp.common.LoginManager
 import com.ct.erp.base.BaseModel
 import com.ct.erp.base.BaseViewModel
 import com.ct.erp.dto.HomeApiData
+import com.ct.erp.dto.ServiceResult
 import com.ct.erp.vo.HomeMenuViewData
 import com.ct.erp.vo.HomeTitleViewData
 import com.ct.erp.vo.HomeViewData
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.delay
 import javax.inject.Inject
 
 /**
@@ -24,13 +26,30 @@ class HomeViewModel @Inject constructor(application: Application, model: BaseMod
 
     fun getHomeMenu() {
         launch {
-            val apiResult = serviceApi.getHomeMenu()
-            if (apiResult.isSuccess()) {
+            val apiResult = mock()//serviceApi.getHomeMenu()
+            if (isSuccess(result = apiResult)) {
                 homeMenu.value = convertHomeApiData2ViewData(apiResult.data)
             }
         }
     }
 
+
+    private fun mock() = ServiceResult<List<HomeApiData>>(
+        data = listOf(
+            HomeApiData(
+                title = "标题一", children = listOf(
+                    HomeApiData(title = "分类1", icon = "", id = "111", parentId = "11"),
+                    HomeApiData(title = "分类2", icon = "", id = "222", parentId = "22"),
+                    HomeApiData(title = "分类3", icon = "", id = "333", parentId = "22"),
+                    HomeApiData(title = "分类4", icon = "", id = "444", parentId = "44"),
+                    HomeApiData(title = "分类5", icon = "", id = "555", parentId = "55"),
+                    HomeApiData(title = "分类6", icon = "", id = "666", parentId = "66")
+                )
+            )
+        ),
+        code = if (LoginManager.getInstance().isLogin()) "200" else Constants.HTTP_ERROR_TOKEN,
+        errorMsg = ""
+    )
 
     private fun convertHomeApiData2ViewData(apiData: List<HomeApiData>?): List<HomeViewData> {
         val result = mutableListOf<HomeViewData>()

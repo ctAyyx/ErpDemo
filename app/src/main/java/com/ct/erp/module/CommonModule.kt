@@ -1,7 +1,7 @@
 package com.ct.erp.module
 
 import android.content.Context
-import com.ct.erp.CommonPref
+import com.ct.erp.common.CommonPref
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

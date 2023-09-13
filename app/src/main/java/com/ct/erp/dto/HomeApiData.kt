@@ -3,7 +3,7 @@ package com.ct.erp.dto
 
 data class HomeApiData(
     val category: String? = "",
-    val children: List<HomeApiData>?,
+    val children: List<HomeApiData>?=null,
     val code: String? = "",
     val color: String? = "",
     val deleteFlag: String? = "",

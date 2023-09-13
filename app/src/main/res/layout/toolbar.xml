@@ -42,8 +42,11 @@
 
         <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/imgLogout"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent" />
+                app:srcCompat="@drawable/ic_logout"
+                android:padding="@dimen/dimen_12"
+                android:visibility="gone"
+                android:layout_width="@dimen/dimen_48"
+                android:layout_height="@dimen/dimen_48" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>

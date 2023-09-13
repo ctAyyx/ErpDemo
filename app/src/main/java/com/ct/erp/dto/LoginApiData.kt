@@ -5,7 +5,7 @@ package com.ct.erp.dto
  *
  */
 
-data class UserViewData(
+data class LoginApiData(
     val account: String? = null,
     val age: Any? = null,
     val avatar: String? = null,

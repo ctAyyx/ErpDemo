@@ -1,12 +1,10 @@
 package com.ct.erp.config
 
 import android.content.Context
-import com.ct.erp.Constants
-import com.ct.erp.LoginManager
-import com.king.frame.mvvmframe.config.AppliesOptions.OkHttpClientOptions
+import com.ct.erp.common.Constants
+import com.ct.erp.common.LoginManager
 import com.king.frame.mvvmframe.config.FrameConfigModule
 import com.king.frame.mvvmframe.di.module.ConfigModule
-import okhttp3.OkHttpClient
 
 /**
  * @author <a href="mailto:jenly1314@gmail.com">Jenly</a>

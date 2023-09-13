@@ -1,4 +1,4 @@
-package com.ct.erp
+package com.ct.erp.common
 
 
 object Constants {
@@ -9,4 +9,5 @@ object Constants {
 
     const val BUS_USER_LOGIN = "BUS_USER_LOGIN"
     const val GRID_SPAN_COUNT = 4
+    const val HTTP_ERROR_TOKEN = "400"
 }

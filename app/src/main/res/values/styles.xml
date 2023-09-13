@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <!--  按钮  -->
     <style name="CommonButton" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">16sp</item>
         <item name="lineHeight">19dp</item>
@@ -10,13 +10,24 @@
         <item name="android:layout_height">50dp</item>
         <item name="android:layout_width">wrap_content</item>
     </style>
-    <!--  强按钮  -->
+
     <style name="CommonButton.Blue">
         <item name="android:background">@drawable/selector_common_button_model_blue</item>
         <item name="android:textColor">@color/common_button_text_model_white</item>
     </style>
 
+    <style name="CommonButton.Black">
+        <item name="android:background">@drawable/selector_common_button_model_black</item>
+        <item name="android:textColor">@color/common_button_text_model_white</item>
+    </style>
 
+    <style name="CommonButton.Red">
+        <item name="android:background">@drawable/selector_common_button_model_black</item>
+        <item name="android:textColor">@color/common_button_text_model_white</item>
+    </style>
+
+
+    <!--  字体  -->
     <style name="ErpText" parent="Widget.AppCompat.TextView" />
 
     <style name="ErpText.Regular" />
@@ -25,6 +36,13 @@
         <item name="android:textStyle">bold</item>
         <item name="fontStyle">normal</item>
         <item name="fontWeight">700</item>
+    </style>
+
+
+    <!--  弹窗  -->
+    <style name="FloatingDialogFragment" parent="@android:style/Theme.Dialog">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
     </style>
 
 
