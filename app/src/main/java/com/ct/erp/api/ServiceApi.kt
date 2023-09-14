@@ -1,5 +1,6 @@
 package com.ct.erp.api
 
+import com.ct.erp.dto.DispatchDetailListApiData
 import com.ct.erp.dto.HomeApiData
 import com.ct.erp.dto.ServiceResult
 import com.ct.erp.dto.LoginApiData
@@ -18,5 +19,8 @@ interface ServiceApi {
 
     @GET("sys/userCenter/loginMobileMenu")
     suspend fun getHomeMenu(): ServiceResult<List<HomeApiData>>
+
+    @GET("biz/k3cloud/dispatching/query")
+    suspend fun getDispatchList(): ServiceResult<List<DispatchDetailListApiData>>
 
 }

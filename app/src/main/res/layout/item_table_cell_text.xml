@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:id="@+id/linearRoot"
+        android:layout_height="@dimen/dimen_40">
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvItemTableCellTitle"
+            android:textSize="@dimen/text_14"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:paddingHorizontal="@dimen/dimen_12"
+            android:textColor="@color/any_black"
+            style="@style/ErpText.Regular"
+            tools:text="测试文案"
+            android:layout_height="match_parent" />
+</androidx.appcompat.widget.LinearLayoutCompat>
+
+

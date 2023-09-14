@@ -45,7 +45,6 @@ import java.util.List;
  */
 
 public class ColumnHeaderRecyclerViewAdapter<CH> extends AbstractRecyclerViewAdapter<CH> {
-
     @NonNull
     private final ITableAdapter mTableAdapter;
     private final ITableView mTableView;

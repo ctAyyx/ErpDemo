@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:orientation="horizontal"
+            android:layout_width="@dimen/dimen_55"
+            android:background="@color/gold"
+            android:layout_height="@dimen/dimen_40">
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTableRowTitle"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                tools:text="列头部"
+                android:gravity="center"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textSize="@dimen/text_14"
+                android:textColor="@color/any_black"
+                style="@style/ErpText.Bold"
+                android:layout_height="@dimen/dimen_40" />
+
+        <View
+                android:layout_width="1dp"
+                android:background="@color/red"
+                android:layout_height="match_parent" />
+    </androidx.appcompat.widget.LinearLayoutCompat>

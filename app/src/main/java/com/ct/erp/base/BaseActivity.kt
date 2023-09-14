@@ -1,6 +1,7 @@
 package com.ct.erp.base
 
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.KeyEvent
 import android.widget.ImageView
@@ -32,7 +33,7 @@ abstract class BaseActivity<VM : BaseViewModel<out BaseModel>, VDB : ViewDataBin
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        //requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
         super.onCreate(savedInstanceState)
         TaskStateManager.getInstance().onCreate(this)
     }

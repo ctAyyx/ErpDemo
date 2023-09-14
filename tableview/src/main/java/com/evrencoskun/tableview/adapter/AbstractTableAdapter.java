@@ -25,6 +25,7 @@
 package com.evrencoskun.tableview.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -161,6 +162,7 @@ public abstract class AbstractTableAdapter<CH, RH, C> implements ITableAdapter<C
             mCornerView = onCreateCornerView((ViewGroup) mTableView);
 
             // Set the corner location
+            Log.e("TAG", "==>" + mColumnHeaderHeight);
             mTableView.addView(mCornerView, layoutParams);
         }
 

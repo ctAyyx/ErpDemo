@@ -1,5 +1,6 @@
 package com.ct.erp
 
+import android.content.Intent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
@@ -9,8 +10,10 @@ import com.ct.erp.base.adapter.OnItemClickHolder
 import com.ct.erp.common.CommonPref
 import com.ct.erp.common.Constants
 import com.ct.erp.databinding.ActivityHomeBinding
+import com.ct.erp.ui.DispatchDetailListActivity
 import com.ct.erp.vm.HomeViewModel
 import com.ct.erp.vo.HomeMenuViewData
+import com.ct.utils.ActivityUtils
 import com.ct.utils.LogUtils
 import com.king.camera.scan.CameraScan
 import dagger.hilt.android.AndroidEntryPoint
@@ -23,16 +26,15 @@ class HomeActivity : BaseActivity<HomeViewModel, ActivityHomeBinding>() {
     lateinit var commonPref: CommonPref
     override fun getLayoutId(): Int = R.layout.activity_home
 
-    private val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-        val result = it.data?.getStringExtra(CameraScan.SCAN_RESULT)
-        LogUtils.e("二维码数据:$result")
-    }
 
     private var mAdapter: HomeRvAdapter? = null
 
     private var menuClickHolder: OnItemClickHolder<HomeMenuViewData>? = object : OnItemClickHolder<HomeMenuViewData> {
         override fun onItemClick(data: HomeMenuViewData, position: Int) {
-
+            ActivityUtils.startActivitySafe(
+                this@HomeActivity,
+                Intent(this@HomeActivity, DispatchDetailListActivity::class.java)
+            )
         }
     }
 

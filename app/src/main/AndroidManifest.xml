@@ -39,6 +39,11 @@
                 android:screenOrientation="landscape"
                 android:exported="false" />
 
+        <activity
+                android:name=".ui.DispatchDetailListActivity"
+                android:screenOrientation="landscape"
+                android:exported="false" />
+
 
         <meta-data
                 android:name="com.ct.erp.config.AppConfigModule"

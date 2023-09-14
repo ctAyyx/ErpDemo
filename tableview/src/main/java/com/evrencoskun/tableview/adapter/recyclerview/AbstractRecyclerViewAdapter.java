@@ -28,8 +28,8 @@ import android.content.Context;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.evrencoskun.tableview.adapter.recyclerview.holder.AbstractViewHolder;
 
 import java.util.ArrayList;
@@ -39,7 +39,8 @@ import java.util.List;
  * Created by evrencoskun on 10/06/2017.
  */
 
-public abstract class AbstractRecyclerViewAdapter<T> extends RecyclerView.Adapter<AbstractViewHolder> {
+public abstract class AbstractRecyclerViewAdapter<T> extends RecyclerView
+        .Adapter<AbstractViewHolder> {
 
     @NonNull
     protected List<T> mItemList;
