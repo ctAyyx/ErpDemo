@@ -19,6 +19,15 @@ class DispatchViewModel @Inject constructor(application: Application, model: Bas
 
     val dispatchViewData by lazy { MutableLiveData<DispatchTableViewData>() }
 
+    val tableAllColumn by lazy { mutableListOf<TabColumnHeaderViewData>() }
+
+    private val _checkedTabColumn by lazy { MutableLiveData<List<TabColumnHeaderViewData>>() }
+
+    fun setCheckedTableColumn(newList: List<TabColumnHeaderViewData>) {
+        _checkedTabColumn.value = newList
+    }
+
+
     fun loadDispatchList() {
         launch {
             val response = mock()//serviceApi.getDispatchList()
@@ -56,6 +65,8 @@ class DispatchViewModel @Inject constructor(application: Application, model: Bas
     private fun convertDispatchApiData2ViewData(apiData: List<DispatchDetailListApiData>?): DispatchTableViewData {
         val rowList = mutableListOf<TabRowHeaderViewData>()
         val columnList = getColumnHeaderList()
+        tableAllColumn.clear()
+        tableAllColumn.addAll(columnList)
         val cellList = mutableListOf<List<DispatchTabCellViewData>>()
         apiData?.forEachIndexed { index, data ->
             rowList.add(TabRowHeaderViewData("序号:$index"))

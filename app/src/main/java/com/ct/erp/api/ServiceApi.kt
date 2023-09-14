@@ -16,6 +16,8 @@ interface ServiceApi {
     @GET("auth/b/getLoginUser")
     suspend fun getUserInfo(): ServiceResult<LoginApiData>
 
+    @GET("auth/b/doLogout")
+    suspend fun logout(): ServiceResult<Any>
 
     @GET("sys/userCenter/loginMobileMenu")
     suspend fun getHomeMenu(): ServiceResult<List<HomeApiData>>

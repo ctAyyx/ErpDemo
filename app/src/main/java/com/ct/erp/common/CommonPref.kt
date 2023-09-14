@@ -2,6 +2,7 @@ package com.ct.erp.common
 
 import android.content.Context
 import androidx.annotation.Keep
+import com.ct.erp.vo.UserViewData
 import com.ct.utils.BasePref
 import javax.inject.Inject
 
@@ -10,22 +11,27 @@ class CommonPref @Inject constructor(context: Context) : BasePref(context, Const
 
     @Keep
     companion object {
-        const val KEY_USER_TOKEN = "KEY_USER_TOKEN"
         const val KEY_USER_DATA = "KEY_USER_DATA"
     }
 
 
-    /**
-     * 用户Token数据
-     */
-    var userToken: String
-        get() = getString(KEY_USER_TOKEN, "")
-        set(value) = putString(KEY_USER_TOKEN, value)
+    var userDataJson: UserViewData?
+        get():UserViewData? {
+            val json = getString(KEY_USER_DATA, "{}")
+            return try {
+                gson.fromJson(json, UserViewData::class.java)
+            } catch (e: Exception) {
+                remove(KEY_USER_DATA)
+                null
+            }
+        }
+        set(value) {
+            val json = gson.toJson(value)
+            putString(KEY_USER_DATA, json)
+        }
 
-
-    var userDataJson: String
-        get() = getString(KEY_USER_DATA, "{}")
-        set(value) = putString(KEY_USER_DATA, value)
-
+    fun clearUserInfo() {
+        remove(KEY_USER_DATA)
+    }
 
 }

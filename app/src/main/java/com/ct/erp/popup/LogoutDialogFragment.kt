@@ -9,14 +9,14 @@ import com.ct.utils.click
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HintDialogFragment : BaseDialogFragment<LoginViewModel, DialogHintBinding>() {
+class LogoutDialogFragment : BaseDialogFragment<LoginViewModel, DialogHintBinding>() {
 
     companion object {
         private const val P_TITLE = "P_TITLE"
         fun newInstance(
             hintText: String, onCancel: NoParamsCallback? = null, onSureClick: NoParamsCallback? = null
-        ): HintDialogFragment {
-            val dialog = HintDialogFragment()
+        ): LogoutDialogFragment {
+            val dialog = LogoutDialogFragment()
 
             val bundle = Bundle()
             bundle.putString(P_TITLE, hintText)
@@ -55,7 +55,10 @@ class HintDialogFragment : BaseDialogFragment<LoginViewModel, DialogHintBinding>
         }
 
         binding.btnDialogLogoutSure.click {
-            onSureClick?.invoke()
+            viewModel.logout()
+        }
+
+        viewModel.loginStatus.observe(this) {
             dismiss()
         }
     }

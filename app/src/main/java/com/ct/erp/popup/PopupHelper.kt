@@ -11,7 +11,7 @@ object PopupHelper {
     ) {
         val resource = activity.resources
         FragmentUtils.showDialogFragment(
-            HintDialogFragment.newInstance(
+            LogoutDialogFragment.newInstance(
                 resource.getString(R.string.hint_logout), onCancel = onCancel, onSureClick = onSureClick
             ), activity, "LogoutDialog"
         )

@@ -33,8 +33,7 @@ class LoginManager {
 
     fun login(userToken: String?) {
         _token = userToken
-        LiveDataBus.get().with(Constants.BUS_USER_LOGIN, UserStateEvent::class.java).value =
-            UserStateEvent(loginState = UserLoginState.LOGIN_SUCCESS, isLogoutByUser = false)
+
     }
 
     /**
@@ -47,6 +46,8 @@ class LoginManager {
         _userName.value = user.userName
         _isAdmin.value = user.isAdmin
         _userId = user.userId
+        LiveDataBus.get().with(Constants.BUS_USER_LOGIN, UserStateEvent::class.java).value =
+            UserStateEvent(loginState = UserLoginState.LOGIN_SUCCESS, isLogoutByUser = false)
     }
 
     fun logout(logoutByUser: Boolean = false) {

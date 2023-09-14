@@ -18,7 +18,7 @@
             tools:text="行头部"
             android:maxLines="1"
             android:ellipsize="end"
-            style="@style/ErpText.Regular"
+            style="@style/ErpText.Bold"
             android:layout_weight="1"
             android:layout_height="0dp" />
 

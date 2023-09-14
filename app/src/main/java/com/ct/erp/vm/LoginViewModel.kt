@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import com.ct.erp.common.LoginManager
 import com.ct.erp.base.BaseModel
 import com.ct.erp.base.BaseViewModel
+import com.ct.erp.common.CommonPref
 import com.ct.erp.common.ErpException
 import com.ct.erp.dto.ServiceResult
 import com.ct.erp.dto.LoginApiData
@@ -23,6 +24,8 @@ import javax.inject.Inject
 class LoginViewModel @Inject constructor(application: Application, model: BaseModel?) :
     BaseViewModel(application, model) {
 
+    @Inject
+    lateinit var comPref: CommonPref
     val loginStatus by lazy { MutableLiveData<UserViewData>() }
 
     fun login(userName: String, userPwd: String) {
@@ -34,11 +37,12 @@ class LoginViewModel @Inject constructor(application: Application, model: BaseMo
                     emit(response.data)
                 } else throw ErpException(0, "登录失败,请重试!")
             }.map {
-                val response = mockUser() //  serviceApi.getUserInfo()
+                val response = mockUser(userName) //  serviceApi.getUserInfo()
                 if (isSuccess(response)) convertUserApiData2ViewData(response.data, it)
                 else throw ErpException(0, "获取用户信息失败!")
             }.collectLatest {
                 loginStatus.value = it
+                comPref.userDataJson = it
             }
         }
     }
@@ -47,9 +51,9 @@ class LoginViewModel @Inject constructor(application: Application, model: BaseMo
         code = "200", data = "111111111", errorMsg = ""
     )
 
-    private fun mockUser() = ServiceResult<LoginApiData>(
+    private fun mockUser(userName:String) = ServiceResult<LoginApiData>(
         code = "200", data = LoginApiData(
-            name = "测试用户", nickname = "测试用户", avatar = "xxx", id = "999"
+            name = "测试用户", nickname = userName, avatar = "xxx", id = "999"
         ), errorMsg = ""
     )
 
@@ -66,8 +70,12 @@ class LoginViewModel @Inject constructor(application: Application, model: BaseMo
 
     fun logout() {
         launch {
-            LoginManager.getInstance().logout(true)
-            loginStatus.value = null
+            val response = mock()//serviceApi.logout()
+            if (isSuccess(response)) {
+                LoginManager.getInstance().logout(true)
+                loginStatus.value = null
+                comPref.clearUserInfo()
+            }
         }
     }
 

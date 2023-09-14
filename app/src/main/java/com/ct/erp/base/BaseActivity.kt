@@ -91,7 +91,9 @@ abstract class BaseActivity<VM : BaseViewModel<out BaseModel>, VDB : ViewDataBin
     }
 
     open fun handleLogoutClick() {
-        PopupHelper.showLogoutDialog(this, onCancel = {}, onSureClick = {})
+        PopupHelper.showLogoutDialog(this, onCancel = {}, onSureClick = {
+            LoginManager.getInstance().logout(true)
+        })
     }
 
     open fun initView(binding: VDB) {}
@@ -100,7 +102,8 @@ abstract class BaseActivity<VM : BaseViewModel<out BaseModel>, VDB : ViewDataBin
     open fun loadData() {}
 
     open fun onUserLoginOut(event: UserStateEvent) {
-        if (!event.isLogoutByUser) ActivityUtils.startActivitySafe(this, Intent(this, LoginActivity::class.java))
+
+        ActivityUtils.startActivitySafe(this, Intent(this, LoginActivity::class.java))
     }
 
     open fun onUserLoginIn(event: UserStateEvent) {

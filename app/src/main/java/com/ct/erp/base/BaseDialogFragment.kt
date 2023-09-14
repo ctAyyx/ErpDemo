@@ -11,6 +11,7 @@ import com.ct.erp.R
 import com.king.frame.mvvmframe.base.BaseDialogFragment
 import com.king.frame.mvvmframe.base.BaseModel
 import com.king.frame.mvvmframe.base.BaseViewModel
+import es.dmoral.toasty.Toasty
 
 abstract class BaseDialogFragment<VM : BaseViewModel<out BaseModel>, VDB : ViewDataBinding> :
     BaseDialogFragment<VM, VDB>() {
@@ -32,11 +33,11 @@ abstract class BaseDialogFragment<VM : BaseViewModel<out BaseModel>, VDB : ViewD
     //-----------------------------------
 
     fun showToast(@StringRes resId: Int) {
-        //Toasty.normal(requireContext(), resId).show()
+        Toasty.normal(requireContext(), resId).show()
     }
 
     fun showToast(text: CharSequence) {
-        //Toasty.normal(requireContext(), text).show()
+        Toasty.normal(requireContext(), text).show()
     }
 
 

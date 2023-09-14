@@ -71,7 +71,7 @@ public abstract class BaseDialogFragment<VM extends BaseViewModel, VDB extends V
      */
     private View mRootView;
 
-    protected static final float DEFAULT_WIDTH_RATIO = 0.5f;
+    protected static final float DEFAULT_WIDTH_RATIO = 0.75f;
 
     private Dialog mProgressDialog;
 

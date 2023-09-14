@@ -9,7 +9,7 @@ import com.google.gson.reflect.TypeToken
 abstract class BasePref(context: Context, prefKey: String) {
 
     private val pref: SharedPreferences = context.getSharedPreferences(prefKey, Context.MODE_PRIVATE)
-    private val gson by lazy { Gson() }
+     val gson by lazy { Gson() }
 
     protected fun putString(key: String, value: String, commit: Boolean = false) =
         pref.edit(commit) { putString(key, value) }
