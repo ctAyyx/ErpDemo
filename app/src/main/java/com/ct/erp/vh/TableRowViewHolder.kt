@@ -13,7 +13,7 @@ class TableRowViewHolder(itemView: View) : AbstractViewHolder(itemView) {
         titleView = itemView.findViewById(R.id.tvTableRowTitle)
     }
 
-    fun bindViewHolder(model: TabRowHeaderViewData?) {
-        titleView?.text = model?.rowTitle
+    fun bindViewHolder(model: TabRowHeaderViewData?, isRowEnd: Boolean) {
+        titleView?.text = if (isRowEnd) "报工" else model?.rowTitle
     }
 }

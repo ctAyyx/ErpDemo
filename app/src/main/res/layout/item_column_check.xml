@@ -5,10 +5,14 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dimen_32">
+
         <androidx.appcompat.widget.AppCompatCheckBox
                 android:id="@+id/checkItemColumn"
                 android:layout_width="wrap_content"
                 android:textSize="@dimen/text_14"
+                android:button="@null"
+                android:background="@null"
+                android:drawableStart="@drawable/selector_common_select"
                 android:textColor="@color/any_black"
                 android:layout_height="match_parent" />
 

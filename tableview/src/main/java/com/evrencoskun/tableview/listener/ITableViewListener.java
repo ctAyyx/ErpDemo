@@ -51,7 +51,7 @@ public interface ITableViewListener {
     void onColumnHeaderLongPressed(@NonNull RecyclerView.ViewHolder columnHeaderView, int
             column);
 
-    void onRowHeaderClicked(@NonNull RecyclerView.ViewHolder rowHeaderView, int row);
+    void onRowHeaderClicked(@NonNull RecyclerView.ViewHolder rowHeaderView, int row,boolean isRowEnd);
 
     void onRowHeaderDoubleClicked(@NonNull RecyclerView.ViewHolder rowHeaderView, int row);
 

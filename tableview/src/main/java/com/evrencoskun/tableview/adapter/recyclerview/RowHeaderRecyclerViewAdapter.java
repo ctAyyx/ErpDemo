@@ -72,7 +72,7 @@ public class RowHeaderRecyclerViewAdapter<RH> extends AbstractRecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull AbstractViewHolder holder, int position) {
-        mTableAdapter.onBindRowHeaderViewHolder(holder, getItem(position), position);
+        mTableAdapter.onBindRowHeaderViewHolder(holder, getItem(position), position,isRowEnd);
     }
 
     @Override

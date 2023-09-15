@@ -60,5 +60,8 @@ data class LoginApiData(
     val roleCodeList: List<String?>? = null,
     val signature: String? = null,
     val sortCode: Int? = null,
-    val userStatus: String? = null
+    val userStatus: String? = null,
+
+    val xkUserId: String? = null,
+    val xkUserName: String? = null
 )

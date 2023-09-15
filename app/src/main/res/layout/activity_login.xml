@@ -16,6 +16,7 @@
                 android:id="@+id/imgLoginLogo"
                 android:layout_width="@dimen/dimen_56"
                 android:layout_height="@dimen/dimen_56"
+                app:srcCompat="@mipmap/ic_launcher"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 tools:background="@color/any_black"
@@ -79,6 +80,25 @@
                 android:layout_height="wrap_content" />
 
 
+        <CheckBox
+                android:id="@+id/radioAgreement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:drawableStart="@drawable/selector_common_select"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:background="@null"
+                android:textColor="@color/grey03"
+                android:textSize="13sp"
+                android:layout_marginBottom="@dimen/dimen_8"
+                app:layout_constraintEnd_toEndOf="@+id/btnLogin"
+                app:layout_constraintStart_toStartOf="@+id/btnLogin"
+                app:layout_constraintBottom_toTopOf="@+id/btnLogin"
+                tools:text="同意XXXX协议和XXXX协议" />
+
         <androidx.appcompat.widget.AppCompatTextView
                 style="@style/CommonButton.Blue"
                 android:id="@+id/btnLogin"
@@ -86,7 +106,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:text="登录" />
+                android:text="@string/btn_login" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

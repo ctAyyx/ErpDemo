@@ -248,7 +248,6 @@ public class TableView extends FrameLayout implements ITableView {
         mRowEndRecyclerView = createRowEndRecyclerView();
         mCellRecyclerView = createCellRecyclerView();
 
-
         // Set some Id to help in identification
         mColumnHeaderRecyclerView.setId(R.id.ColumnHeaderRecyclerView);
         mRowHeaderRecyclerView.setId(R.id.RowHeaderRecyclerView);
@@ -303,9 +302,13 @@ public class TableView extends FrameLayout implements ITableView {
         // Add item click listener for row header recyclerView
         if (mAllowClickInsideRowHeader) {
             RowHeaderRecyclerViewItemClickListener rowHeaderRecyclerViewItemClickListener = new RowHeaderRecyclerViewItemClickListener(
-                    mRowHeaderRecyclerView, this);
+                    mRowHeaderRecyclerView, this, false);
             mRowHeaderRecyclerView.addOnItemTouchListener(rowHeaderRecyclerViewItemClickListener);
         }
+
+        RowHeaderRecyclerViewItemClickListener rowHeaderRecyclerViewItemClickListener = new RowHeaderRecyclerViewItemClickListener(
+                mRowEndRecyclerView, this, true);
+        mRowEndRecyclerView.addOnItemTouchListener(rowHeaderRecyclerViewItemClickListener);
 
         // Add Layout change listener both of Column Header  & Cell recyclerView to detect
         // changing size

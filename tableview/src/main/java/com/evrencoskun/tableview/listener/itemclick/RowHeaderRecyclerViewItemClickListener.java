@@ -40,9 +40,12 @@ import com.evrencoskun.tableview.adapter.recyclerview.holder.AbstractViewHolder;
 
 public class RowHeaderRecyclerViewItemClickListener extends AbstractItemClickListener {
 
+    private boolean isRowEnd = false;
+
     public RowHeaderRecyclerViewItemClickListener(@NonNull CellRecyclerView recyclerView, @NonNull ITableView
-            tableView) {
+            tableView, boolean isRowEnd) {
         super(recyclerView, tableView);
+        this.isRowEnd = isRowEnd;
     }
 
     @Override
@@ -63,7 +66,7 @@ public class RowHeaderRecyclerViewItemClickListener extends AbstractItemClickLis
             }
 
             // Call ITableView listener for item click
-            getTableViewListener().onRowHeaderClicked(holder, row);
+            getTableViewListener().onRowHeaderClicked(holder, row, isRowEnd);
             return true;
         }
         return false;

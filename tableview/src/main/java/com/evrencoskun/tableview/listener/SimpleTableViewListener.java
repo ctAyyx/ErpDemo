@@ -56,7 +56,7 @@ public abstract class SimpleTableViewListener implements ITableViewListener {
 	}
 
 	@Override
-	public void onRowHeaderClicked(@NonNull RecyclerView.ViewHolder rowHeaderView, int row) {
+	public void onRowHeaderClicked(@NonNull RecyclerView.ViewHolder rowHeaderView, int row,boolean isRowEnd) {
 	}
 
 	@Override

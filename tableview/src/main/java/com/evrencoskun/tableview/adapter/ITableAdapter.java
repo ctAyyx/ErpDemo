@@ -63,7 +63,7 @@ public interface ITableAdapter<CH, RH, C> {
     AbstractViewHolder onCreateRowHeaderViewHolder(@NonNull ViewGroup parent, int viewType, boolean isRowEnd);
 
     void onBindRowHeaderViewHolder(@NonNull AbstractViewHolder holder, @Nullable RH rowHeaderItemModel,
-            int rowPosition);
+            int rowPosition,boolean isRowEnd);
 
     @NonNull
     View onCreateCornerView(@NonNull ViewGroup parent);

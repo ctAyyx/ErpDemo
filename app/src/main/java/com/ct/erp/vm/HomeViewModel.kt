@@ -38,12 +38,22 @@ class HomeViewModel @Inject constructor(application: Application, model: BaseMod
         data = listOf(
             HomeApiData(
                 title = "标题一", children = listOf(
-                    HomeApiData(title = "分类1", icon = "", id = "111", parentId = "11"),
-                    HomeApiData(title = "分类2", icon = "", id = "222", parentId = "22"),
-                    HomeApiData(title = "分类3", icon = "", id = "333", parentId = "22"),
-                    HomeApiData(title = "分类4", icon = "", id = "444", parentId = "44"),
-                    HomeApiData(title = "分类5", icon = "", id = "555", parentId = "55"),
-                    HomeApiData(title = "分类6", icon = "", id = "666", parentId = "66")
+                    HomeApiData(title = "分类1", icon = "https://cdn.pixabay.com/photo/2017/03/12/11/30/alishan-2136879_640.jpg", id = "111", parentId = "11"),
+                    HomeApiData(title = "分类2", icon = "https://cdn.pixabay.com/photo/2017/03/12/11/30/alishan-2136879_640.jpg", id = "222", parentId = "22"),
+                    HomeApiData(title = "分类3", icon = "https://cdn.pixabay.com/photo/2017/03/12/11/30/alishan-2136879_640.jpg", id = "333", parentId = "22"),
+                    HomeApiData(title = "分类4", icon = "https://cdn.pixabay.com/photo/2017/03/12/11/30/alishan-2136879_640.jpg", id = "444", parentId = "44"),
+                    HomeApiData(title = "分类5", icon = "https://cdn.pixabay.com/photo/2017/03/12/11/30/alishan-2136879_640.jpg", id = "555", parentId = "55"),
+                    HomeApiData(title = "分类6", icon = "https://cdn.pixabay.com/photo/2017/03/12/11/30/alishan-2136879_640.jpg", id = "666", parentId = "66")
+                )
+            ),
+            HomeApiData(
+                title = "标题二", children = listOf(
+                    HomeApiData(title = "分类1", icon = "https://cdn.pixabay.com/photo/2017/03/12/11/30/alishan-2136879_640.jpg", id = "111", parentId = "11"),
+                    HomeApiData(title = "分类2", icon = "https://cdn.pixabay.com/photo/2017/03/12/11/30/alishan-2136879_640.jpg", id = "222", parentId = "22"),
+                    HomeApiData(title = "分类3", icon = "https://cdn.pixabay.com/photo/2017/03/12/11/30/alishan-2136879_640.jpg", id = "333", parentId = "22"),
+                    HomeApiData(title = "分类4", icon = "https://cdn.pixabay.com/photo/2017/03/12/11/30/alishan-2136879_640.jpg", id = "444", parentId = "44"),
+                    HomeApiData(title = "分类5", icon = "https://cdn.pixabay.com/photo/2017/03/12/11/30/alishan-2136879_640.jpg", id = "555", parentId = "55"),
+                    HomeApiData(title = "分类6", icon = "https://cdn.pixabay.com/photo/2017/03/12/11/30/alishan-2136879_640.jpg", id = "666", parentId = "66")
                 )
             )
         ),

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.KeyEvent
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.StringRes
@@ -57,7 +58,7 @@ abstract class BaseActivity<VM : BaseViewModel<out BaseModel>, VDB : ViewDataBin
 
     open fun registerLoginState() {
         LiveDataBus.get().with(Constants.BUS_USER_LOGIN, UserStateEvent::class.java).observe(this) {
-            LogUtils.e("${this} 登录状态改变:$it")
+            LogUtils.e(" 登录状态改变:$it")
             when (it.loginState) {
                 UserLoginState.LOGIN_SUCCESS -> {
                     onUserLoginIn(it)
@@ -70,13 +71,12 @@ abstract class BaseActivity<VM : BaseViewModel<out BaseModel>, VDB : ViewDataBin
     }
 
     open fun initToolbar() {
+        getTitleView()?.text = getToolbarTitle()
         LoginManager.getInstance().userName.observe(this) {
-            LogUtils.e("$this 用户名称:$it")
             getUserView()?.text = it
         }
 
         LoginManager.getInstance().isAdmin.observe(this) {
-            LogUtils.e("$this 是否显示图标:$it")
             getLogoutView()?.setVisibility(it)
         }
 
@@ -84,9 +84,10 @@ abstract class BaseActivity<VM : BaseViewModel<out BaseModel>, VDB : ViewDataBin
             handleLogoutClick()
         }
 
-        getBackView()?.setVisibility(showBackView())
+        getBackView()?.visibility = if (showBackView()) View.VISIBLE else View.INVISIBLE
         getBackView()?.click {
-            finish()
+            if (showBackView())
+                finish()
         }
     }
 
@@ -102,7 +103,6 @@ abstract class BaseActivity<VM : BaseViewModel<out BaseModel>, VDB : ViewDataBin
     open fun loadData() {}
 
     open fun onUserLoginOut(event: UserStateEvent) {
-
         ActivityUtils.startActivitySafe(this, Intent(this, LoginActivity::class.java))
     }
 
@@ -124,10 +124,12 @@ abstract class BaseActivity<VM : BaseViewModel<out BaseModel>, VDB : ViewDataBin
         return binding.root.findViewById(R.id.imgLogout)
     }
 
-    open fun showBackView(): Boolean = false
+    open fun showBackView(): Boolean = true
     open fun getBackView(): ImageView? {
         return binding.root.findViewById(R.id.imgBack)
     }
+
+    open fun getToolbarTitle(): String = ""
 
     //-----------------------------------
 

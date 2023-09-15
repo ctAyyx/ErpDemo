@@ -11,7 +11,9 @@
 
         <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/imgBack"
-                android:layout_width="32dp"
+                android:layout_width="@dimen/dimen_48"
+                app:srcCompat="@drawable/ic_back"
+                android:padding="@dimen/dimen_14"
                 android:layout_height="match_parent" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -20,6 +22,9 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:singleLine="true"
+                android:textSize="@dimen/text_16"
+                android:textColor="@color/any_black"
+                style="@style/ErpText.Bold"
                 android:layout_gravity="center_horizontal"
                 android:text="@string/app_name" />
 
@@ -43,7 +48,7 @@
         <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/imgLogout"
                 app:srcCompat="@drawable/ic_logout"
-                android:padding="@dimen/dimen_12"
+                android:padding="@dimen/dimen_14"
                 android:visibility="gone"
                 android:layout_width="@dimen/dimen_48"
                 android:layout_height="@dimen/dimen_48" />

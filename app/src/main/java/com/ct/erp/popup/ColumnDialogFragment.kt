@@ -41,6 +41,15 @@ class ColumnDialogFragment : BaseDialogFragment<DispatchViewModel, DialogTableCo
         tempList.clear()
         tempList.addAll(viewModel.tableAllColumn)
 
+        var checkedAll = true
+        tempList.forEach {
+            if (!it.isChecked) {
+                checkedAll = false
+                return@forEach
+            }
+        }
+
+        binding.checkDialogColumnAll.isChecked = checkedAll
         binding.rvDialogColumn.apply {
             layoutManager = GridLayoutManager(context, Constants.GRID_SPAN_COUNT)
             adapter = mAdapter

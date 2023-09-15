@@ -54,9 +54,9 @@ class DispatchTableAdapter @Inject constructor() :
 
 
     override fun onBindRowHeaderViewHolder(
-        holder: AbstractViewHolder, rowHeaderItemModel: TabRowHeaderViewData?, rowPosition: Int
+        holder: AbstractViewHolder, rowHeaderItemModel: TabRowHeaderViewData?, rowPosition: Int, isRowEnd: Boolean
     ) {
-        if (holder is TableRowViewHolder) holder.bindViewHolder(rowHeaderItemModel)
+        if (holder is TableRowViewHolder) holder.bindViewHolder(rowHeaderItemModel, isRowEnd)
     }
 
     override fun onCreateCornerView(parent: ViewGroup): View {

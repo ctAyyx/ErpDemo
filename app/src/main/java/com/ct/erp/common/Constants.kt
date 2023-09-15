@@ -1,8 +1,9 @@
 package com.ct.erp.common
 
 
+
 object Constants {
-    const val BASE_URL = "http://apis.juhe.cn"
+    const val BASE_URL = "https://console-mock.apipost.cn/mock/b03dd4c0-611b-40f3-90b5-ae8b9e45fabc"
 
     const val PREF_KEY_COMMON = "PREF_KEY_COMMON"
 

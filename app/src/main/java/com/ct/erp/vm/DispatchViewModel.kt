@@ -2,6 +2,7 @@ package com.ct.erp.vm
 
 import android.app.Application
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.map
 import com.ct.erp.base.BaseModel
 import com.ct.erp.base.BaseViewModel
 import com.ct.erp.dto.DispatchDetailListApiData
@@ -17,21 +18,36 @@ import javax.inject.Inject
 class DispatchViewModel @Inject constructor(application: Application, model: BaseModel?) :
     BaseViewModel(application, model) {
 
-    val dispatchViewData by lazy { MutableLiveData<DispatchTableViewData>() }
-
+    // 所有的可配置选项
     val tableAllColumn by lazy { mutableListOf<TabColumnHeaderViewData>() }
 
-    private val _checkedTabColumn by lazy { MutableLiveData<List<TabColumnHeaderViewData>>() }
+    // 所有数据
+    val tableAllCell by lazy { mutableListOf<DispatchDetailListApiData>() }
+
+    private val checkedTabColumn = mutableListOf<TabColumnHeaderViewData>()
+
+    val dispatchViewData by lazy { MutableLiveData<DispatchTableViewData>() }
 
     fun setCheckedTableColumn(newList: List<TabColumnHeaderViewData>) {
-        _checkedTabColumn.value = newList
+        checkedTabColumn.clear()
+        checkedTabColumn.addAll(newList)
+        dispatchViewData.value = convertDispatchApiData2ViewData(tableAllCell)
     }
-
 
     fun loadDispatchList() {
         launch {
+            // 加载所有配置选项
+            val columnList = getColumnHeaderList()
+            tableAllColumn.clear()
+            tableAllColumn.addAll(columnList)
+            setCheckedTableColumn(getDefaultColumnHeaderList())
+            //记载数据
             val response = mock()//serviceApi.getDispatchList()
+
+
             if (isSuccess(response)) {
+                tableAllCell.clear()
+                response.data?.let { tableAllCell.addAll(it) }
                 dispatchViewData.value = convertDispatchApiData2ViewData(response.data)
             }
         }
@@ -63,21 +79,19 @@ class DispatchViewModel @Inject constructor(application: Application, model: Bas
     )
 
     private fun convertDispatchApiData2ViewData(apiData: List<DispatchDetailListApiData>?): DispatchTableViewData {
-        val rowList = mutableListOf<TabRowHeaderViewData>()
-        val columnList = getColumnHeaderList()
-        tableAllColumn.clear()
-        tableAllColumn.addAll(columnList)
+
+        val rowHeaderList = mutableListOf<TabRowHeaderViewData>()
         val cellList = mutableListOf<List<DispatchTabCellViewData>>()
         apiData?.forEachIndexed { index, data ->
-            rowList.add(TabRowHeaderViewData("序号:$index"))
+            rowHeaderList.add(TabRowHeaderViewData("序号:$index"))
             val rowList = mutableListOf<DispatchTabCellViewData>()
-            columnList.forEach { columnHeader ->
+            checkedTabColumn.forEach { columnHeader ->
                 val cell = buildCell(columnHeader, data)
                 rowList.add(cell)
             }
             cellList.add(rowList)
         }
-        return DispatchTableViewData(rowHeader = rowList, columnHeader = columnList, cells = cellList)
+        return DispatchTableViewData(rowHeader = rowHeaderList, columnHeader = checkedTabColumn, cells = cellList)
     }
 
 
@@ -116,4 +130,19 @@ class DispatchViewModel @Inject constructor(application: Application, model: Bas
         TabColumnHeaderViewData("班次", ""),
         TabColumnHeaderViewData("报工", ""),
     )
+
+    private fun getDefaultColumnHeaderList(): List<TabColumnHeaderViewData> {
+        val result = mutableListOf<TabColumnHeaderViewData>()
+
+        tableAllColumn.forEach {
+            when (it.columnTitle) {
+                "生产工单号", "产品", "图号", "批号" -> {
+                    it.isChecked = true
+                    result.add(it)
+                }
+            }
+        }
+
+        return result
+    }
 }

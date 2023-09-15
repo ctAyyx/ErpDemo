@@ -11,6 +11,7 @@ import com.ct.erp.dto.ServiceResult
 import com.ct.erp.dto.LoginApiData
 import com.ct.erp.vo.UserViewData
 import com.ct.utils.LogUtils
+import com.google.gson.JsonObject
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.flow
@@ -31,7 +32,10 @@ class LoginViewModel @Inject constructor(application: Application, model: BaseMo
     fun login(userName: String, userPwd: String) {
         launch {
             flow {
-                val response = mock()//serviceApi.login(userName, userPwd)
+                val jsonObject = JsonObject()
+                jsonObject.addProperty("account", userName)
+                jsonObject.addProperty("password", encoderPwd(userPwd))
+                val response = mock()//serviceApi.login(jsonObject)
                 if (isSuccess(response)) {
                     LoginManager.getInstance().login(response.data)
                     emit(response.data)
@@ -47,11 +51,15 @@ class LoginViewModel @Inject constructor(application: Application, model: BaseMo
         }
     }
 
+    private fun encoderPwd(userPwd: String): String {
+        return userPwd
+    }
+
     private fun mock() = ServiceResult<String>(
         code = "200", data = "111111111", errorMsg = ""
     )
 
-    private fun mockUser(userName:String) = ServiceResult<LoginApiData>(
+    private fun mockUser(userName: String) = ServiceResult<LoginApiData>(
         code = "200", data = LoginApiData(
             name = "测试用户", nickname = userName, avatar = "xxx", id = "999"
         ), errorMsg = ""
@@ -63,7 +71,9 @@ class LoginViewModel @Inject constructor(application: Application, model: BaseMo
             userName = apiData?.nickname ?: "",
             userIcon = apiData?.avatar ?: "",
             isAdmin = true,
-            userId = apiData?.id ?: ""
+            userId = apiData?.id ?: "",
+            xkUserId = apiData?.xkUserId,
+            xkUserName = apiData?.xkUserName
         )
     }
 

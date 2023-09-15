@@ -25,8 +25,9 @@ class HomeActivity : BaseActivity<HomeViewModel, ActivityHomeBinding>() {
     @Inject
     lateinit var commonPref: CommonPref
     override fun getLayoutId(): Int = R.layout.activity_home
-
-
+    override fun getToolbarTitle(): String = "主页"
+    override fun showBackView(): Boolean = false
+    override fun canBack(): Boolean = false
     private var mAdapter: HomeRvAdapter? = null
 
     private var menuClickHolder: OnItemClickHolder<HomeMenuViewData>? = object : OnItemClickHolder<HomeMenuViewData> {

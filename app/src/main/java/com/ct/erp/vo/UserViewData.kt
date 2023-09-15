@@ -5,5 +5,7 @@ data class UserViewData(
     val userName: String,
     val userIcon: String,
     val isAdmin: Boolean,
-    val userId: String
+    val userId: String,
+    val xkUserName: String? = null,
+    val xkUserId: String? = null
 )

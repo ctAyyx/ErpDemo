@@ -24,6 +24,7 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class DispatchDetailListActivity : BaseActivity<DispatchViewModel, ActivityDispatchDetailBinding>() {
     override fun getLayoutId(): Int = R.layout.activity_dispatch_detail
+    override fun getToolbarTitle(): String = "做工明显列表"
 
     @Inject
     lateinit var mAdapter: DispatchTableAdapter
@@ -58,6 +59,7 @@ class DispatchDetailListActivity : BaseActivity<DispatchViewModel, ActivityDispa
     override fun bindEvent(binding: ActivityDispatchDetailBinding) {
         super.bindEvent(binding)
         viewModel.dispatchViewData.observe(this) {
+            LogUtils.e("$this $it")
             mAdapter.setAllItems(it.columnHeader, it.rowHeader, it.cells)
         }
         viewModel.loadDispatchList()
@@ -83,7 +85,9 @@ class DispatchDetailListActivity : BaseActivity<DispatchViewModel, ActivityDispa
         override fun onColumnHeaderLongPressed(columnHeaderView: RecyclerView.ViewHolder, column: Int) {
         }
 
-        override fun onRowHeaderClicked(rowHeaderView: RecyclerView.ViewHolder, row: Int) {
+        override fun onRowHeaderClicked(rowHeaderView: RecyclerView.ViewHolder, row: Int, isRowEnd: Boolean) {
+            LogUtils.e("onRowHeaderClicked $row  $isRowEnd ${viewModel.tableAllCell[row]}")
+
         }
 
         override fun onRowHeaderDoubleClicked(rowHeaderView: RecyclerView.ViewHolder, row: Int) {
