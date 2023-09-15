@@ -50,7 +50,7 @@ class ColumnDialogFragment : BaseDialogFragment<DispatchViewModel, DialogTableCo
         binding.checkDialogColumnAll.setOnCheckedChangeListener { _, isChecked ->
             val curList = mAdapter.currentList
             curList.forEach {
-                it.isChecked = true
+                it.isChecked = isChecked
             }
             mAdapter.notifyDataSetChanged()
         }

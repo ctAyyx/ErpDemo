@@ -43,22 +43,31 @@ import java.util.List;
  */
 
 public class RowHeaderRecyclerViewAdapter<RH> extends AbstractRecyclerViewAdapter<RH> {
+
     @NonNull
     private final ITableAdapter mTableAdapter;
     private final ITableView mTableView;
     private RowHeaderSortHelper mRowHeaderSortHelper;
+
+    private boolean isRowEnd = false;
+
 
     public RowHeaderRecyclerViewAdapter(@NonNull Context context, @Nullable List<RH> itemList, @NonNull ITableAdapter
             tableAdapter) {
         super(context, itemList);
         this.mTableAdapter = tableAdapter;
         this.mTableView = tableAdapter.getTableView();
+
+    }
+
+    public void setIsRowEnd() {
+        this.isRowEnd = true;
     }
 
     @NonNull
     @Override
     public AbstractViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return mTableAdapter.onCreateRowHeaderViewHolder(parent, viewType);
+        return mTableAdapter.onCreateRowHeaderViewHolder(parent, viewType, isRowEnd);
     }
 
     @Override

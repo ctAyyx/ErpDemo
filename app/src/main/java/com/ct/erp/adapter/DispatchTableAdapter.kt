@@ -46,7 +46,7 @@ class DispatchTableAdapter @Inject constructor() :
     }
 
 
-    override fun onCreateRowHeaderViewHolder(parent: ViewGroup, viewType: Int): AbstractViewHolder {
+    override fun onCreateRowHeaderViewHolder(parent: ViewGroup, viewType: Int, isRowEnd: Boolean): AbstractViewHolder {
         return TableRowViewHolder(
             LayoutInflater.from(parent.context).inflate(R.layout.item_table_row, parent, false)
         )
@@ -60,6 +60,10 @@ class DispatchTableAdapter @Inject constructor() :
     }
 
     override fun onCreateCornerView(parent: ViewGroup): View {
+        return LayoutInflater.from(parent.context).inflate(R.layout.item_corner, parent, false)
+    }
+
+    override fun onCreateCornerEndView(parent: ViewGroup): View {
         return LayoutInflater.from(parent.context).inflate(R.layout.item_corner, parent, false)
     }
 

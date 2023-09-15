@@ -50,20 +50,26 @@ public interface ITableAdapter<CH, RH, C> {
     @NonNull
     AbstractViewHolder onCreateCellViewHolder(@NonNull ViewGroup parent, int viewType);
 
-    void onBindCellViewHolder(@NonNull AbstractViewHolder holder, @Nullable C cellItemModel, int columnPosition, int rowPosition);
+    void onBindCellViewHolder(@NonNull AbstractViewHolder holder, @Nullable C cellItemModel, int columnPosition,
+            int rowPosition);
 
     @NonNull
     AbstractViewHolder onCreateColumnHeaderViewHolder(@NonNull ViewGroup parent, int viewType);
 
-    void onBindColumnHeaderViewHolder(@NonNull AbstractViewHolder holder, @Nullable CH columnHeaderItemModel, int columnPosition);
+    void onBindColumnHeaderViewHolder(@NonNull AbstractViewHolder holder, @Nullable CH columnHeaderItemModel,
+            int columnPosition);
 
     @NonNull
-    AbstractViewHolder onCreateRowHeaderViewHolder(@NonNull ViewGroup parent, int viewType);
+    AbstractViewHolder onCreateRowHeaderViewHolder(@NonNull ViewGroup parent, int viewType, boolean isRowEnd);
 
-    void onBindRowHeaderViewHolder(@NonNull AbstractViewHolder holder, @Nullable RH rowHeaderItemModel, int rowPosition);
+    void onBindRowHeaderViewHolder(@NonNull AbstractViewHolder holder, @Nullable RH rowHeaderItemModel,
+            int rowPosition);
 
     @NonNull
     View onCreateCornerView(@NonNull ViewGroup parent);
+
+
+    View onCreateCornerEndView(@NonNull ViewGroup parent);
 
     ITableView getTableView();
 

@@ -26,6 +26,7 @@ package com.evrencoskun.tableview.adapter;
 
 import android.content.Context;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -52,11 +53,14 @@ public abstract class AbstractTableAdapter<CH, RH, C> implements ITableAdapter<C
 
     private ColumnHeaderRecyclerViewAdapter<CH> mColumnHeaderRecyclerViewAdapter;
     private RowHeaderRecyclerViewAdapter<RH> mRowHeaderRecyclerViewAdapter;
+    private RowHeaderRecyclerViewAdapter<RH> mRowEndRecyclerViewAdapter;
     private CellRecyclerViewAdapter mCellRecyclerViewAdapter;
     private View mCornerView;
+    private View mCornerViewEnd;
 
     protected List<CH> mColumnHeaderItems;
     protected List<RH> mRowHeaderItems;
+    protected List<RH> mRowEndItems;
     protected List<List<C>> mCellItems;
 
     private ITableView mTableView;
@@ -71,12 +75,13 @@ public abstract class AbstractTableAdapter<CH, RH, C> implements ITableAdapter<C
         Context context = mTableView.getContext();
 
         // Create Column header RecyclerView Adapter
-        mColumnHeaderRecyclerViewAdapter = new ColumnHeaderRecyclerViewAdapter<>(context,
-                mColumnHeaderItems, this);
+        mColumnHeaderRecyclerViewAdapter = new ColumnHeaderRecyclerViewAdapter<>(context, mColumnHeaderItems, this);
 
         // Create Row Header RecyclerView Adapter
-        mRowHeaderRecyclerViewAdapter = new RowHeaderRecyclerViewAdapter<>(context,
-                mRowHeaderItems, this);
+        mRowHeaderRecyclerViewAdapter = new RowHeaderRecyclerViewAdapter<>(context, mRowHeaderItems, this);
+
+        mRowEndRecyclerViewAdapter = new RowHeaderRecyclerViewAdapter<>(context, mRowHeaderItems, this);
+        mRowEndRecyclerViewAdapter.setIsRowEnd();
 
         // Create Cell RecyclerView Adapter
         mCellRecyclerViewAdapter = new CellRecyclerViewAdapter<>(context, mCellItems, mTableView);
@@ -108,6 +113,19 @@ public abstract class AbstractTableAdapter<CH, RH, C> implements ITableAdapter<C
         dispatchRowHeaderDataSetChangesToListeners(mRowHeaderItems);
     }
 
+    public void setRowEndItems(@Nullable List<RH> rowEndItems) {
+        if (rowEndItems == null) {
+            return;
+        }
+
+        mRowEndItems = rowEndItems;
+
+        // Set the items to the adapter
+        Log.e("TAG", "setRowEndItems" + rowEndItems.size());
+        mRowEndRecyclerViewAdapter.setItems(mRowEndItems);
+        dispatchRowHeaderDataSetChangesToListeners(mRowEndItems);
+    }
+
     public void setCellItems(@Nullable List<List<C>> cellItems) {
         if (cellItems == null) {
             return;
@@ -122,24 +140,19 @@ public abstract class AbstractTableAdapter<CH, RH, C> implements ITableAdapter<C
         dispatchCellDataSetChangesToListeners(mCellItems);
     }
 
-    public void setAllItems(
-            @Nullable List<CH> columnHeaderItems,
-            @Nullable List<RH> rowHeaderItems,
-            @Nullable List<List<C>> cellItems
-    ) {
+    public void setAllItems(@Nullable List<CH> columnHeaderItems, @Nullable List<RH> rowHeaderItems,
+            @Nullable List<List<C>> cellItems) {
         // Set all items
         setColumnHeaderItems(columnHeaderItems);
         setRowHeaderItems(rowHeaderItems);
+        setRowEndItems(rowHeaderItems);
         setCellItems(cellItems);
 
         // Control corner view
         updateCornerViewState(columnHeaderItems, rowHeaderItems);
     }
 
-    private void updateCornerViewState(
-            @Nullable List<CH> columnHeaderItems,
-            @Nullable List<RH> rowHeaderItems
-    ) {
+    private void updateCornerViewState(@Nullable List<CH> columnHeaderItems, @Nullable List<RH> rowHeaderItems) {
         boolean hasColumnHeaders = columnHeaderItems != null && !columnHeaderItems.isEmpty();
         boolean hasRowHeaders = rowHeaderItems != null && !rowHeaderItems.isEmpty();
         boolean showCornerView = mTableView != null && mTableView.getShowCornerView();
@@ -152,17 +165,13 @@ public abstract class AbstractTableAdapter<CH, RH, C> implements ITableAdapter<C
                 return;
             }
 
-            FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(
-                    mRowHeaderWidth,
-                    mColumnHeaderHeight,
-                    mTableView.getGravity()
-            );
+            FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(mRowHeaderWidth, mColumnHeaderHeight,
+                    mTableView.getGravity());
 
             // Create corner view
             mCornerView = onCreateCornerView((ViewGroup) mTableView);
 
             // Set the corner location
-            Log.e("TAG", "==>" + mColumnHeaderHeight);
             mTableView.addView(mCornerView, layoutParams);
         }
 
@@ -176,6 +185,15 @@ public abstract class AbstractTableAdapter<CH, RH, C> implements ITableAdapter<C
         } else {
             mCornerView.setVisibility(View.GONE);
         }
+
+        if (mCornerViewEnd == null && mTableView != null) {
+            FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(mRowHeaderWidth, mColumnHeaderHeight,
+                    Gravity.TOP | Gravity.RIGHT);
+
+            mCornerViewEnd = onCreateCornerEndView((ViewGroup) mTableView);
+            mTableView.addView(mCornerViewEnd, layoutParams);
+        }
+
     }
 
     @Override
@@ -207,6 +225,10 @@ public abstract class AbstractTableAdapter<CH, RH, C> implements ITableAdapter<C
         return mRowHeaderRecyclerViewAdapter;
     }
 
+    public RowHeaderRecyclerViewAdapter getRowEndRecyclerViewAdapter() {
+        return mRowEndRecyclerViewAdapter;
+    }
+
     public CellRecyclerViewAdapter getCellRecyclerViewAdapter() {
         return mCellRecyclerViewAdapter;
     }
@@ -218,6 +240,11 @@ public abstract class AbstractTableAdapter<CH, RH, C> implements ITableAdapter<C
             ViewGroup.LayoutParams layoutParams = mCornerView.getLayoutParams();
             layoutParams.width = rowHeaderWidth;
         }
+
+        if (mCornerViewEnd != null) {
+            ViewGroup.LayoutParams layoutParams = mCornerViewEnd.getLayoutParams();
+            layoutParams.width = rowHeaderWidth;
+        }
     }
 
     public void setColumnHeaderHeight(int columnHeaderHeight) {
@@ -226,8 +253,8 @@ public abstract class AbstractTableAdapter<CH, RH, C> implements ITableAdapter<C
 
     @Nullable
     public CH getColumnHeaderItem(int position) {
-        if ((mColumnHeaderItems == null || mColumnHeaderItems.isEmpty()) || position < 0 ||
-                position >= mColumnHeaderItems.size()) {
+        if ((mColumnHeaderItems == null || mColumnHeaderItems.isEmpty()) || position < 0
+                || position >= mColumnHeaderItems.size()) {
             return null;
         }
         return mColumnHeaderItems.get(position);
@@ -235,8 +262,8 @@ public abstract class AbstractTableAdapter<CH, RH, C> implements ITableAdapter<C
 
     @Nullable
     public RH getRowHeaderItem(int position) {
-        if ((mRowHeaderItems == null || mRowHeaderItems.isEmpty()) || position < 0 || position >=
-                mRowHeaderItems.size()) {
+        if ((mRowHeaderItems == null || mRowHeaderItems.isEmpty()) || position < 0
+                || position >= mRowHeaderItems.size()) {
             return null;
         }
         return mRowHeaderItems.get(position);
@@ -244,9 +271,9 @@ public abstract class AbstractTableAdapter<CH, RH, C> implements ITableAdapter<C
 
     @Nullable
     public C getCellItem(int columnPosition, int rowPosition) {
-        if ((mCellItems == null || mCellItems.isEmpty()) || columnPosition < 0 || rowPosition >=
-                mCellItems.size() || mCellItems.get(rowPosition) == null || rowPosition < 0 ||
-                columnPosition >= mCellItems.get(rowPosition).size()) {
+        if ((mCellItems == null || mCellItems.isEmpty()) || columnPosition < 0 || rowPosition >= mCellItems.size()
+                || mCellItems.get(rowPosition) == null || rowPosition < 0 || columnPosition >= mCellItems.get(
+                rowPosition).size()) {
             return null;
         }
 
@@ -332,8 +359,7 @@ public abstract class AbstractTableAdapter<CH, RH, C> implements ITableAdapter<C
     }
 
     public void changeColumnHeaderRange(int columnPositionStart, @Nullable List<CH> columnHeaderModelList) {
-        mColumnHeaderRecyclerViewAdapter.changeItemRange(columnPositionStart,
-                columnHeaderModelList);
+        mColumnHeaderRecyclerViewAdapter.changeItemRange(columnPositionStart, columnHeaderModelList);
     }
 
     @NonNull

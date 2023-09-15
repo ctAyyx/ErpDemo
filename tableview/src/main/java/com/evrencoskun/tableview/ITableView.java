@@ -80,6 +80,8 @@ public interface ITableView {
     @NonNull
     CellRecyclerView getRowHeaderRecyclerView();
 
+    CellRecyclerView getRowEndRecyclerView();
+
     @NonNull
     ColumnHeaderLayoutManager getColumnHeaderLayoutManager();
 
@@ -180,7 +182,9 @@ public interface ITableView {
 
         static CornerViewLocation fromId(int id) {
             for (CornerViewLocation c : values()) {
-                if (c.id == id) return c;
+                if (c.id == id) {
+                    return c;
+                }
             }
             // If enum not found return default of Top Left
             return TOP_LEFT;

@@ -44,7 +44,7 @@ public class VerticalRecyclerViewListener extends RecyclerView.OnScrollListener 
     private static final String LOG_TAG = VerticalRecyclerViewListener.class.getSimpleName();
 
     @NonNull
-    private final CellRecyclerView mRowHeaderRecyclerView, mCellRecyclerView;
+    private final CellRecyclerView mRowHeaderRecyclerView, mCellRecyclerView, mRowEndRecyclerView;
     private RecyclerView mLastTouchedRecyclerView;
 
     // Y Position means row position
@@ -57,6 +57,7 @@ public class VerticalRecyclerViewListener extends RecyclerView.OnScrollListener 
     public VerticalRecyclerViewListener(@NonNull ITableView tableView) {
         this.mRowHeaderRecyclerView = tableView.getRowHeaderRecyclerView();
         this.mCellRecyclerView = tableView.getCellRecyclerView();
+        this.mRowEndRecyclerView = tableView.getRowEndRecyclerView();
     }
 
     private float dx = 0, dy = 0;
@@ -137,8 +138,7 @@ public class VerticalRecyclerViewListener extends RecyclerView.OnScrollListener 
             // TODO: Below if condition may be changed later.
 
             // Is it just touched without scrolling then remove the listener
-            if (mYPosition == nScrollY && !mIsMoved && rv.getScrollState() == RecyclerView
-                    .SCROLL_STATE_IDLE) {
+            if (mYPosition == nScrollY && !mIsMoved && rv.getScrollState() == RecyclerView.SCROLL_STATE_IDLE) {
                 rv.removeOnScrollListener(this);
 
                 if (rv == mCellRecyclerView) {
@@ -173,7 +173,7 @@ public class VerticalRecyclerViewListener extends RecyclerView.OnScrollListener 
             // The below code has been moved in CellLayoutManager
             //mRowHeaderRecyclerView.scrollBy(0, dy);
 
-        } else if (recyclerView == mRowHeaderRecyclerView) {
+        } else if (recyclerView == mRowHeaderRecyclerView || recyclerView == mRowEndRecyclerView) {
             super.onScrolled(recyclerView, dx, dy);
 
             mCellRecyclerView.scrollBy(0, dy);
@@ -189,11 +189,9 @@ public class VerticalRecyclerViewListener extends RecyclerView.OnScrollListener 
             mIsMoved = false;
             mCurrentRVTouched = null;
             if (recyclerView == mCellRecyclerView) {
-                Log.d(LOG_TAG, "mCellRecyclerView scroll listener removed from " +
-                        "onScrollStateChanged");
+                Log.d(LOG_TAG, "mCellRecyclerView scroll listener removed from " + "onScrollStateChanged");
             } else if (recyclerView == mRowHeaderRecyclerView) {
-                Log.d(LOG_TAG, "mRowHeaderRecyclerView scroll listener removed from " +
-                        "onScrollStateChanged");
+                Log.d(LOG_TAG, "mRowHeaderRecyclerView scroll listener removed from " + "onScrollStateChanged");
             }
         }
     }
@@ -204,8 +202,8 @@ public class VerticalRecyclerViewListener extends RecyclerView.OnScrollListener 
      * This method is a little bit different from HorizontalRecyclerViewListener.
      *
      * @param isNeeded Is mCellRecyclerView scroll listener should be removed ? The scenario is a
-     *                 user scrolls vertically using RowHeaderRecyclerView. After that, the user
-     *                 scrolls horizontally using ColumnHeaderRecyclerView.
+     *         user scrolls vertically using RowHeaderRecyclerView. After that, the user
+     *         scrolls horizontally using ColumnHeaderRecyclerView.
      */
     public void removeLastTouchedRecyclerViewScrollListener(boolean isNeeded) {
 
@@ -216,6 +214,9 @@ public class VerticalRecyclerViewListener extends RecyclerView.OnScrollListener 
         } else {
             mRowHeaderRecyclerView.removeOnScrollListener(this);
             mRowHeaderRecyclerView.stopScroll();
+
+            mRowEndRecyclerView.removeOnScrollListener(this);
+            mRowEndRecyclerView.stopScroll();
             Log.d(LOG_TAG, "mRowHeaderRecyclerView scroll listener removed from last touched");
             if (isNeeded) {
                 mCellRecyclerView.removeOnScrollListener(this);

@@ -26,6 +26,7 @@ package com.evrencoskun.tableview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Parcelable;
@@ -70,12 +71,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
  */
 
 public class TableView extends FrameLayout implements ITableView {
+
     @NonNull
     protected CellRecyclerView mCellRecyclerView;
     @NonNull
     protected CellRecyclerView mColumnHeaderRecyclerView;
     @NonNull
     protected CellRecyclerView mRowHeaderRecyclerView;
+
+    @NonNull
+    protected CellRecyclerView mRowEndRecyclerView;
+
     @Nullable
     protected AbstractTableAdapter mTableAdapter;
     @Nullable
@@ -88,6 +94,7 @@ public class TableView extends FrameLayout implements ITableView {
     private ColumnHeaderLayoutManager mColumnHeaderLayoutManager;
     @NonNull
     private LinearLayoutManager mRowHeaderLayoutManager;
+    private LinearLayoutManager mRowEndLayoutManager;
     @NonNull
     private CellLayoutManager mCellLayoutManager;
     @NonNull
@@ -110,6 +117,8 @@ public class TableView extends FrameLayout implements ITableView {
     private ColumnWidthHandler mColumnWidthHandler;
 
     private int mRowHeaderWidth;
+
+    private int mRowEndWidth;
     private int mColumnHeaderHeight;
 
     private int mSelectedColor;
@@ -143,8 +152,7 @@ public class TableView extends FrameLayout implements ITableView {
         initialize();
     }
 
-    public TableView(@NonNull Context context, @Nullable AttributeSet attrs, @AttrRes int
-            defStyleAttr) {
+    public TableView(@NonNull Context context, @Nullable AttributeSet attrs, @AttrRes int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initialDefaultValues(null);
         initialize();
@@ -158,20 +166,21 @@ public class TableView extends FrameLayout implements ITableView {
      * @param context
      * @param initialize {@code false} to not call second part of class construction
      *
-     * <p><b>Note:</b> If initialize is false you need to call {@code initilize()} method yourself.
-     *
+     *         <p><b>Note:</b> If initialize is false you need to call {@code initilize()} method yourself.
      */
     public TableView(@NonNull Context context, boolean initialize) {
         super(context);
         initialDefaultValues(null);
-        if (initialize) initialize();
+        if (initialize) {
+            initialize();
+        }
     }
 
     private void initialDefaultValues(@Nullable AttributeSet attrs) {
         // Dimensions
         mRowHeaderWidth = (int) getResources().getDimension(R.dimen.default_row_header_width);
-        mColumnHeaderHeight = (int) getResources().getDimension(R.dimen
-                .default_column_header_height);
+        mRowEndWidth = (int) getResources().getDimension(R.dimen.default_row_header_width);
+        mColumnHeaderHeight = (int) getResources().getDimension(R.dimen.default_column_header_height);
 
         // Cornerview location
         mCornerViewLocation = ITableView.CornerViewLocation.TOP_LEFT;
@@ -180,12 +189,9 @@ public class TableView extends FrameLayout implements ITableView {
         mReverseLayout = false;
 
         // Colors
-        mSelectedColor = ContextCompat.getColor(getContext(), R.color
-                .table_view_default_selected_background_color);
-        mUnSelectedColor = ContextCompat.getColor(getContext(), R.color
-                .table_view_default_unselected_background_color);
-        mShadowColor = ContextCompat.getColor(getContext(), R.color
-                .table_view_default_shadow_background_color);
+        mSelectedColor = ContextCompat.getColor(getContext(), R.color.table_view_default_selected_background_color);
+        mUnSelectedColor = ContextCompat.getColor(getContext(), R.color.table_view_default_unselected_background_color);
+        mShadowColor = ContextCompat.getColor(getContext(), R.color.table_view_default_shadow_background_color);
 
         if (attrs == null) {
             // That means TableView is created programmatically.
@@ -193,14 +199,11 @@ public class TableView extends FrameLayout implements ITableView {
         }
 
         // Get values from xml attributes
-        TypedArray a = getContext().getTheme().obtainStyledAttributes(attrs, R.styleable
-                .TableView, 0, 0);
+        TypedArray a = getContext().getTheme().obtainStyledAttributes(attrs, R.styleable.TableView, 0, 0);
         try {
             // Dimensions
-            mRowHeaderWidth = (int) a.getDimension(R.styleable.TableView_row_header_width,
-                    mRowHeaderWidth);
-            mColumnHeaderHeight = (int) a.getDimension(R.styleable
-                    .TableView_column_header_height, mColumnHeaderHeight);
+            mRowHeaderWidth = (int) a.getDimension(R.styleable.TableView_row_header_width, mRowHeaderWidth);
+            mColumnHeaderHeight = (int) a.getDimension(R.styleable.TableView_column_header_height, mColumnHeaderHeight);
 
             // CornerView location
             mCornerViewLocation = CornerViewLocation.fromId(a.getInt(R.styleable.TableView_corner_view_location, 0));
@@ -212,16 +215,15 @@ public class TableView extends FrameLayout implements ITableView {
             mSelectedColor = a.getColor(R.styleable.TableView_selected_color, mSelectedColor);
             mUnSelectedColor = a.getColor(R.styleable.TableView_unselected_color, mUnSelectedColor);
             mShadowColor = a.getColor(R.styleable.TableView_shadow_color, mShadowColor);
-            mSeparatorColor = a.getColor(R.styleable.TableView_separator_color, ContextCompat
-                    .getColor(getContext(), R.color.table_view_default_separator_color));
+            mSeparatorColor = a.getColor(R.styleable.TableView_separator_color,
+                    ContextCompat.getColor(getContext(), R.color.table_view_default_separator_color));
 
             // Booleans
             mShowVerticalSeparators = a.getBoolean(R.styleable.TableView_show_vertical_separator,
                     mShowVerticalSeparators);
-            mShowHorizontalSeparators = a.getBoolean(R.styleable
-                    .TableView_show_horizontal_separator, mShowHorizontalSeparators);
-            mAllowClickInsideCell = a.getBoolean(R.styleable.TableView_allow_click_inside_cell,
-                    mAllowClickInsideCell);
+            mShowHorizontalSeparators = a.getBoolean(R.styleable.TableView_show_horizontal_separator,
+                    mShowHorizontalSeparators);
+            mAllowClickInsideCell = a.getBoolean(R.styleable.TableView_allow_click_inside_cell, mAllowClickInsideCell);
             mAllowClickInsideRowHeader = a.getBoolean(R.styleable.TableView_allow_click_inside_row_header,
                     mAllowClickInsideRowHeader);
             mAllowClickInsideColumnHeader = a.getBoolean(R.styleable.TableView_allow_click_inside_column_header,
@@ -243,17 +245,24 @@ public class TableView extends FrameLayout implements ITableView {
         // Create Views
         mColumnHeaderRecyclerView = createColumnHeaderRecyclerView();
         mRowHeaderRecyclerView = createRowHeaderRecyclerView();
+        mRowEndRecyclerView = createRowEndRecyclerView();
         mCellRecyclerView = createCellRecyclerView();
+
 
         // Set some Id to help in identification
         mColumnHeaderRecyclerView.setId(R.id.ColumnHeaderRecyclerView);
         mRowHeaderRecyclerView.setId(R.id.RowHeaderRecyclerView);
         mCellRecyclerView.setId(R.id.CellRecyclerView);
 
+        mRowEndRecyclerView.setId(R.id.CellRowEndRecyclerView);
+        mRowEndRecyclerView.setBackgroundColor(Color.RED);
+
         // Add Views
         addView(mColumnHeaderRecyclerView);
         addView(mRowHeaderRecyclerView);
         addView(mCellRecyclerView);
+
+        addView(mRowEndRecyclerView);
 
         // Create Handlers
         mSelectionHandler = new SelectionHandler(this);
@@ -275,35 +284,33 @@ public class TableView extends FrameLayout implements ITableView {
         mRowHeaderRecyclerView.addOnItemTouchListener(mVerticalRecyclerListener);
         mCellRecyclerView.addOnItemTouchListener(mVerticalRecyclerListener);
 
+        mRowEndRecyclerView.addOnItemTouchListener(mVerticalRecyclerListener);
         // It handles Horizontal scroll listener
         mHorizontalRecyclerViewListener = new HorizontalRecyclerViewListener(this);
         // Set scroll listener to be able to scroll all rows synchrony.
         mColumnHeaderRecyclerView.addOnItemTouchListener(mHorizontalRecyclerViewListener);
-
 
         // --- Listeners to help item clicks ---
         // Create item click listeners
 
         // Add item click listener for column header recyclerView
         if (mAllowClickInsideColumnHeader) {
-            ColumnHeaderRecyclerViewItemClickListener columnHeaderRecyclerViewItemClickListener = new ColumnHeaderRecyclerViewItemClickListener
-                    (mColumnHeaderRecyclerView, this);
+            ColumnHeaderRecyclerViewItemClickListener columnHeaderRecyclerViewItemClickListener = new ColumnHeaderRecyclerViewItemClickListener(
+                    mColumnHeaderRecyclerView, this);
             mColumnHeaderRecyclerView.addOnItemTouchListener(columnHeaderRecyclerViewItemClickListener);
         }
 
         // Add item click listener for row header recyclerView
         if (mAllowClickInsideRowHeader) {
-            RowHeaderRecyclerViewItemClickListener rowHeaderRecyclerViewItemClickListener = new RowHeaderRecyclerViewItemClickListener
-                    (mRowHeaderRecyclerView, this);
+            RowHeaderRecyclerViewItemClickListener rowHeaderRecyclerViewItemClickListener = new RowHeaderRecyclerViewItemClickListener(
+                    mRowHeaderRecyclerView, this);
             mRowHeaderRecyclerView.addOnItemTouchListener(rowHeaderRecyclerViewItemClickListener);
         }
-
 
         // Add Layout change listener both of Column Header  & Cell recyclerView to detect
         // changing size
         // For some case, it is pretty necessary.
-        TableViewLayoutChangeListener layoutChangeListener = new TableViewLayoutChangeListener
-                (this);
+        TableViewLayoutChangeListener layoutChangeListener = new TableViewLayoutChangeListener(this);
         mColumnHeaderRecyclerView.addOnLayoutChangeListener(layoutChangeListener);
         mCellRecyclerView.addOnLayoutChangeListener(layoutChangeListener);
 
@@ -317,15 +324,16 @@ public class TableView extends FrameLayout implements ITableView {
         recyclerView.setLayoutManager(getColumnHeaderLayoutManager());
 
         // Set layout params
-        LayoutParams layoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT,
-                mColumnHeaderHeight, getGravity());
+        LayoutParams layoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT, mColumnHeaderHeight, getGravity());
         // If the corner is on the right the margin needs to be on the right
-        if (mCornerViewLocation == CornerViewLocation.TOP_RIGHT || mCornerViewLocation == CornerViewLocation.BOTTOM_RIGHT) {
+        if (mCornerViewLocation == CornerViewLocation.TOP_RIGHT
+                || mCornerViewLocation == CornerViewLocation.BOTTOM_RIGHT) {
             layoutParams.rightMargin = mRowHeaderWidth;
         } else {
             layoutParams.leftMargin = mRowHeaderWidth;
         }
 
+        layoutParams.rightMargin = mRowEndWidth;
         recyclerView.setLayoutParams(layoutParams);
 
         if (isShowHorizontalSeparators()) {
@@ -346,13 +354,13 @@ public class TableView extends FrameLayout implements ITableView {
         // Set layout params
         LayoutParams layoutParams = new LayoutParams(mRowHeaderWidth, LayoutParams.WRAP_CONTENT, getGravity());
         // If the corner is on the bottom the margin needs to be on the bottom
-        if (mCornerViewLocation == CornerViewLocation.BOTTOM_LEFT || mCornerViewLocation == CornerViewLocation.BOTTOM_RIGHT) {
+        if (mCornerViewLocation == CornerViewLocation.BOTTOM_LEFT
+                || mCornerViewLocation == CornerViewLocation.BOTTOM_RIGHT) {
             layoutParams.bottomMargin = mColumnHeaderHeight;
         } else {
             layoutParams.topMargin = mColumnHeaderHeight;
         }
         recyclerView.setLayoutParams(layoutParams);
-
 
         if (isShowVerticalSeparators()) {
             // Add vertical item decoration to display row line
@@ -361,6 +369,21 @@ public class TableView extends FrameLayout implements ITableView {
 
         return recyclerView;
     }
+
+    protected CellRecyclerView createRowEndRecyclerView() {
+        CellRecyclerView recyclerView = new CellRecyclerView(getContext());
+        recyclerView.setLayoutManager(getRowEndLayoutManager());
+        // Set layout params
+        LayoutParams layoutParams = new LayoutParams(mRowEndWidth, LayoutParams.WRAP_CONTENT,
+                Gravity.TOP | Gravity.RIGHT);
+        layoutParams.topMargin = mColumnHeaderHeight;
+        recyclerView.setLayoutParams(layoutParams);
+        if (isShowVerticalSeparators()) {
+            recyclerView.addItemDecoration(getVerticalItemDecoration());
+        }
+        return recyclerView;
+    }
+
 
     @NonNull
     protected CellRecyclerView createCellRecyclerView() {
@@ -373,16 +396,19 @@ public class TableView extends FrameLayout implements ITableView {
         recyclerView.setLayoutManager(getCellLayoutManager());
 
         // Set layout params
-        LayoutParams layoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams
-                .WRAP_CONTENT, getGravity());
+        LayoutParams layoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT,
+                getGravity());
         // If the corner is on the right the margin needs to be on the right
-        if (mCornerViewLocation == CornerViewLocation.TOP_RIGHT || mCornerViewLocation == CornerViewLocation.BOTTOM_RIGHT) {
+        if (mCornerViewLocation == CornerViewLocation.TOP_RIGHT
+                || mCornerViewLocation == CornerViewLocation.BOTTOM_RIGHT) {
             layoutParams.rightMargin = mRowHeaderWidth;
         } else {
             layoutParams.leftMargin = mRowHeaderWidth;
         }
+        layoutParams.rightMargin = mRowEndWidth;
         // If the corner is on the bottom the margin needs to be on the bottom
-        if (mCornerViewLocation == CornerViewLocation.BOTTOM_LEFT || mCornerViewLocation == CornerViewLocation.BOTTOM_RIGHT) {
+        if (mCornerViewLocation == CornerViewLocation.BOTTOM_LEFT
+                || mCornerViewLocation == CornerViewLocation.BOTTOM_RIGHT) {
             layoutParams.bottomMargin = mColumnHeaderHeight;
         } else {
             layoutParams.topMargin = mColumnHeaderHeight;
@@ -408,6 +434,8 @@ public class TableView extends FrameLayout implements ITableView {
             mColumnHeaderRecyclerView.setAdapter(mTableAdapter.getColumnHeaderRecyclerViewAdapter());
             mRowHeaderRecyclerView.setAdapter(mTableAdapter.getRowHeaderRecyclerViewAdapter());
             mCellRecyclerView.setAdapter(mTableAdapter.getCellRecyclerViewAdapter());
+
+            mRowEndRecyclerView.setAdapter(mTableAdapter.getRowEndRecyclerViewAdapter());
 
             // Create Sort Handler
             mColumnSortHandler = new ColumnSortHandler(this);
@@ -444,7 +472,7 @@ public class TableView extends FrameLayout implements ITableView {
     }
 
     @Override
-    public boolean isAllowClickInsideCell(){
+    public boolean isAllowClickInsideCell() {
         return mAllowClickInsideCell;
     }
 
@@ -484,12 +512,19 @@ public class TableView extends FrameLayout implements ITableView {
         return mRowHeaderRecyclerView;
     }
 
+    @Override
+    public CellRecyclerView getRowEndRecyclerView() {
+        return mRowEndRecyclerView;
+    }
+
     @NonNull
     @Override
     public ColumnHeaderLayoutManager getColumnHeaderLayoutManager() {
         if (mColumnHeaderLayoutManager == null) {
             mColumnHeaderLayoutManager = new ColumnHeaderLayoutManager(getContext(), this);
-            if (mReverseLayout) mColumnHeaderLayoutManager.setReverseLayout(true);
+            if (mReverseLayout) {
+                mColumnHeaderLayoutManager.setReverseLayout(true);
+            }
         }
         return mColumnHeaderLayoutManager;
     }
@@ -507,10 +542,17 @@ public class TableView extends FrameLayout implements ITableView {
     @Override
     public LinearLayoutManager getRowHeaderLayoutManager() {
         if (mRowHeaderLayoutManager == null) {
-            mRowHeaderLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager
-                    .VERTICAL, false);
+            mRowHeaderLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         }
         return mRowHeaderLayoutManager;
+    }
+
+    public LinearLayoutManager getRowEndLayoutManager() {
+        if (mRowEndLayoutManager == null) {
+            mRowEndLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
+        }
+
+        return mRowEndLayoutManager;
     }
 
     @NonNull
@@ -668,9 +710,8 @@ public class TableView extends FrameLayout implements ITableView {
 
     public void setSelectedRow(int row) {
         // Find the row header view holder which is located on row position.
-        AbstractViewHolder rowViewHolder = (AbstractViewHolder) getRowHeaderRecyclerView()
-                .findViewHolderForAdapterPosition(row);
-
+        AbstractViewHolder rowViewHolder = (AbstractViewHolder) getRowHeaderRecyclerView().findViewHolderForAdapterPosition(
+                row);
 
         mSelectionHandler.setSelectedRowPosition(rowViewHolder, row);
     }
@@ -684,8 +725,8 @@ public class TableView extends FrameLayout implements ITableView {
 
     public void setSelectedColumn(int column) {
         // Find the column view holder which is located on column position .
-        AbstractViewHolder columnViewHolder = (AbstractViewHolder) getColumnHeaderRecyclerView()
-                .findViewHolderForAdapterPosition(column);
+        AbstractViewHolder columnViewHolder = (AbstractViewHolder) getColumnHeaderRecyclerView().findViewHolderForAdapterPosition(
+                column);
 
         mSelectionHandler.setSelectedColumnPosition(columnViewHolder, column);
     }
@@ -796,8 +837,7 @@ public class TableView extends FrameLayout implements ITableView {
     }
 
     @Override
-    public @ColorInt
-    int getShadowColor() {
+    public @ColorInt int getShadowColor() {
         return mShadowColor;
     }
 
@@ -829,7 +869,8 @@ public class TableView extends FrameLayout implements ITableView {
         // Update ColumnHeader left margin
         LayoutParams layoutParamsColumn = (LayoutParams) mColumnHeaderRecyclerView.getLayoutParams();
         // If the corner is on the right the margin needs to be on the right
-        if (mCornerViewLocation == CornerViewLocation.TOP_RIGHT || mCornerViewLocation == CornerViewLocation.BOTTOM_RIGHT) {
+        if (mCornerViewLocation == CornerViewLocation.TOP_RIGHT
+                || mCornerViewLocation == CornerViewLocation.BOTTOM_RIGHT) {
             layoutParamsColumn.rightMargin = rowHeaderWidth;
         } else {
             layoutParamsColumn.leftMargin = rowHeaderWidth;
@@ -839,7 +880,8 @@ public class TableView extends FrameLayout implements ITableView {
 
         // Update Cells left margin
         LayoutParams layoutParamsCell = (LayoutParams) mCellRecyclerView.getLayoutParams();
-        if (mCornerViewLocation == CornerViewLocation.TOP_RIGHT || mCornerViewLocation == CornerViewLocation.BOTTOM_RIGHT) {
+        if (mCornerViewLocation == CornerViewLocation.TOP_RIGHT
+                || mCornerViewLocation == CornerViewLocation.BOTTOM_RIGHT) {
             layoutParamsCell.rightMargin = rowHeaderWidth;
         } else {
             layoutParamsCell.leftMargin = rowHeaderWidth;
@@ -857,15 +899,17 @@ public class TableView extends FrameLayout implements ITableView {
         mColumnWidthHandler.setColumnWidth(columnPosition, width);
     }
 
-    public void setShowCornerView(boolean showCornerView){
+    public void setShowCornerView(boolean showCornerView) {
         mShowCornerView = showCornerView;
     }
 
-    public boolean getShowCornerView(){
+    public boolean getShowCornerView() {
         return mShowCornerView;
     }
 
-    public CornerViewLocation getCornerViewLocation() { return mCornerViewLocation; }
+    public CornerViewLocation getCornerViewLocation() {
+        return mCornerViewLocation;
+    }
 
     @Override
     public void setCornerViewLocation(CornerViewLocation cornerViewLocation) {
@@ -876,25 +920,27 @@ public class TableView extends FrameLayout implements ITableView {
         int gravity;
         switch (mCornerViewLocation) {
             case TOP_LEFT:
-                gravity = Gravity.TOP|Gravity.LEFT;
+                gravity = Gravity.TOP | Gravity.LEFT;
                 break;
             case TOP_RIGHT:
-                gravity = Gravity.TOP|Gravity.RIGHT;
+                gravity = Gravity.TOP | Gravity.RIGHT;
                 break;
             case BOTTOM_LEFT:
-                gravity = Gravity.BOTTOM|Gravity.LEFT;
+                gravity = Gravity.BOTTOM | Gravity.LEFT;
                 break;
             case BOTTOM_RIGHT:
-                gravity = Gravity.BOTTOM|Gravity.RIGHT;
+                gravity = Gravity.BOTTOM | Gravity.RIGHT;
                 break;
             default:
-                gravity = Gravity.TOP|Gravity.LEFT;
+                gravity = Gravity.TOP | Gravity.LEFT;
                 break;
         }
         return gravity;
     }
 
-    public boolean getReverseLayout(){ return mReverseLayout;}
+    public boolean getReverseLayout() {
+        return mReverseLayout;
+    }
 
     public void setReverseLayout(boolean reverseLayout) {
         mReverseLayout = reverseLayout;

@@ -23,7 +23,8 @@
   -->
 
 <resources>
-    <item name="ColumnHeaderRecyclerView" type="id"/>
-    <item name="RowHeaderRecyclerView" type="id"/>
-    <item name="CellRecyclerView" type="id"/>
+    <item name="ColumnHeaderRecyclerView" type="id" />
+    <item name="RowHeaderRecyclerView" type="id" />
+    <item name="CellRecyclerView" type="id" />
+    <item name="CellRowEndRecyclerView" type="id" />
 </resources>

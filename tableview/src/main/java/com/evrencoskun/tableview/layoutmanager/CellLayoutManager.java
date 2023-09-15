@@ -49,6 +49,7 @@ import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
  */
 
 public class CellLayoutManager extends LinearLayoutManager {
+
     private static final String LOG_TAG = CellLayoutManager.class.getSimpleName();
     private static final int IGNORE_LEFT = -99999;
 
@@ -56,7 +57,7 @@ public class CellLayoutManager extends LinearLayoutManager {
     private final ColumnHeaderLayoutManager mColumnHeaderLayoutManager;
 
     @NonNull
-    private final CellRecyclerView mRowHeaderRecyclerView;
+    private final CellRecyclerView mRowHeaderRecyclerView, mRowEndRecyclerView;
 
     private HorizontalRecyclerViewListener mHorizontalListener;
     @NonNull
@@ -75,7 +76,7 @@ public class CellLayoutManager extends LinearLayoutManager {
         this.mTableView = tableView;
         this.mColumnHeaderLayoutManager = tableView.getColumnHeaderLayoutManager();
         this.mRowHeaderRecyclerView = tableView.getRowHeaderRecyclerView();
-
+        this.mRowEndRecyclerView = tableView.getRowEndRecyclerView();
         initialize();
     }
 
@@ -102,6 +103,13 @@ public class CellLayoutManager extends LinearLayoutManager {
             // CellRecyclerViews should be scrolled after the RowHeaderRecyclerView.
             // Because it is one of the main compared criterion to make each columns fit.
             mRowHeaderRecyclerView.scrollBy(0, dy);
+        }
+
+        if (mRowEndRecyclerView.getScrollState() == RecyclerView.SCROLL_STATE_IDLE &&
+                !mRowEndRecyclerView.isScrollOthers()) {
+            // CellRecyclerViews should be scrolled after the RowHeaderRecyclerView.
+            // Because it is one of the main compared criterion to make each columns fit.
+            mRowEndRecyclerView.scrollBy(0, dy);
         }
 
         int scroll = super.scrollVerticallyBy(dy, recycler, state);
@@ -161,7 +169,7 @@ public class CellLayoutManager extends LinearLayoutManager {
             if (scrollingUp) {
                 // Loop reverse order
                 for (int i = findLastVisibleItemPosition(); i >= findFirstVisibleItemPosition();
-                     i--) {
+                        i--) {
                     cellRight = fit(position, i, left, cellRight, columnCacheWidth);
                 }
             } else {
@@ -215,7 +223,8 @@ public class CellLayoutManager extends LinearLayoutManager {
                         // It shouldn't be scroll horizontally and the problem is gotten just for
                         // first visible item.
                         if (offset > 0 && xPosition == childLayoutManager
-                                .findFirstVisibleItemPosition() && getCellRecyclerViewScrollState() != RecyclerView.SCROLL_STATE_IDLE) {
+                                .findFirstVisibleItemPosition()
+                                && getCellRecyclerViewScrollState() != RecyclerView.SCROLL_STATE_IDLE) {
 
                             int scrollPosition = mHorizontalListener.getScrollPosition();
                             offset = mHorizontalListener.getScrollPositionOffset() + scrollX;
@@ -292,19 +301,18 @@ public class CellLayoutManager extends LinearLayoutManager {
         fitSize2(position, scrollingLeft, columnHeaderScrollPosition, columnHeaderOffset,
                 columnHeaderFirstItem);
 
-
         mNeedSetLeft = false;
     }
 
     private void fitSize2(int position, boolean scrollingLeft, int columnHeaderScrollPosition,
-                          int columnHeaderOffset, int columnHeaderFirstItem) {
+            int columnHeaderOffset, int columnHeaderFirstItem) {
         int columnCacheWidth = mColumnHeaderLayoutManager.getCacheWidth(position);
         View column = mColumnHeaderLayoutManager.findViewByPosition(position);
 
         if (column != null) {
             // Loop for all rows which are visible.
             for (int j = findFirstVisibleItemPosition(); j < findLastVisibleItemPosition() + 1;
-                 j++) {
+                    j++) {
 
                 // Get CellRowRecyclerView
                 CellRecyclerView child = (CellRecyclerView) findViewByPosition(j);
@@ -332,7 +340,7 @@ public class CellLayoutManager extends LinearLayoutManager {
     }
 
     private void fit2(int xPosition, int yPosition, int columnCachedWidth, @NonNull View column,
-                      @NonNull ColumnLayoutManager childLayoutManager) {
+            @NonNull ColumnLayoutManager childLayoutManager) {
         int cellCacheWidth = getCacheWidth(yPosition, xPosition);
         View cell = childLayoutManager.findViewByPosition(xPosition);
 
