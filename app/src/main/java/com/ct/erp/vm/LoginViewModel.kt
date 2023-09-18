@@ -6,11 +6,13 @@ import com.ct.erp.common.LoginManager
 import com.ct.erp.base.BaseModel
 import com.ct.erp.base.BaseViewModel
 import com.ct.erp.common.CommonPref
+import com.ct.erp.common.Constants
 import com.ct.erp.common.ErpException
 import com.ct.erp.dto.ServiceResult
 import com.ct.erp.dto.LoginApiData
 import com.ct.erp.vo.UserViewData
 import com.ct.utils.LogUtils
+import com.ct.utils.Sm2Utils
 import com.google.gson.JsonObject
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collectLatest
@@ -52,7 +54,7 @@ class LoginViewModel @Inject constructor(application: Application, model: BaseMo
     }
 
     private fun encoderPwd(userPwd: String): String {
-        return userPwd
+        return Sm2Utils.encodeM2(Constants.SM_PUBLIC_KEY, userPwd)
     }
 
     private fun mock() = ServiceResult<String>(
