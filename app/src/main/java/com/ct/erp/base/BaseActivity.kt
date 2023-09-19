@@ -34,7 +34,7 @@ abstract class BaseActivity<VM : BaseViewModel<out BaseModel>, VDB : ViewDataBin
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+       // requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
         super.onCreate(savedInstanceState)
         TaskStateManager.getInstance().onCreate(this)
     }

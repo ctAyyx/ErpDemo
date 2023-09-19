@@ -17,6 +17,8 @@ class LoginManager {
     private val _userName = MutableLiveData<String>()
     private val _isAdmin = MutableLiveData<Boolean>(false)
 
+    private var _xkUserName: String? = null
+
 
     val token: String
         get() = _token ?: ""
@@ -30,6 +32,9 @@ class LoginManager {
 
     val userId: String
         get() = _userId ?: ""
+
+    val xkUserName: String
+        get() = _xkUserName ?: ""
 
     fun login(userToken: String?) {
         _token = userToken
@@ -46,16 +51,17 @@ class LoginManager {
         _userName.value = user.userName
         _isAdmin.value = user.isAdmin
         _userId = user.userId
+        _xkUserName = user.xkUserName
         LiveDataBus.get().with(Constants.BUS_USER_LOGIN, UserStateEvent::class.java).value =
             UserStateEvent(loginState = UserLoginState.LOGIN_SUCCESS, isLogoutByUser = false)
     }
 
     fun logout(logoutByUser: Boolean = false) {
         LogUtils.e("用户退出登录:$logoutByUser")
-        _userName.value = null
+        _userName.value = ""
         _token = null
         _userId = null
-        _isAdmin.value = null
+        _isAdmin.value = false
 
         LiveDataBus.get().with(Constants.BUS_USER_LOGIN, UserStateEvent::class.java).value =
             UserStateEvent(loginState = UserLoginState.LOGOUT_SUCCESS, isLogoutByUser = logoutByUser)

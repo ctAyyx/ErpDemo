@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ct.erp.R
 import com.ct.erp.adapter.DispatchTableAdapter
 import com.ct.erp.base.BaseActivity
+import com.ct.erp.common.LoginManager
 import com.ct.erp.databinding.ActivityDispatchDetailBinding
 import com.ct.erp.popup.ColumnDialogFragment
 import com.ct.erp.vm.DispatchViewModel
@@ -62,7 +63,7 @@ class DispatchDetailListActivity : BaseActivity<DispatchViewModel, ActivityDispa
             LogUtils.e("$this $it")
             mAdapter.setAllItems(it.columnHeader, it.rowHeader, it.cells)
         }
-        viewModel.loadDispatchList()
+        viewModel.doRefresh(LoginManager.getInstance().xkUserName)
     }
 
     private val tabListener = object : ITableViewListener {

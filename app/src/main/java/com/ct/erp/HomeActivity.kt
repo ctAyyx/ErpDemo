@@ -1,9 +1,11 @@
 package com.ct.erp
 
 import android.content.Intent
+import android.util.Base64
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
+import com.antherd.smcrypto.sm2.Sm2
 import com.ct.erp.adapter.HomeRvAdapter
 import com.ct.erp.base.BaseActivity
 import com.ct.erp.base.adapter.OnItemClickHolder
@@ -15,7 +17,7 @@ import com.ct.erp.vm.HomeViewModel
 import com.ct.erp.vo.HomeMenuViewData
 import com.ct.utils.ActivityUtils
 import com.ct.utils.LogUtils
-import com.king.camera.scan.CameraScan
+import com.ct.utils.Sm2Utils
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -33,8 +35,7 @@ class HomeActivity : BaseActivity<HomeViewModel, ActivityHomeBinding>() {
     private var menuClickHolder: OnItemClickHolder<HomeMenuViewData>? = object : OnItemClickHolder<HomeMenuViewData> {
         override fun onItemClick(data: HomeMenuViewData, position: Int) {
             ActivityUtils.startActivitySafe(
-                this@HomeActivity,
-                Intent(this@HomeActivity, DispatchDetailListActivity::class.java)
+                this@HomeActivity, Intent(this@HomeActivity, DispatchDetailListActivity::class.java)
             )
         }
     }
@@ -48,7 +49,7 @@ class HomeActivity : BaseActivity<HomeViewModel, ActivityHomeBinding>() {
             layoutManager = buildLayoutManager()
 //            addItemDecoration()
         }
-
+        LogUtils.e("===========================>initVie   ${Sm2Utils.encrypt()}")
     }
 
     private fun buildLayoutManager(): GridLayoutManager {

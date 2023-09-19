@@ -56,11 +56,13 @@ dependencies {
     implementation "androidx.multidex:multidex:2.0.1"
 
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.1"
 
     implementation "com.github.GrenderG:Toasty:1.5.2"
 
     implementation 'com.github.jenly1314:zxing-lite:3.0.0'
-
+    implementation "com.antherd:sm-crypto:0.3.2"
+    implementation "io.apisense:rhino-android:1.0"
 
 
 

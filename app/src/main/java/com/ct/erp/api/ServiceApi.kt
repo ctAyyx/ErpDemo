@@ -8,6 +8,7 @@ import com.google.gson.JsonObject
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Query
 import retrofit2.http.Url
 
 @JvmSuppressWildcards
@@ -26,6 +27,10 @@ interface ServiceApi {
     suspend fun getHomeMenu(): ServiceResult<List<HomeApiData>>
 
     @GET("biz/k3cloud/dispatching/query")
-    suspend fun getDispatchList(): ServiceResult<List<DispatchDetailListApiData>>
+    suspend fun getDispatchList(
+        @Query("FilterString") filter: String,
+        @Query("StartRow") startRow: String,
+        @Query("Limit") limit: String
+    ): ServiceResult<List<DispatchDetailListApiData>>
 
 }

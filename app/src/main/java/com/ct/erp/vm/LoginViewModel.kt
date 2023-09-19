@@ -54,7 +54,7 @@ class LoginViewModel @Inject constructor(application: Application, model: BaseMo
     }
 
     private fun encoderPwd(userPwd: String): String {
-        return Sm2Utils.encodeM2(Constants.SM_PUBLIC_KEY, userPwd)
+        return userPwd
     }
 
     private fun mock() = ServiceResult<String>(
@@ -63,7 +63,7 @@ class LoginViewModel @Inject constructor(application: Application, model: BaseMo
 
     private fun mockUser(userName: String) = ServiceResult<LoginApiData>(
         code = "200", data = LoginApiData(
-            name = "测试用户", nickname = userName, avatar = "xxx", id = "999"
+            name = "测试用户", nickname = userName, avatar = "xxx", id = "999", xkUserName = userName
         ), errorMsg = ""
     )
 
