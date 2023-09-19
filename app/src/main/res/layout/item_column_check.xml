@@ -4,7 +4,7 @@
     <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_32">
+            android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.AppCompatCheckBox
                 android:id="@+id/checkItemColumn"
@@ -14,7 +14,7 @@
                 android:background="@null"
                 android:drawableStart="@drawable/selector_common_select"
                 android:textColor="@color/any_black"
-                android:layout_height="match_parent" />
+                android:layout_height="wrap_content" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>

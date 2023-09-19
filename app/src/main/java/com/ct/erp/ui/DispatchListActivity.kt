@@ -7,9 +7,11 @@ import com.ct.erp.R
 import com.ct.erp.adapter.DispatchTableAdapter
 import com.ct.erp.base.BaseActivity
 import com.ct.erp.common.LoginManager
-import com.ct.erp.databinding.ActivityDispatchDetailBinding
+
+import com.ct.erp.databinding.ActivityDispatchListBinding
 import com.ct.erp.popup.ColumnDialogFragment
 import com.ct.erp.vm.DispatchViewModel
+import com.ct.utils.ActivityUtils
 import com.ct.utils.FragmentUtils
 import com.ct.utils.LogUtils
 import com.ct.utils.click
@@ -23,8 +25,8 @@ import javax.inject.Inject
  *
  */
 @AndroidEntryPoint
-class DispatchDetailListActivity : BaseActivity<DispatchViewModel, ActivityDispatchDetailBinding>() {
-    override fun getLayoutId(): Int = R.layout.activity_dispatch_detail
+class DispatchListActivity : BaseActivity<DispatchViewModel, ActivityDispatchListBinding>() {
+    override fun getLayoutId(): Int = R.layout.activity_dispatch_list
     override fun getToolbarTitle(): String = "做工明显列表"
 
     @Inject
@@ -36,7 +38,7 @@ class DispatchDetailListActivity : BaseActivity<DispatchViewModel, ActivityDispa
         Toasty.error(this, "二维码数据:$result").show()
     }
 
-    override fun initView(binding: ActivityDispatchDetailBinding) {
+    override fun initView(binding: ActivityDispatchListBinding) {
         super.initView(binding)
 
         binding.tableDispatchDetailList.setAdapter(mAdapter)
@@ -44,7 +46,7 @@ class DispatchDetailListActivity : BaseActivity<DispatchViewModel, ActivityDispa
 
     }
 
-    override fun initListener(binding: ActivityDispatchDetailBinding) {
+    override fun initListener(binding: ActivityDispatchListBinding) {
         super.initListener(binding)
         binding.tableDispatchDetailList.tableViewListener = tabListener
         binding.btnTableQr.click {
@@ -54,10 +56,23 @@ class DispatchDetailListActivity : BaseActivity<DispatchViewModel, ActivityDispa
         binding.btnTableColumn.click {
             FragmentUtils.showDialogFragment(ColumnDialogFragment.newInstance(), this, ColumnDialogFragment.TAG)
         }
-        LogUtils.e("Activity:$viewModel")
+
+        binding.btnTableFilter.click {
+            doFilter()
+        }
     }
 
-    override fun bindEvent(binding: ActivityDispatchDetailBinding) {
+    private fun doFilter() {
+        val filter = binding.etTableFilter.text.toString().trim()
+        if (filter.isBlank()) {
+            showToast("筛选条件不能为空!")
+            return
+        }
+        viewModel.doRefresh(filter)
+    }
+
+
+    override fun bindEvent(binding: ActivityDispatchListBinding) {
         super.bindEvent(binding)
         viewModel.dispatchViewData.observe(this) {
             LogUtils.e("$this $it")
@@ -68,7 +83,7 @@ class DispatchDetailListActivity : BaseActivity<DispatchViewModel, ActivityDispa
 
     private val tabListener = object : ITableViewListener {
         override fun onCellClicked(cellView: RecyclerView.ViewHolder, column: Int, row: Int) {
-            Toasty.normal(this@DispatchDetailListActivity, "被点击了:$column-$row").show()
+            Toasty.normal(this@DispatchListActivity, "被点击了:$column-$row").show()
         }
 
         override fun onCellDoubleClicked(cellView: RecyclerView.ViewHolder, column: Int, row: Int) {
@@ -88,6 +103,12 @@ class DispatchDetailListActivity : BaseActivity<DispatchViewModel, ActivityDispa
 
         override fun onRowHeaderClicked(rowHeaderView: RecyclerView.ViewHolder, row: Int, isRowEnd: Boolean) {
             LogUtils.e("onRowHeaderClicked $row  $isRowEnd ${viewModel.tableAllCell[row]}")
+            if (isRowEnd) {
+                ActivityUtils.startActivitySafe(
+                    this@DispatchListActivity,
+                    Intent(this@DispatchListActivity, DispatchDetailActivity::class.java)
+                )
+            }
 
         }
 

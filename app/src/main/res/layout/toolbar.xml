@@ -43,6 +43,7 @@
         <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="@dimen/dimen_24"
                 android:id="@+id/imgSetting"
+                android:visibility="gone"
                 android:layout_height="@dimen/dimen_24" />
 
         <androidx.appcompat.widget.AppCompatImageView

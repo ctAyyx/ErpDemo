@@ -122,7 +122,7 @@ public abstract class BaseDialogFragment<VM extends BaseViewModel, VDB extends V
         if (window != null) {
             window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             window.getAttributes().windowAnimations = R.style.mvvmframe_dialog_animation;
-            setWindow(window, Gravity.CENTER_HORIZONTAL, DEFAULT_WIDTH_RATIO, 0, 0, 0, 0, 0, 0);
+            setWindow(window, Gravity.CENTER, DEFAULT_WIDTH_RATIO, 0, 0, 0, 0, 0, 0);
         }
     }
 

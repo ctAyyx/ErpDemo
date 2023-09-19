@@ -1,18 +1,15 @@
 package com.ct.erp
 
 import android.content.Intent
-import android.util.Base64
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
-import com.antherd.smcrypto.sm2.Sm2
 import com.ct.erp.adapter.HomeRvAdapter
 import com.ct.erp.base.BaseActivity
 import com.ct.erp.base.adapter.OnItemClickHolder
 import com.ct.erp.common.CommonPref
 import com.ct.erp.common.Constants
 import com.ct.erp.databinding.ActivityHomeBinding
-import com.ct.erp.ui.DispatchDetailListActivity
+import com.ct.erp.ui.DispatchListActivity
 import com.ct.erp.vm.HomeViewModel
 import com.ct.erp.vo.HomeMenuViewData
 import com.ct.utils.ActivityUtils
@@ -35,7 +32,7 @@ class HomeActivity : BaseActivity<HomeViewModel, ActivityHomeBinding>() {
     private var menuClickHolder: OnItemClickHolder<HomeMenuViewData>? = object : OnItemClickHolder<HomeMenuViewData> {
         override fun onItemClick(data: HomeMenuViewData, position: Int) {
             ActivityUtils.startActivitySafe(
-                this@HomeActivity, Intent(this@HomeActivity, DispatchDetailListActivity::class.java)
+                this@HomeActivity, Intent(this@HomeActivity, DispatchListActivity::class.java)
             )
         }
     }

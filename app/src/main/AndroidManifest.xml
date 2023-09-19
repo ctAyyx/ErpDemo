@@ -42,7 +42,12 @@
                 android:exported="false" />
 
         <activity
-                android:name=".ui.DispatchDetailListActivity"
+                android:name=".ui.DispatchListActivity"
+                android:screenOrientation="landscape"
+                android:exported="false" />
+
+        <activity
+                android:name=".ui.DispatchDetailActivity"
                 android:screenOrientation="landscape"
                 android:exported="false" />
 

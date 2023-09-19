@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:background="@color/card"
-            android:paddingVertical="@dimen/dimen_32"
             android:paddingHorizontal="@dimen/dimen_20"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
 
         <androidx.appcompat.widget.AppCompatCheckBox
@@ -25,39 +25,46 @@
 
         <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvDialogColumn"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/checkDialogColumnAll"
                 app:layout_constraintBottom_toTopOf="@+id/btnCancel"
                 android:layout_marginTop="@dimen/dimen_16"
                 android:layout_marginBottom="@dimen/dimen_16"
-                android:layout_height="0dp" />
+                tools:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent" />
 
 
-        <androidx.appcompat.widget.AppCompatTextView
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:id="@+id/btnCancel"
-                android:layout_width="0dp"
-                app:layout_constraintEnd_toStartOf="@+id/btnSure"
-                android:layout_height="@dimen/common_button_height"
-                style="@style/CommonButton.Black"
-                android:layout_marginEnd="@dimen/dimen_10"
-                android:text="取消" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <androidx.appcompat.widget.AppCompatTextView
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/btnCancel"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/btnCancel"
-                android:id="@+id/btnSure"
-                android:layout_width="0dp"
-                app:layout_goneMarginStart="0dp"
-                android:layout_marginStart="@dimen/dimen_10"
-                android:layout_height="@dimen/common_button_height"
-                style="@style/CommonButton.Blue"
-                android:text="确定" />
+            <androidx.appcompat.widget.AppCompatTextView
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:id="@+id/btnCancel"
+                    android:layout_width="0dp"
+                    app:layout_constraintEnd_toStartOf="@+id/btnSure"
+                    android:layout_height="@dimen/common_button_height"
+                    style="@style/CommonButton.Black"
+                    android:layout_marginEnd="@dimen/dimen_10"
+                    android:text="取消" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.appcompat.widget.AppCompatTextView
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/btnCancel"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/btnCancel"
+                    android:id="@+id/btnSure"
+                    android:layout_width="0dp"
+                    app:layout_goneMarginStart="0dp"
+                    android:layout_marginStart="@dimen/dimen_10"
+                    android:layout_height="@dimen/common_button_height"
+                    style="@style/CommonButton.Blue"
+                    android:text="确定" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>

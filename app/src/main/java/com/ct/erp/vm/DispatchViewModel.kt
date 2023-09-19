@@ -60,6 +60,12 @@ class DispatchViewModel @Inject constructor(application: Application, model: Bas
         loadDispatchList(filter = filter, startRow = startRow, limit = limit)
     }
 
+
+    fun loadDispatchDetail() {
+
+    }
+
+
     private fun loadDispatchList(filter: String, startRow: Int, limit: Int) {
         launch {
             loadAllColumnHeader()
@@ -180,7 +186,7 @@ class DispatchViewModel @Inject constructor(application: Application, model: Bas
     private fun buildCell(
         header: TabColumnHeaderViewData, data: DispatchDetailListApiData
     ): DispatchTabCellViewData {
-        return DispatchTabCellViewData("$filter-$startRow ${matchKey(header.columnKey, data)}")
+        return DispatchTabCellViewData("$filter-$startRow ${matchKey(header.getFieldKey(), data)}")
     }
 
 

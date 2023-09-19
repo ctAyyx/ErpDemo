@@ -71,8 +71,12 @@ class ColumnDialogFragment : BaseDialogFragment<DispatchViewModel, DialogTableCo
         binding.btnSure.click {
             doSure()
         }
+    }
 
-        LogUtils.e("Dialog:$viewModel $tempList")
+    override fun onStart() {
+        super.onStart()
+        val view = dialog?.window?.decorView ?: return
+        view.setPadding(0, 0, 0, 32)
     }
 
     private fun doSure() {
