@@ -1,6 +1,7 @@
 package com.ct.erp.api
 
 import com.ct.erp.dto.DispatchDetailListApiData
+import com.ct.erp.dto.DispatchPlanApiData
 import com.ct.erp.dto.HomeApiData
 import com.ct.erp.dto.ServiceResult
 import com.ct.erp.dto.LoginApiData
@@ -32,5 +33,12 @@ interface ServiceApi {
         @Query("StartRow") startRow: String,
         @Query("Limit") limit: String
     ): ServiceResult<List<DispatchDetailListApiData>>
+
+    @GET("/biz/k3cloud/process-plan/view")
+    suspend fun getDispatchPlan(
+        @Query("Number") number: String,
+        @Query("SeqNumber") seqNumber: String,
+        @Query("operNumber") operNumber: String
+    ): ServiceResult<DispatchPlanApiData>
 
 }

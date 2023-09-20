@@ -1,723 +1,448 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
 
-    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:orientation="horizontal"
-                android:layout_height="match_parent">
-
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                    android:orientation="vertical"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:paddingHorizontal="@dimen/dimen_10"
-
-                    android:layout_height="match_parent">
-
-                <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/tvTitle01"
-                        android:layout_width="wrap_content"
-                        android:textSize="@dimen/text_16"
-                        android:textColor="@color/any_white"
-                        android:background="@color/grey03"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:text="数量"
-                        android:paddingHorizontal="@dimen/dimen_8"
-                        android:layout_height="wrap_content" />
-
-                <View
-                        android:layout_width="match_parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        android:background="@color/grey03"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        android:layout_height="1dp" />
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_height="@dimen/dimen_24">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:text="生产订单/工号"
-                            android:textSize="@dimen/text_14"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="0dp"
-                            android:textSize="@dimen/text_14"
-                            android:background="@color/grey02"
-                            android:layout_weight="1"
-                            android:layout_marginHorizontal="@dimen/dimen_4"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:textSize="@dimen/text_14"
-                            android:paddingHorizontal="@dimen/dimen_6"
-                            android:text="1"
-                            android:background="@color/grey02"
-                            android:layout_height="wrap_content" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_height="@dimen/dimen_24">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:text="生产订单/工号"
-                            android:textSize="@dimen/text_14"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="0dp"
-                            android:textSize="@dimen/text_14"
-                            android:background="@color/grey02"
-                            android:layout_weight="1"
-                            android:layout_marginHorizontal="@dimen/dimen_4"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:textSize="@dimen/text_14"
-                            android:paddingHorizontal="@dimen/dimen_6"
-                            android:text="1"
-                            android:background="@color/grey02"
-                            android:layout_height="wrap_content" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_height="@dimen/dimen_24">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:text="生产订单/工号"
-                            android:textSize="@dimen/text_14"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="0dp"
-                            android:textSize="@dimen/text_14"
-                            android:background="@color/grey02"
-                            android:layout_weight="1"
-                            android:layout_marginHorizontal="@dimen/dimen_4"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:textSize="@dimen/text_14"
-                            android:paddingHorizontal="@dimen/dimen_6"
-                            android:text="1"
-                            android:background="@color/grey02"
-                            android:layout_height="wrap_content" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_height="@dimen/dimen_24">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:text="生产订单/工号"
-                            android:textSize="@dimen/text_14"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="0dp"
-                            android:textSize="@dimen/text_14"
-                            android:background="@color/grey02"
-                            android:layout_weight="1"
-                            android:layout_marginHorizontal="@dimen/dimen_4"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:textSize="@dimen/text_14"
-                            android:paddingHorizontal="@dimen/dimen_6"
-                            android:text="1"
-                            android:background="@color/grey02"
-                            android:layout_height="wrap_content" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_height="@dimen/dimen_24">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:text="生产订单/工号"
-                            android:textSize="@dimen/text_14"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="0dp"
-                            android:textSize="@dimen/text_14"
-                            android:background="@color/grey02"
-                            android:layout_weight="1"
-                            android:layout_marginHorizontal="@dimen/dimen_4"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:textSize="@dimen/text_14"
-                            android:paddingHorizontal="@dimen/dimen_6"
-                            android:text="1"
-                            android:background="@color/grey02"
-                            android:layout_height="wrap_content" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                    android:orientation="vertical"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:paddingHorizontal="@dimen/dimen_10"
-
-                    android:layout_height="match_parent">
-
-                <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:textSize="@dimen/text_16"
-                        android:textColor="@color/any_white"
-                        android:background="@color/grey03"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:text="数量"
-                        android:paddingHorizontal="@dimen/dimen_8"
-                        android:layout_height="wrap_content" />
-
-                <View
-                        android:layout_width="match_parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        android:background="@color/grey03"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        android:layout_height="1dp" />
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_height="@dimen/dimen_24">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:text="生产订单/工号"
-                            android:textSize="@dimen/text_14"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="0dp"
-                            android:textSize="@dimen/text_14"
-                            android:background="@color/grey02"
-                            android:layout_weight="1"
-                            android:layout_marginHorizontal="@dimen/dimen_4"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:textSize="@dimen/text_14"
-                            android:paddingHorizontal="@dimen/dimen_6"
-                            android:text="1"
-                            android:background="@color/grey02"
-                            android:layout_height="wrap_content" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_height="@dimen/dimen_24">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:text="生产订单/工号"
-                            android:textSize="@dimen/text_14"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="0dp"
-                            android:textSize="@dimen/text_14"
-                            android:background="@color/grey02"
-                            android:layout_weight="1"
-                            android:layout_marginHorizontal="@dimen/dimen_4"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:textSize="@dimen/text_14"
-                            android:paddingHorizontal="@dimen/dimen_6"
-                            android:text="1"
-                            android:background="@color/grey02"
-                            android:layout_height="wrap_content" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_height="@dimen/dimen_24">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:text="生产订单/工号"
-                            android:textSize="@dimen/text_14"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="0dp"
-                            android:textSize="@dimen/text_14"
-                            android:background="@color/grey02"
-                            android:layout_weight="1"
-                            android:layout_marginHorizontal="@dimen/dimen_4"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:textSize="@dimen/text_14"
-                            android:paddingHorizontal="@dimen/dimen_6"
-                            android:text="1"
-                            android:background="@color/grey02"
-                            android:layout_height="wrap_content" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_height="@dimen/dimen_24">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:text="生产订单/工号"
-                            android:textSize="@dimen/text_14"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="0dp"
-                            android:textSize="@dimen/text_14"
-                            android:background="@color/grey02"
-                            android:layout_weight="1"
-                            android:layout_marginHorizontal="@dimen/dimen_4"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:textSize="@dimen/text_14"
-                            android:paddingHorizontal="@dimen/dimen_6"
-                            android:text="1"
-                            android:background="@color/grey02"
-                            android:layout_height="wrap_content" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_height="@dimen/dimen_24">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:text="生产订单/工号"
-                            android:textSize="@dimen/text_14"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="0dp"
-                            android:textSize="@dimen/text_14"
-                            android:background="@color/grey02"
-                            android:layout_weight="1"
-                            android:layout_marginHorizontal="@dimen/dimen_4"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:textSize="@dimen/text_14"
-                            android:paddingHorizontal="@dimen/dimen_6"
-                            android:text="1"
-                            android:background="@color/grey02"
-                            android:layout_height="wrap_content" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-                <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:textSize="@dimen/text_16"
-                        android:textColor="@color/any_white"
-                        android:background="@color/grey03"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:text="数量"
-                        android:paddingHorizontal="@dimen/dimen_8"
-                        android:layout_height="wrap_content" />
-
-                <View
-                        android:layout_width="match_parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        android:background="@color/grey03"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        android:layout_height="1dp" />
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_height="@dimen/dimen_24">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:text="生产订单/工号"
-                            android:textSize="@dimen/text_14"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="0dp"
-                            android:textSize="@dimen/text_14"
-                            android:background="@color/grey02"
-                            android:layout_weight="1"
-                            android:layout_marginHorizontal="@dimen/dimen_4"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:textSize="@dimen/text_14"
-                            android:paddingHorizontal="@dimen/dimen_6"
-                            android:text="1"
-                            android:background="@color/grey02"
-                            android:layout_height="wrap_content" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_height="@dimen/dimen_24">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:text="生产订单/工号"
-                            android:textSize="@dimen/text_14"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="0dp"
-                            android:textSize="@dimen/text_14"
-                            android:background="@color/grey02"
-                            android:layout_weight="1"
-                            android:layout_marginHorizontal="@dimen/dimen_4"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:textSize="@dimen/text_14"
-                            android:paddingHorizontal="@dimen/dimen_6"
-                            android:text="1"
-                            android:background="@color/grey02"
-                            android:layout_height="wrap_content" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_height="@dimen/dimen_24">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:text="生产订单/工号"
-                            android:textSize="@dimen/text_14"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="0dp"
-                            android:textSize="@dimen/text_14"
-                            android:background="@color/grey02"
-                            android:layout_weight="1"
-                            android:layout_marginHorizontal="@dimen/dimen_4"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:textSize="@dimen/text_14"
-                            android:paddingHorizontal="@dimen/dimen_6"
-                            android:text="1"
-                            android:background="@color/grey02"
-                            android:layout_height="wrap_content" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_height="@dimen/dimen_24">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:text="生产订单/工号"
-                            android:textSize="@dimen/text_14"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="0dp"
-                            android:textSize="@dimen/text_14"
-                            android:background="@color/grey02"
-                            android:layout_weight="1"
-                            android:layout_marginHorizontal="@dimen/dimen_4"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:textSize="@dimen/text_14"
-                            android:paddingHorizontal="@dimen/dimen_6"
-                            android:text="1"
-                            android:background="@color/grey02"
-                            android:layout_height="wrap_content" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_height="@dimen/dimen_24">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:text="生产订单/工号"
-                            android:textSize="@dimen/text_14"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="0dp"
-                            android:textSize="@dimen/text_14"
-                            android:background="@color/grey02"
-                            android:layout_weight="1"
-                            android:layout_marginHorizontal="@dimen/dimen_4"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:textSize="@dimen/text_14"
-                            android:paddingHorizontal="@dimen/dimen_6"
-                            android:text="1"
-                            android:background="@color/grey02"
-                            android:layout_height="wrap_content" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                    android:orientation="vertical"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:paddingHorizontal="@dimen/dimen_10"
-
-                    android:layout_height="match_parent">
-
-                <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:textSize="@dimen/text_16"
-                        android:textColor="@color/any_white"
-                        android:background="@color/grey03"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:text="数量"
-                        android:paddingHorizontal="@dimen/dimen_8"
-                        android:layout_height="wrap_content" />
-
-                <View
-                        android:layout_width="match_parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        android:background="@color/grey03"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        android:layout_height="1dp" />
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_height="@dimen/dimen_24">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:text="生产订单/工号"
-                            android:textSize="@dimen/text_14"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="0dp"
-                            android:textSize="@dimen/text_14"
-                            android:background="@color/grey02"
-                            android:layout_weight="1"
-                            android:layout_marginHorizontal="@dimen/dimen_4"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:textSize="@dimen/text_14"
-                            android:paddingHorizontal="@dimen/dimen_6"
-                            android:text="1"
-                            android:background="@color/grey02"
-                            android:layout_height="wrap_content" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_height="@dimen/dimen_24">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:text="生产订单/工号"
-                            android:textSize="@dimen/text_14"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="0dp"
-                            android:textSize="@dimen/text_14"
-                            android:background="@color/grey02"
-                            android:layout_weight="1"
-                            android:layout_marginHorizontal="@dimen/dimen_4"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:textSize="@dimen/text_14"
-                            android:paddingHorizontal="@dimen/dimen_6"
-                            android:text="1"
-                            android:background="@color/grey02"
-                            android:layout_height="wrap_content" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_height="@dimen/dimen_24">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:text="生产订单/工号"
-                            android:textSize="@dimen/text_14"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="0dp"
-                            android:textSize="@dimen/text_14"
-                            android:background="@color/grey02"
-                            android:layout_weight="1"
-                            android:layout_marginHorizontal="@dimen/dimen_4"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:textSize="@dimen/text_14"
-                            android:paddingHorizontal="@dimen/dimen_6"
-                            android:text="1"
-                            android:background="@color/grey02"
-                            android:layout_height="wrap_content" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_height="@dimen/dimen_24">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:text="生产订单/工号"
-                            android:textSize="@dimen/text_14"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="0dp"
-                            android:textSize="@dimen/text_14"
-                            android:background="@color/grey02"
-                            android:layout_weight="1"
-                            android:layout_marginHorizontal="@dimen/dimen_4"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:textSize="@dimen/text_14"
-                            android:paddingHorizontal="@dimen/dimen_6"
-                            android:text="1"
-                            android:background="@color/grey02"
-                            android:layout_height="wrap_content" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_height="@dimen/dimen_24">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:text="生产订单/工号"
-                            android:textSize="@dimen/text_14"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="0dp"
-                            android:textSize="@dimen/text_14"
-                            android:background="@color/grey02"
-                            android:layout_weight="1"
-                            android:layout_marginHorizontal="@dimen/dimen_4"
-                            android:layout_height="wrap_content" />
-
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:textSize="@dimen/text_14"
-                            android:paddingHorizontal="@dimen/dimen_6"
-                            android:text="1"
-                            android:background="@color/grey02"
-                            android:layout_height="wrap_content" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-    </androidx.core.widget.NestedScrollView>
+            android:orientation="horizontal"
+            android:background="@color/any_white"
+            android:layout_marginTop="@dimen/dimen_20"
+            app:set_radius="@{@dimen/dimen_8}"
+            android:paddingVertical="@dimen/dimen_16"
+            android:layout_marginHorizontal="@dimen/dimen_16"
+            android:layout_height="wrap_content">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle01"
+                android:layout_width="0dp"
+                android:textSize="@dimen/text_16"
+                android:layout_marginHorizontal="@dimen/dimen_16"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="@color/blue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="基本信息"
+                android:layout_height="wrap_content" />
+
+
+        <View
+                android:id="@+id/viewOperation"
+                android:layout_width="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle01"
+                android:layout_marginTop="@dimen/dimen_4"
+                android:background="@color/blue_alpha_15"
+                android:layout_height="@dimen/dimen_32" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnItemQuantityFirst"
+                android:layout_width="wrap_content"
+                android:text="首行"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/text_14"
+                android:paddingHorizontal="@dimen/dimen_4"
+                app:layout_constraintStart_toStartOf="@+id/tvTitle01"
+                app:layout_constraintTop_toTopOf="@+id/viewOperation"
+                app:layout_constraintBottom_toBottomOf="@+id/viewOperation"
+                android:gravity="center"
+                android:layout_height="0dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnItemQuantityPre"
+                android:layout_width="wrap_content"
+                android:text="上一行"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/text_14"
+                android:paddingHorizontal="@dimen/dimen_4"
+                app:layout_constraintStart_toEndOf="@+id/btnItemQuantityFirst"
+                app:layout_constraintTop_toTopOf="@+id/viewOperation"
+                app:layout_constraintBottom_toBottomOf="@+id/viewOperation"
+                android:gravity="center"
+                android:layout_height="0dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnItemQuantityNext"
+                android:layout_width="wrap_content"
+                android:text="下一行"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/text_14"
+                android:paddingHorizontal="@dimen/dimen_4"
+                app:layout_constraintStart_toEndOf="@+id/btnItemQuantityPre"
+                app:layout_constraintTop_toTopOf="@+id/viewOperation"
+                app:layout_constraintBottom_toBottomOf="@+id/viewOperation"
+                android:gravity="center"
+                android:layout_height="0dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnItemQuantityLast"
+                android:layout_width="wrap_content"
+                android:text="末行"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/text_14"
+                android:paddingHorizontal="@dimen/dimen_4"
+                app:layout_constraintStart_toEndOf="@+id/btnItemQuantityNext"
+                app:layout_constraintTop_toTopOf="@+id/viewOperation"
+                app:layout_constraintBottom_toBottomOf="@+id/viewOperation"
+                android:gravity="center"
+                android:layout_height="0dp" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideStart"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.33"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideEnd"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.67"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSubTitle01"
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/text_14"
+                android:textColor="@color/any_white"
+                android:background="@color/grey02"
+                android:paddingHorizontal="@dimen/dimen_8"
+                android:layout_marginTop="@dimen/dimen_12"
+                app:layout_constraintStart_toStartOf="@+id/btnItemQuantityFirst"
+                app:layout_constraintTop_toBottomOf="@+id/viewOperation"
+                android:text="工序"
+                android:layout_height="wrap_content" />
+
+        <View
+                android:id="@+id/viewLine01"
+                android:layout_width="0dp"
+                android:background="@color/grey02"
+                app:layout_constraintStart_toStartOf="@+id/tvSubTitle01"
+                app:layout_constraintEnd_toStartOf="@+id/guideStart"
+                app:layout_constraintTop_toBottomOf="@+id/tvSubTitle01"
+                android:layout_height="@dimen/dimen_1" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNum01"
+                android:layout_width="@dimen/dimen_96"
+                android:text="生产订单/行号"
+                android:textColor="@color/any_black"
+                android:layout_marginTop="@dimen/dimen_8"
+                app:layout_constraintStart_toStartOf="@+id/tvSubTitle01"
+                app:layout_constraintTop_toBottomOf="@+id/viewLine01"
+                android:gravity="end"
+                android:textSize="@dimen/text_14"
+                android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvItemQuantityNumStr"
+                android:layout_width="0dp"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="@dimen/dimen_4"
+                android:textSize="@dimen/text_14"
+                app:layout_constraintBottom_toBottomOf="@+id/tvNum01"
+                android:background="@color/grey01"
+                app:layout_constraintTop_toTopOf="@+id/tvNum01"
+                app:layout_constraintStart_toEndOf="@+id/tvNum01"
+                app:layout_constraintEnd_toStartOf="@+id/tvItemQuantityNum"
+                android:textColor="@color/any_black"
+                android:maxLines="1"
+                android:layout_marginHorizontal="@dimen/dimen_4"
+                android:layout_height="wrap_content" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvItemQuantityNum"
+                android:layout_width="@dimen/dimen_48"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_14"
+                android:textColor="@color/any_black"
+                android:background="@color/grey01"
+                android:text="1"
+                android:layout_marginHorizontal="@dimen/dimen_4"
+                app:layout_constraintBottom_toBottomOf="@+id/tvNum01"
+                android:gravity="center"
+                app:layout_constraintEnd_toStartOf="@+id/guideStart"
+                app:layout_constraintTop_toTopOf="@+id/tvNum01" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNum02"
+                android:layout_width="0dp"
+                android:text="序列/工序"
+                android:textColor="@color/any_black"
+                android:layout_marginTop="@dimen/dimen_4"
+                app:layout_constraintStart_toStartOf="@+id/tvSubTitle01"
+                app:layout_constraintTop_toBottomOf="@+id/tvNum01"
+                app:layout_constraintEnd_toEndOf="@+id/tvNum01"
+                android:gravity="end"
+                android:textSize="@dimen/text_14"
+                android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvItemQuantityNum2Str"
+                android:layout_width="0dp"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="@dimen/dimen_4"
+                android:textSize="@dimen/text_14"
+                app:layout_constraintBottom_toBottomOf="@+id/tvNum02"
+                android:background="@color/grey01"
+                app:layout_constraintTop_toTopOf="@+id/tvNum02"
+                app:layout_constraintStart_toEndOf="@+id/tvNum02"
+                app:layout_constraintEnd_toStartOf="@+id/tvItemQuantityNum2"
+                android:textColor="@color/any_black"
+                android:maxLines="1"
+                android:layout_marginHorizontal="@dimen/dimen_4"
+                android:layout_height="wrap_content" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvItemQuantityNum2"
+                android:layout_width="@dimen/dimen_48"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_14"
+                android:textColor="@color/any_black"
+                android:background="@color/grey01"
+                android:text="1"
+                android:layout_marginHorizontal="@dimen/dimen_4"
+                app:layout_constraintBottom_toBottomOf="@+id/tvNum02"
+                android:gravity="center"
+                app:layout_constraintEnd_toStartOf="@+id/guideStart"
+                app:layout_constraintTop_toTopOf="@+id/tvNum02" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNum03"
+                android:layout_width="0dp"
+                android:text="作业"
+                android:textSize="@dimen/text_14"
+                android:gravity="end"
+                android:layout_marginTop="@dimen/dimen_4"
+                app:layout_constraintStart_toStartOf="@+id/tvNum01"
+                app:layout_constraintTop_toBottomOf="@+id/tvNum02"
+                app:layout_constraintEnd_toEndOf="@+id/tvNum01"
+                android:textColor="@color/blue"
+                android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvItemQuantityWork"
+                android:layout_width="0dp"
+                android:textSize="@dimen/text_14"
+                tools:text="测试文案"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="@dimen/dimen_4"
+                android:background="@color/grey01"
+                app:layout_constraintStart_toEndOf="@+id/tvNum03"
+                app:layout_constraintEnd_toStartOf="@+id/guideStart"
+                app:layout_constraintTop_toTopOf="@+id/tvNum03"
+                app:layout_constraintBottom_toBottomOf="@+id/tvNum03"
+                android:textColor="@color/any_black"
+                android:layout_marginHorizontal="@dimen/dimen_4"
+                android:layout_height="wrap_content" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNum04"
+                android:layout_width="0dp"
+                android:text="作业"
+                android:textSize="@dimen/text_14"
+                android:gravity="end"
+                android:layout_marginTop="@dimen/dimen_4"
+                app:layout_constraintStart_toStartOf="@+id/tvNum01"
+                app:layout_constraintTop_toBottomOf="@+id/tvNum03"
+                app:layout_constraintEnd_toEndOf="@+id/tvNum01"
+                android:textColor="@color/blue"
+                android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:textSize="@dimen/text_14"
+                tools:text="测试文案"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="@dimen/dimen_4"
+                android:background="@color/grey01"
+                app:layout_constraintStart_toEndOf="@+id/tvNum04"
+                app:layout_constraintEnd_toStartOf="@+id/guideStart"
+                app:layout_constraintTop_toTopOf="@+id/tvNum04"
+                app:layout_constraintBottom_toBottomOf="@+id/tvNum04"
+                android:textColor="@color/any_black"
+                android:layout_marginHorizontal="@dimen/dimen_4"
+                android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNum05"
+                android:layout_width="0dp"
+                android:text="作业"
+                android:textSize="@dimen/text_14"
+                android:gravity="end"
+                android:layout_marginTop="@dimen/dimen_4"
+                app:layout_constraintStart_toStartOf="@+id/tvNum01"
+                app:layout_constraintTop_toBottomOf="@+id/tvNum04"
+                app:layout_constraintEnd_toEndOf="@+id/tvNum01"
+                android:textColor="@color/blue"
+                android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:textSize="@dimen/text_14"
+                tools:text="测试文案"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="@dimen/dimen_4"
+                android:background="@color/grey01"
+                app:layout_constraintStart_toEndOf="@+id/tvNum05"
+                app:layout_constraintEnd_toStartOf="@+id/guideStart"
+                app:layout_constraintTop_toTopOf="@+id/tvNum05"
+                app:layout_constraintBottom_toBottomOf="@+id/tvNum05"
+                android:textColor="@color/any_black"
+                android:layout_marginHorizontal="@dimen/dimen_4"
+                android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNum06"
+                android:layout_width="0dp"
+                android:text="作业"
+                android:textSize="@dimen/text_14"
+                android:gravity="end"
+                android:layout_marginTop="@dimen/dimen_4"
+                app:layout_constraintStart_toStartOf="@+id/tvNum01"
+                app:layout_constraintTop_toBottomOf="@+id/tvNum05"
+                app:layout_constraintEnd_toEndOf="@+id/tvNum01"
+                android:textColor="@color/blue"
+                android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:textSize="@dimen/text_14"
+                tools:text="测试文案"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="@dimen/dimen_4"
+                android:background="@color/grey01"
+                app:layout_constraintStart_toEndOf="@+id/tvNum06"
+                app:layout_constraintEnd_toStartOf="@+id/guideStart"
+                app:layout_constraintTop_toTopOf="@+id/tvNum06"
+                app:layout_constraintBottom_toBottomOf="@+id/tvNum06"
+                android:textColor="@color/any_black"
+                android:layout_marginHorizontal="@dimen/dimen_4"
+                android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNum07"
+                android:layout_width="0dp"
+                android:text="作业"
+                android:textSize="@dimen/text_14"
+                android:gravity="end"
+                android:layout_marginTop="@dimen/dimen_4"
+                app:layout_constraintStart_toStartOf="@+id/tvNum01"
+                app:layout_constraintTop_toBottomOf="@+id/tvNum06"
+                app:layout_constraintEnd_toEndOf="@+id/tvNum01"
+                android:textColor="@color/blue"
+                android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:textSize="@dimen/text_14"
+                tools:text="测试文案"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="@dimen/dimen_4"
+                android:background="@color/grey01"
+                app:layout_constraintStart_toEndOf="@+id/tvNum07"
+                app:layout_constraintEnd_toStartOf="@+id/guideStart"
+                app:layout_constraintTop_toTopOf="@+id/tvNum07"
+                app:layout_constraintBottom_toBottomOf="@+id/tvNum07"
+                android:textColor="@color/any_black"
+                android:layout_marginHorizontal="@dimen/dimen_4"
+                android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNum08"
+                android:layout_width="0dp"
+                android:text="作业"
+                android:textSize="@dimen/text_14"
+                android:gravity="end"
+                android:layout_marginTop="@dimen/dimen_4"
+                app:layout_constraintStart_toStartOf="@+id/tvNum01"
+                app:layout_constraintTop_toBottomOf="@+id/tvNum07"
+                app:layout_constraintEnd_toEndOf="@+id/tvNum01"
+                android:textColor="@color/blue"
+                android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:textSize="@dimen/text_14"
+                tools:text="测试文案"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="@dimen/dimen_4"
+                android:background="@color/grey01"
+                app:layout_constraintStart_toEndOf="@+id/tvNum08"
+                app:layout_constraintEnd_toStartOf="@+id/guideStart"
+                app:layout_constraintTop_toTopOf="@+id/tvNum08"
+                app:layout_constraintBottom_toBottomOf="@+id/tvNum08"
+                android:textColor="@color/any_black"
+                android:layout_marginHorizontal="@dimen/dimen_4"
+                android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNum09"
+                android:layout_width="0dp"
+                android:text="作业"
+                android:textSize="@dimen/text_14"
+                android:gravity="end"
+                android:layout_marginTop="@dimen/dimen_4"
+                app:layout_constraintStart_toStartOf="@+id/tvNum01"
+                app:layout_constraintTop_toBottomOf="@+id/tvNum08"
+                app:layout_constraintEnd_toEndOf="@+id/tvNum01"
+                android:textColor="@color/blue"
+                android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:textSize="@dimen/text_14"
+                tools:text="测试文案"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="@dimen/dimen_4"
+                android:background="@color/grey01"
+                app:layout_constraintStart_toEndOf="@+id/tvNum09"
+                app:layout_constraintEnd_toStartOf="@+id/guideStart"
+                app:layout_constraintTop_toTopOf="@+id/tvNum09"
+                app:layout_constraintBottom_toBottomOf="@+id/tvNum09"
+                android:textColor="@color/any_black"
+                android:layout_marginHorizontal="@dimen/dimen_4"
+                android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNum10"
+                android:layout_width="0dp"
+                android:text="作业"
+                android:textSize="@dimen/text_14"
+                android:gravity="end"
+                android:layout_marginTop="@dimen/dimen_4"
+                app:layout_constraintStart_toStartOf="@+id/tvNum01"
+                app:layout_constraintTop_toBottomOf="@+id/tvNum09"
+                app:layout_constraintEnd_toEndOf="@+id/tvNum01"
+                android:textColor="@color/blue"
+                android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:textSize="@dimen/text_14"
+                tools:text="测试文案"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="@dimen/dimen_4"
+                android:background="@color/grey01"
+                app:layout_constraintStart_toEndOf="@+id/tvNum10"
+                app:layout_constraintEnd_toStartOf="@+id/guideStart"
+                app:layout_constraintTop_toTopOf="@+id/tvNum10"
+                app:layout_constraintBottom_toBottomOf="@+id/tvNum10"
+                android:textColor="@color/any_black"
+                android:layout_marginHorizontal="@dimen/dimen_4"
+                android:layout_height="wrap_content" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
