@@ -12,12 +12,17 @@
         <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:orientation="horizontal"
+                android:gravity="center_vertical"
                 android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/etTableFilter"
                     android:layout_width="@dimen/dimen_96"
-                    android:background="@drawable/shape_edit_outline"
+                    style="@style/CommonEdit"
+                    android:hint="筛选条件"
+                    android:textColor="@color/any_black"
+                    android:paddingVertical="@dimen/dimen_8"
+                    android:paddingHorizontal="@dimen/dimen_6"
                     android:layout_height="wrap_content" />
 
             <androidx.appcompat.widget.AppCompatTextView

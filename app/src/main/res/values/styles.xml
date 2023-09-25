@@ -48,6 +48,8 @@
 
     <style name="CommonEdit" parent="Widget.AppCompat.EditText">
         <item name="android:textColor">@color/any_black</item>
+        <item name="android:textSize">@dimen/text_14</item>
+        <item name="android:singleLine">true</item>
         <item name="android:textColorHint">@color/grey03</item>
         <item name="android:background">@drawable/selector_edit_outline</item>
         <item name="android:textCursorDrawable">@drawable/shape_edit_cursor</item>
