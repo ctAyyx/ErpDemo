@@ -46,7 +46,6 @@ class HomeActivity : BaseActivity<HomeViewModel, ActivityHomeBinding>() {
             layoutManager = buildLayoutManager()
 //            addItemDecoration()
         }
-        LogUtils.e("===========================>initVie   ${Sm2Utils.encrypt()}")
     }
 
     private fun buildLayoutManager(): GridLayoutManager {

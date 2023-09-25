@@ -17,6 +17,7 @@
             <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/etTableFilter"
                     android:layout_width="@dimen/dimen_96"
+                    android:background="@drawable/shape_edit_outline"
                     android:layout_height="wrap_content" />
 
             <androidx.appcompat.widget.AppCompatTextView

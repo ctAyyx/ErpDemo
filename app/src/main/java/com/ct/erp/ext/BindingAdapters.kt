@@ -4,9 +4,11 @@ import android.graphics.Color
 import android.graphics.Outline
 import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.GradientDrawable.Orientation
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewOutlineProvider
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isVisible
 import androidx.databinding.BindingAdapter
@@ -108,5 +110,25 @@ fun View.setGradient(orientation: Orientation, colors: IntArray, radius: Float =
         background = gradient
     } catch (e: Exception) {
         e.printStackTrace()
+    }
+}
+
+fun TextView.onEndDrawableClick(onClick: () -> Unit) {
+    try {
+        setOnTouchListener { v, event ->
+            val endDrawable = compoundDrawables[2]
+            if (endDrawable != null && event.action == MotionEvent.ACTION_UP) {
+                val downX = event.x
+                val endBound = v.right - v.paddingEnd - endDrawable.bounds.width()
+                if (downX >= endBound) {
+                    onClick.invoke()
+                    return@setOnTouchListener true
+                }
+            }
+
+
+            return@setOnTouchListener false
+        }
+    } catch (e: Exception) {
     }
 }
