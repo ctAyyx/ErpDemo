@@ -1,23 +1,16 @@
 package com.ct.erp.vm
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.asLiveData
-import androidx.lifecycle.map
-import androidx.lifecycle.switchMap
 import com.ct.erp.base.BaseModel
 import com.ct.erp.base.BaseViewModel
 import com.ct.erp.dto.DispatchDetailListApiData
 import com.ct.erp.dto.ServiceResult
 import com.ct.erp.vo.DispatchTabCellViewData
+import com.ct.erp.vo.DispatchTableViewData
 import com.ct.erp.vo.TabColumnHeaderViewData
 import com.ct.erp.vo.TabRowHeaderViewData
-import com.ct.erp.vo.DispatchTableViewData
-import com.google.gson.annotations.SerializedName
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
 @HiltViewModel
