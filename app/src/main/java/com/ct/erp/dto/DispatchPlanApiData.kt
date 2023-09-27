@@ -1,5 +1,6 @@
 package com.ct.erp.dto
 
+import androidx.databinding.BaseObservable
 import com.google.gson.annotations.SerializedName
 
 
@@ -166,7 +167,20 @@ data class DispatchPlanApiData(
     val stockInOrgId: StockInOrgId? = null,
     @SerializedName("StockInOrgId_Id")
     val stockInOrgIdId: Int? = 0
-)
+) : BaseObservable() {
+
+
+    /**
+     * 获取产品序列号
+     */
+    fun getProductSerialNum(): String {
+        return ""
+    }
+
+    fun getProcessUnit(): String {
+        return entity?.firstOrNull()?.subEntity?.firstOrNull()?.processUnit ?: ""
+    }
+}
 
 data class ApproverId(
     @SerializedName("Id")
@@ -280,7 +294,9 @@ data class Entity(
     val srcEntityId: Int? = 0,
     @SerializedName("SubEntity")
     val subEntity: List<SubEntity>? = null
-)
+) {
+
+}
 
 data class FBillHeadLink(
     @SerializedName("BaseQty")

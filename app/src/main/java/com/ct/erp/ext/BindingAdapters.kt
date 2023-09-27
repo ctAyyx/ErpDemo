@@ -1,5 +1,6 @@
 package com.ct.erp.ext
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.graphics.Outline
 import android.graphics.drawable.GradientDrawable
@@ -7,11 +8,14 @@ import android.graphics.drawable.GradientDrawable.Orientation
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewOutlineProvider
+import android.widget.AdapterView
 import android.widget.ImageView
+import android.widget.Spinner
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isVisible
 import androidx.databinding.BindingAdapter
+import com.ct.erp.adapter.CommonSpinnerAdapter
 import com.ct.utils.image.ImageManager
 
 
@@ -113,6 +117,7 @@ fun View.setGradient(orientation: Orientation, colors: IntArray, radius: Float =
     }
 }
 
+@SuppressLint("ClickableViewAccessibility")
 fun TextView.onEndDrawableClick(onClick: () -> Unit) {
     try {
         setOnTouchListener { v, event ->
@@ -130,5 +135,17 @@ fun TextView.onEndDrawableClick(onClick: () -> Unit) {
             return@setOnTouchListener false
         }
     } catch (e: Exception) {
+    }
+}
+
+fun Spinner.setCommonAdapter(data: List<String>, onItemSelect: ((Int) -> Unit)? = null) {
+    if (data.isEmpty()) return
+    adapter = CommonSpinnerAdapter(context, data)
+    onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+        override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+            onItemSelect?.invoke(position)
+        }
+        override fun onNothingSelected(parent: AdapterView<*>?) {
+        }
     }
 }

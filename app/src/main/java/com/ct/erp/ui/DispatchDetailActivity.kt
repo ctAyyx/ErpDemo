@@ -7,6 +7,7 @@ import com.ct.erp.R
 import com.ct.erp.adapter.DispatchDetailVpAdapter
 import com.ct.erp.base.BaseActivity
 import com.ct.erp.databinding.ActivityDispatchDetailBinding
+import com.ct.erp.dto.DispatchPlanApiData
 import com.ct.erp.vm.DispatchViewModel
 import com.ct.erp.vo.DispatchDetailViewData
 import com.ct.utils.click
@@ -25,7 +26,7 @@ class DispatchDetailActivity : BaseActivity<DispatchViewModel, ActivityDispatchD
         mAdapter = DispatchDetailVpAdapter()
         binding.rvDispatchPlant.adapter = mAdapter
         binding.rvDispatchPlant.layoutManager = LinearLayoutManager(this)
-        val data = DispatchDetailViewData("1")
+        val data = DispatchDetailViewData("1", model = DispatchPlanApiData())
         mAdapter?.submitList(listOf(data, data, data, data))
 
     }
