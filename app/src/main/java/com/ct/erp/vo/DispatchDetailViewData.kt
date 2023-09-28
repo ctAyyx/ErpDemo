@@ -10,7 +10,7 @@ enum class DisDetailViewHolderType {
 data class DispatchDetailViewData(
     val id: String,
 
-    val model: DispatchPlanApiData,
+    val model: DispatchPlanApiData?=null,
 ) : BaseViewHolderData<DisDetailViewHolderType>() {
     override val viewHolderType: DisDetailViewHolderType = DisDetailViewHolderType.BASIC
     override fun getDataSourceKey(): String {

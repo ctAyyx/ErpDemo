@@ -9,13 +9,15 @@ import com.ct.erp.base.adapter.OnItemClickHolder
 import com.ct.erp.common.CommonPref
 import com.ct.erp.common.Constants
 import com.ct.erp.databinding.ActivityHomeBinding
+import com.ct.erp.dto.DispatchPlanApiData
 import com.ct.erp.ui.DispatchListActivity
 import com.ct.erp.vm.HomeViewModel
 import com.ct.erp.vo.HomeMenuViewData
 import com.ct.utils.ActivityUtils
 import com.ct.utils.LogUtils
-import com.ct.utils.Sm2Utils
+import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
+import java.io.InputStreamReader
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -46,6 +48,19 @@ class HomeActivity : BaseActivity<HomeViewModel, ActivityHomeBinding>() {
             layoutManager = buildLayoutManager()
 //            addItemDecoration()
         }
+
+        doTest()
+    }
+
+    private fun doTest() {
+//        val open = assets.open("dis_detail.json")
+//        val ins = InputStreamReader(open)
+//        val data = Gson().fromJson(ins, DispatchPlanApiData::class.java)
+//
+//        val subEntity = data.entity?.firstOrNull()?.subEntity?.firstOrNull()
+//
+
+
     }
 
     private fun buildLayoutManager(): GridLayoutManager {

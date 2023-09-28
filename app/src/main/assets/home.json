@@ -1,0 +1,111 @@
+[
+  {
+    "id": "1623380023993298945",
+    "parentId": "0",
+    "weight": 1,
+    "name": "业务",
+    "title": "业务",
+    "code": "217gcp9ifi",
+    "category": "MODULE",
+    "path": "/3mev1ljazy",
+    "icon": "container-outlined",
+    "color": "#1890ff",
+    "sortCode": 1,
+    "deleteFlag": "NOT_DELETE",
+    "meta": {
+      "icon": "container-outlined",
+      "title": "业务",
+      "type": "module"
+    },
+    "children": [
+      {
+        "id": "1623380258656219138",
+        "parentId": "1623380023993298945",
+        "weight": 0,
+        "name": "机构管理",
+        "title": "机构管理",
+        "category": "MENU",
+        "module": "1623380023993298945",
+        "menuType": "MENU",
+        "path": "/pages/biz/org/index",
+        "icon": "apartment-outlined",
+        "color": "#1890ff",
+        "regType": "YES",
+        "status": "ENABLE",
+        "sortCode": 0,
+        "deleteFlag": "NOT_DELETE",
+        "meta": {
+          "icon": "apartment-outlined",
+          "title": "机构管理",
+          "type": "menu"
+        }
+      },
+      {
+        "id": "1623380614295449601",
+        "parentId": "1623380023993298945",
+        "weight": 2,
+        "name": "岗位管理",
+        "title": "岗位管理",
+        "category": "MENU",
+        "module": "1623380023993298945",
+        "menuType": "MENU",
+        "path": "/pages/biz/position/index",
+        "icon": "robot-outlined",
+        "color": "#9c28b1",
+        "regType": "YES",
+        "status": "ENABLE",
+        "sortCode": 2,
+        "deleteFlag": "NOT_DELETE",
+        "meta": {
+          "icon": "robot-outlined",
+          "title": "岗位管理",
+          "type": "menu"
+        }
+      },
+      {
+        "id": "1623380765202313218",
+        "parentId": "1623380023993298945",
+        "weight": 4,
+        "name": "人员管理",
+        "title": "人员管理",
+        "category": "MENU",
+        "module": "1623380023993298945",
+        "menuType": "MENU",
+        "path": "/pages/biz/user/index",
+        "icon": "team-outlined",
+        "color": "#fed835",
+        "regType": "YES",
+        "status": "ENABLE",
+        "sortCode": 4,
+        "deleteFlag": "NOT_DELETE",
+        "meta": {
+          "icon": "team-outlined",
+          "title": "人员管理",
+          "type": "menu"
+        }
+      },
+      {
+        "id": "1623381127095250946",
+        "parentId": "1623380023993298945",
+        "weight": 7,
+        "name": "更多",
+        "title": "更多",
+        "category": "MENU",
+        "module": "1623380023993298945",
+        "menuType": "CATALOG",
+        "path": "7029146815941316608",
+        "icon": "small-dash-outlined",
+        "color": "#f1627e",
+        "regType": "YES",
+        "status": "ENABLE",
+        "sortCode": 7,
+        "deleteFlag": "NOT_DELETE",
+        "meta": {
+          "icon": "small-dash-outlined",
+          "title": "更多",
+          "type": "catalog"
+        }
+      }
+    ]
+  }
+]

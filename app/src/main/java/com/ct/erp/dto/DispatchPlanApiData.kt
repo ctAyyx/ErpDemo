@@ -10,11 +10,11 @@ data class DispatchPlanApiData(
     @SerializedName("ApproverId")
     val approverId: ApproverId? = null,
     @SerializedName("ApproverId_Id")
-    val approverIdId: Int? = 0,
+    val approverIdId: String? = null,
     @SerializedName("AutoInStore")
     val autoInStore: String? = "",
     @SerializedName("AuxPropId_Id")
-    val auxPropIdId: Int? = 0,
+    val auxPropIdId: String? = null,
     @SerializedName("BFLowId_Id")
     val bFLowIdId: String? = "",
     @SerializedName("BaseQty")
@@ -22,7 +22,7 @@ data class DispatchPlanApiData(
     @SerializedName("BaseUnitId")
     val baseUnitId: BaseUnitId? = null,
     @SerializedName("BaseUnitId_Id")
-    val baseUnitIdId: Int? = 0,
+    val baseUnitIdId: String? = null,
     @SerializedName("BillNo")
     val billNo: String? = "",
     @SerializedName("BillType")
@@ -32,9 +32,9 @@ data class DispatchPlanApiData(
     @SerializedName("BomId")
     val bomId: BomId? = null,
     @SerializedName("BomId_Id")
-    val bomIdId: Int? = 0,
+    val bomIdId: String? = null,
     @SerializedName("CANCELER_Id")
-    val cANCELERId: Int? = 0,
+    val cANCELERId: String? = null,
     @SerializedName("CancelStatus")
     val cancelStatus: String? = "",
     @SerializedName("CreateDate")
@@ -42,13 +42,13 @@ data class DispatchPlanApiData(
     @SerializedName("CreatorId")
     val creatorId: CreatorId? = null,
     @SerializedName("CreatorId_Id")
-    val creatorIdId: Int? = 0,
+    val creatorIdId: String? = null,
     @SerializedName("DecuctionTime")
     val decuctionTime: String? = "",
     @SerializedName("DemandBillEntryId")
-    val demandBillEntryId: Int? = 0,
+    val demandBillEntryId: String? = null,
     @SerializedName("DemandBillId")
-    val demandBillId: Int? = 0,
+    val demandBillId: String? = null,
     @SerializedName("DemandType")
     val demandType: String? = "",
     @SerializedName("Description")
@@ -64,23 +64,23 @@ data class DispatchPlanApiData(
     @SerializedName("FailAutoInStore")
     val failAutoInStore: String? = "",
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("InspectCheckSchemaId_Id")
-    val inspectCheckSchemaIdId: Int? = 0,
+    val inspectCheckSchemaIdId: String? = null,
     @SerializedName("IsEntrust")
     val isEntrust: Boolean? = false,
     @SerializedName("IsWastageInStock")
     val isWastageInStock: Boolean? = false,
     @SerializedName("Lot_Id")
-    val lotId: Int? = 0,
+    val lotId: String? = null,
     @SerializedName("Lot_Text")
     val lotText: String? = "",
     @SerializedName("MOEntryId")
-    val mOEntryId: Int? = 0,
+    val mOEntryId: String? = null,
     @SerializedName("MOEntrySeq")
-    val mOEntrySeq: Int? = 0,
+    val mOEntrySeq: String? = null,
     @SerializedName("MOId")
-    val mOId: Int? = 0,
+    val mOId: String? = null,
     @SerializedName("MOIsSuspend")
     val mOIsSuspend: String? = "",
     @SerializedName("MONumber")
@@ -92,13 +92,13 @@ data class DispatchPlanApiData(
     @SerializedName("MOUnitId")
     val mOUnitId: MOUnitId? = null,
     @SerializedName("MOUnitId_Id")
-    val mOUnitIdId: Int? = 0,
+    val mOUnitIdId: String? = null,
     @SerializedName("MTONo")
     val mTONo: String? = "",
     @SerializedName("ModifierId")
     val modifierId: ModifierId? = null,
     @SerializedName("ModifierId_Id")
-    val modifierIdId: Int? = 0,
+    val modifierIdId: String? = null,
     @SerializedName("ModifyDate")
     val modifyDate: String? = "",
     @SerializedName("MultiLanguageText")
@@ -108,11 +108,11 @@ data class DispatchPlanApiData(
     @SerializedName("OwnerId")
     val ownerId: OwnerId? = null,
     @SerializedName("OwnerId_Id")
-    val ownerIdId: Int? = 0,
+    val ownerIdId: String? = null,
     @SerializedName("OwnerTypeId")
     val ownerTypeId: String? = "",
     @SerializedName("ParentId")
-    val parentId: Int? = 0,
+    val parentId: String? = null,
     @SerializedName("PlanFinishTime")
     val planFinishTime: String? = "",
     @SerializedName("PlanStartTime")
@@ -124,31 +124,31 @@ data class DispatchPlanApiData(
     @SerializedName("ProDepartmentId")
     val proDepartmentId: ProDepartmentId? = null,
     @SerializedName("ProDepartmentId_Id")
-    val proDepartmentIdId: Int? = 0,
+    val proDepartmentIdId: String? = null,
     @SerializedName("ProOrgId")
     val proOrgId: ProOrgId? = null,
     @SerializedName("ProOrgId_Id")
-    val proOrgIdId: Int? = 0,
+    val proOrgIdId: String? = null,
     @SerializedName("ProcessCheckSchemaId_Id")
-    val processCheckSchemaIdId: Int? = 0,
+    val processCheckSchemaIdId: String? = null,
     @SerializedName("ProduceType")
     val produceType: String? = "",
     @SerializedName("ProductId")
     val productId: ProductId? = null,
     @SerializedName("ProductId_Id")
-    val productIdId: Int? = 0,
+    val productIdId: String? = null,
     @SerializedName("ProductLine_Id")
-    val productLineId: Int? = 0,
+    val productLineId: String? = null,
     @SerializedName("ProductType")
     val productType: String? = "",
     @SerializedName("ProjectNo")
     val projectNo: String? = "",
     @SerializedName("RootBillId")
-    val rootBillId: Int? = 0,
+    val rootBillId: String? = null,
     @SerializedName("RouteId")
     val routeId: RouteId? = null,
     @SerializedName("RouteId_Id")
-    val routeIdId: Int? = 0,
+    val routeIdId: String? = null,
     @SerializedName("SaleOrderEntrySeq")
     val saleOrderEntrySeq: Int? = 0,
     @SerializedName("SaleOrderNumber")
@@ -156,7 +156,7 @@ data class DispatchPlanApiData(
     @SerializedName("ScheduleModelId")
     val scheduleModelId: ScheduleModelId? = null,
     @SerializedName("ScheduleModelId_Id")
-    val scheduleModelIdId: Int? = 0,
+    val scheduleModelIdId: String? = null,
     @SerializedName("ScheduleSeq")
     val scheduleSeq: Int? = 0,
     @SerializedName("SourceBillNo")
@@ -166,7 +166,7 @@ data class DispatchPlanApiData(
     @SerializedName("StockInOrgId")
     val stockInOrgId: StockInOrgId? = null,
     @SerializedName("StockInOrgId_Id")
-    val stockInOrgIdId: Int? = 0
+    val stockInOrgIdId: String? = null
 ) : BaseObservable() {
 
 
@@ -184,7 +184,7 @@ data class DispatchPlanApiData(
 
 data class ApproverId(
     @SerializedName("Id")
-    val id: Int? = null,
+    val Id: String? = null,
     @SerializedName("Name")
     val name: String? = null,
     @SerializedName("UserAccount")
@@ -193,9 +193,9 @@ data class ApproverId(
 
 data class BaseUnitId(
     @SerializedName("Id")
-    val id: Int? = null,
+    val Id: String? = null,
     @SerializedName("msterID")
-    val msterID: Int? = null,
+    val msterId: String? = null,
     @SerializedName("MultiLanguageText")
     val multiLanguageText: List<MultiLanguageText?>? = null,
     @SerializedName("Name")
@@ -223,9 +223,9 @@ data class BillType(
 
 data class BomId(
     @SerializedName("Id")
-    val id: Int? = null,
+    val Id: String? = null,
     @SerializedName("msterID")
-    val msterID: Int? = null,
+    val msterId: String? = null,
     @SerializedName("MultiLanguageText")
     val multiLanguageText: List<Any?>? = null,
     @SerializedName("Name")
@@ -236,7 +236,7 @@ data class BomId(
 
 data class CreatorId(
     @SerializedName("Id")
-    val id: Int? = null,
+    val Id: String? = null,
     @SerializedName("Name")
     val name: String? = null,
     @SerializedName("UserAccount")
@@ -245,7 +245,7 @@ data class CreatorId(
 
 data class Entity(
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("MultiLanguageText")
     val multiLanguageText: List<MultiLanguageText>? = null,
     @SerializedName("RptWriteBackBaseQty")
@@ -275,7 +275,7 @@ data class Entity(
     @SerializedName("SeqRefer")
     val seqRefer: String? = "",
     @SerializedName("SeqSrcEntryId")
-    val seqSrcEntryId: Int? = 0,
+    val seqSrcEntryId: String? = null,
     @SerializedName("SeqSrcType")
     val seqSrcType: String? = "",
     @SerializedName("SeqType")
@@ -283,7 +283,7 @@ data class Entity(
     @SerializedName("SeqWorkCenterId")
     val seqWorkCenterId: SeqWorkCenterId? = null,
     @SerializedName("SeqWorkCenterId_Id")
-    val seqWorkCenterIdId: Int? = 0,
+    val seqWorkCenterIdId: String? = null,
     @SerializedName("SplitFromOper")
     val splitFromOper: Int? = 0,
     @SerializedName("SplitQty")
@@ -291,7 +291,7 @@ data class Entity(
     @SerializedName("SplitToOper")
     val splitToOper: Int? = 0,
     @SerializedName("SrcEntityId")
-    val srcEntityId: Int? = 0,
+    val srcEntityId: String? = null,
     @SerializedName("SubEntity")
     val subEntity: List<SubEntity>? = null
 ) {
@@ -306,9 +306,9 @@ data class FBillHeadLink(
     @SerializedName("FlowId")
     val flowId: String? = null,
     @SerializedName("FlowLineId")
-    val flowLineId: Int? = null,
+    val flowLineId: String? = null,
     @SerializedName("Id")
-    val id: Int? = null,
+    val Id: String? = null,
     @SerializedName("RuleId")
     val ruleId: String? = null,
     @SerializedName("SBillId")
@@ -316,16 +316,16 @@ data class FBillHeadLink(
     @SerializedName("SId")
     val sId: String? = null,
     @SerializedName("STableId")
-    val sTableId: Int? = null,
+    val sTableId: String? = null,
     @SerializedName("STableName")
     val sTableName: String? = null
 )
 
 data class MOUnitId(
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("msterID")
-    val msterID: Int? = 0,
+    val msterId: String? = null,
     @SerializedName("MultiLanguageText")
     val multiLanguageText: List<MultiLanguageText>? = null,
     @SerializedName("Name")
@@ -342,7 +342,7 @@ data class MOUnitId(
 
 data class ModifierId(
     @SerializedName("Id")
-    val id: Int? = null,
+    val Id: String? = null,
     @SerializedName("Name")
     val name: String? = null,
     @SerializedName("UserAccount")
@@ -351,9 +351,9 @@ data class ModifierId(
 
 data class OwnerId(
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("msterID")
-    val msterID: Int? = 0,
+    val msterId: String? = null,
     @SerializedName("MultiLanguageText")
     val multiLanguageText: List<MultiLanguageText>? = null,
     @SerializedName("Name")
@@ -364,9 +364,9 @@ data class OwnerId(
 
 data class ProDepartmentId(
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("msterID")
-    val msterID: Int? = 0,
+    val msterId: String? = null,
     @SerializedName("MultiLanguageText")
     val multiLanguageText: List<MultiLanguageText>? = null,
     @SerializedName("Name")
@@ -377,7 +377,7 @@ data class ProDepartmentId(
 
 data class ProOrgId(
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("MultiLanguageText")
     val multiLanguageText: List<MultiLanguageText>? = null,
     @SerializedName("Name")
@@ -392,7 +392,7 @@ data class ProductId(
     @SerializedName("ForbidStatus")
     val forbidStatus: String? = "",
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("MaterialAuxPty")
     val materialAuxPty: List<MaterialAuxPty>? = null,
     @SerializedName("MaterialBase")
@@ -400,7 +400,7 @@ data class ProductId(
     @SerializedName("MaterialStock")
     val materialStock: List<MaterialStock>? = null,
     @SerializedName("msterID")
-    val msterID: Int? = 0,
+    val msterId: String? = null,
     @SerializedName("MultiLanguageText")
     val multiLanguageText: List<MultiLanguageText>? = null,
     @SerializedName("Name")
@@ -412,18 +412,18 @@ data class ProductId(
     @SerializedName("UseOrgId")
     val useOrgId: UseOrgId? = null,
     @SerializedName("UseOrgId_Id")
-    val useOrgIdId: Int? = 0
+    val useOrgIdId: String? = null
 )
 
 data class RouteId(
     @SerializedName("FFormId")
     val fFormId: String? = "",
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("IsWastageInStock")
     val isWastageInStock: Boolean? = false,
     @SerializedName("msterID")
-    val msterID: Int? = 0,
+    val msterId: String? = null,
     @SerializedName("MultiLanguageText")
     val multiLanguageText: List<MultiLanguageText>? = null,
     @SerializedName("Name")
@@ -438,9 +438,9 @@ data class RouteId(
 
 data class ScheduleModelId(
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("msterID")
-    val msterID: Int? = 0,
+    val msterId: String? = null,
     @SerializedName("MultiLanguageText")
     val multiLanguageText: List<MultiLanguageText>? = null,
     @SerializedName("Name")
@@ -453,7 +453,7 @@ data class ScheduleModelId(
 
 data class StockInOrgId(
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("MultiLanguageText")
     val multiLanguageText: List<MultiLanguageText>? = null,
     @SerializedName("Name")
@@ -474,7 +474,7 @@ data class UNITCONVERTRATE(
     @SerializedName("ConvertType")
     val convertType: String? = null,
     @SerializedName("Id")
-    val id: Int? = null
+    val Id: String? = null
 )
 
 
@@ -489,7 +489,7 @@ data class SeqWorkCenterId(
     @SerializedName("DeptID")
     val deptID: DeptID? = null,
     @SerializedName("DeptID_Id")
-    val deptIDId: Int? = 0,
+    val deptIDId: String? = null,
     @SerializedName("EffectDate")
     val effectDate: String? = "",
     @SerializedName("ExpireDate")
@@ -497,11 +497,11 @@ data class SeqWorkCenterId(
     @SerializedName("FFormId")
     val fFormId: String? = "",
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("IsDiscreteOperDispDetail")
     val isDiscreteOperDispDetail: Boolean? = false,
     @SerializedName("msterID")
-    val msterID: Int? = 0,
+    val msterId: String? = null,
     @SerializedName("MultiLanguageText")
     val multiLanguageText: List<MultiLanguageText>? = null,
     @SerializedName("Name")
@@ -511,537 +511,792 @@ data class SeqWorkCenterId(
     @SerializedName("OptCtrlCodeID")
     val optCtrlCodeID: OptCtrlCodeId? = null,
     @SerializedName("OptCtrlCodeID_Id")
-    val optCtrlCodeIDId: Int? = 0,
+    val optCtrlCodeIDId: String? = null,
     @SerializedName("ProcessID_Id")
-    val processIDId: Int? = 0,
+    val processIDId: String? = null,
     @SerializedName("UseOrgId")
     val useOrgId: UseOrgId? = null,
     @SerializedName("UseOrgId_Id")
-    val useOrgIdId: Int? = 0,
+    val useOrgIdId: String? = null,
     @SerializedName("WorkCenterCapacity")
     val workCenterCapacity: List<WorkCenterCapacity>? = null,
     @SerializedName("WorkCenterScheduling")
     val workCenterScheduling: List<WorkCenterScheduling>? = null
 )
 
-data class SubEntity(
+
+class SubEntity {
     @SerializedName("Activity1BaseQty")
-    val activity1BaseQty: Int? = 0,
+    val activity1BaseQty: Int? = null
+
     @SerializedName("Activity1FormulaId")
-    val activity1FormulaId: ActivityFormulaId? = null,
+    val activity1FormulaId: ActivityFormulaId? = null
+
     @SerializedName("Activity1FormulaId_Id")
-    val activity1FormulaIdId: Int? = 0,
+    val activity1FormulaIdId: String? = null
+
     @SerializedName("Activity1Id")
-    val activity1Id: ActivityId? = null,
+    val activity1Id: ActivityId? = null
+
     @SerializedName("Activity1Id_Id")
-    val activity1IdId: Int? = 0,
+    val activity1IdId: String? = null
+
     @SerializedName("Activity1Qty")
-    val activity1Qty: Int? = 0,
+    val activity1Qty: Int? = null
+
     @SerializedName("Activity1RepFormulaId")
-    val activity1RepFormulaId: ActivityRepFormulaId? = null,
+    val activity1RepFormulaId: ActivityRepFormulaId? = null
+
     @SerializedName("Activity1RepFormulaId_Id")
-    val activity1RepFormulaIdId: Int? = 0,
+    val activity1RepFormulaIdId: String? = null
+
     @SerializedName("Activity1ReportQty")
-    val activity1ReportQty: Int? = 0,
+    val activity1ReportQty: Int? = null
+
     @SerializedName("Activity1UnitId")
-    val activity1UnitId: ActivityUnitId? = null,
+    val activity1UnitId: ActivityUnitId? = null
+
     @SerializedName("Activity1UnitId_Id")
-    val activity1UnitIdId: Int? = 0,
+    val activity1UnitIdId: String? = null
+
     @SerializedName("Activity2BaseQty")
-    val activity2BaseQty: Int? = 0,
+    val activity2BaseQty: Int? = null
+
     @SerializedName("Activity2FormulaId")
-    val activity2FormulaId: ActivityFormulaId? = null,
+    val activity2FormulaId: ActivityFormulaId? = null
+
     @SerializedName("Activity2FormulaId_Id")
-    val activity2FormulaIdId: Int? = 0,
+    val activity2FormulaIdId: String? = null
+
     @SerializedName("Activity2Id")
-    val activity2Id: ActivityId? = null,
+    val activity2Id: ActivityId? = null
+
     @SerializedName("Activity2Id_Id")
-    val activity2IdId: Int? = 0,
+    val activity2IdId: String? = null
+
     @SerializedName("Activity2Qty")
-    val activity2Qty: Int? = 0,
+    val activity2Qty: Int? = null
+
     @SerializedName("Activity2RepFormulaId")
-    val activity2RepFormulaId: ActivityRepFormulaId? = null,
+    val activity2RepFormulaId: ActivityRepFormulaId? = null
+
     @SerializedName("Activity2RepFormulaId_Id")
-    val activity2RepFormulaIdId: Int? = 0,
+    val activity2RepFormulaIdId: String? = null
+
     @SerializedName("Activity2ReportQty")
-    val activity2ReportQty: Int? = 0,
+    val activity2ReportQty: Int? = null
+
     @SerializedName("Activity2UnitId")
-    val activity2UnitId: ActivityUnitId? = null,
+    val activity2UnitId: ActivityUnitId? = null
+
     @SerializedName("Activity2UnitId_Id")
-    val activity2UnitIdId: Int? = 0,
+    val activity2UnitIdId: String? = null
+
     @SerializedName("Activity3BaseQty")
-    val activity3BaseQty: Int? = 0,
+    val activity3BaseQty: Int? = null
+
     @SerializedName("Activity3FormulaId")
-    val activity3FormulaId: ActivityFormulaId? = null,
+    val activity3FormulaId: ActivityFormulaId? = null
+
     @SerializedName("Activity3FormulaId_Id")
-    val activity3FormulaIdId: Int? = 0,
+    val activity3FormulaIdId: String? = null
+
     @SerializedName("Activity3Id")
-    val activity3Id: ActivityId? = null,
+    val activity3Id: ActivityId? = null
+
     @SerializedName("Activity3Id_Id")
-    val activity3IdId: Int? = 0,
+    val activity3IdId: String? = null
+
     @SerializedName("Activity3Qty")
-    val activity3Qty: Int? = 0,
+    val activity3Qty: Int? = null
+
     @SerializedName("Activity3RepFormulaId")
-    val activity3RepFormulaId: ActivityRepFormulaId? = null,
+    val activity3RepFormulaId: ActivityRepFormulaId? = null
+
     @SerializedName("Activity3RepFormulaId_Id")
-    val activity3RepFormulaIdId: Int? = 0,
+    val activity3RepFormulaIdId: String? = null
+
     @SerializedName("Activity3ReportQty")
-    val activity3ReportQty: Int? = 0,
+    val activity3ReportQty: Int? = null
+
     @SerializedName("Activity3UnitId")
-    val activity3UnitId: ActivityUnitId? = null,
+    val activity3UnitId: ActivityUnitId? = null
+
     @SerializedName("Activity3UnitId_Id")
-    val activity3UnitIdId: Int? = 0,
+    val activity3UnitIdId: String? = null
+
     @SerializedName("Activity4BaseQty")
-    val activity4BaseQty: Int? = 0,
+    val activity4BaseQty: Int? = null
+
     @SerializedName("Activity4FormulaId_Id")
-    val activity4FormulaIdId: Int? = 0,
+    val activity4FormulaIdId: String? = null
+
     @SerializedName("Activity4Id_Id")
-    val activity4IdId: Int? = 0,
+    val activity4IdId: String? = null
+
     @SerializedName("Activity4Qty")
-    val activity4Qty: Int? = 0,
+    val activity4Qty: Int? = null
+
     @SerializedName("Activity4RepFormulaId_Id")
-    val activity4RepFormulaIdId: Int? = 0,
+    val activity4RepFormulaIdId: String? = null
+
     @SerializedName("Activity4ReportQty")
-    val activity4ReportQty: Int? = 0,
+    val activity4ReportQty: Int? = null
+
     @SerializedName("Activity4UnitId_Id")
-    val activity4UnitIdId: Int? = 0,
+    val activity4UnitIdId: String? = null
+
     @SerializedName("Activity5BaseQty")
-    val activity5BaseQty: Int? = 0,
+    val activity5BaseQty: Int? = null
+
     @SerializedName("Activity5FormulaId_Id")
-    val activity5FormulaIdId: Int? = 0,
+    val activity5FormulaIdId: String? = null
+
     @SerializedName("Activity5Id_Id")
-    val activity5IdId: Int? = 0,
+    val activity5IdId: String? = null
+
     @SerializedName("Activity5Qty")
-    val activity5Qty: Int? = 0,
+    val activity5Qty: Int? = null
+
     @SerializedName("Activity5RepFormulaId_Id")
-    val activity5RepFormulaIdId: Int? = 0,
+    val activity5RepFormulaIdId: String? = null
+
     @SerializedName("Activity5ReportQty")
-    val activity5ReportQty: Int? = 0,
+    val activity5ReportQty: Int? = null
+
     @SerializedName("Activity5UnitId_Id")
-    val activity5UnitIdId: Int? = 0,
+    val activity5UnitIdId: String? = null
+
     @SerializedName("Activity6BaseQty")
-    val activity6BaseQty: Int? = 0,
+    val activity6BaseQty: Int? = null
+
     @SerializedName("Activity6FormulaId_Id")
-    val activity6FormulaIdId: Int? = 0,
+    val activity6FormulaIdId: String? = null
+
     @SerializedName("Activity6Id_Id")
-    val activity6IdId: Int? = 0,
+    val activity6IdId: String? = null
+
     @SerializedName("Activity6Qty")
-    val activity6Qty: Int? = 0,
+    val activity6Qty: Int? = null
+
     @SerializedName("Activity6RepFormulaId_Id")
-    val activity6RepFormulaIdId: Int? = 0,
+    val activity6RepFormulaIdId: String? = null
+
     @SerializedName("Activity6ReportQty")
-    val activity6ReportQty: Int? = 0,
+    val activity6ReportQty: Int? = null
+
     @SerializedName("Activity6UnitId_Id")
-    val activity6UnitIdId: Int? = 0,
+    val activity6UnitIdId: String? = null
+
     @SerializedName("AdviceSplitQty")
-    val adviceSplitQty: Int? = 0,
+    val adviceSplitQty: Int? = null
+
     @SerializedName("BarCode")
-    val barCode: String? = "",
+    val barCode: String? = null
+
     @SerializedName("BaseBatch")
-    val baseBatch: Int? = 0,
+    val baseBatch: Int? = null
+
     @SerializedName("BaseCheckDiffQty")
-    val baseCheckDiffQty: Int? = 0,
+    val baseCheckDiffQty: Int? = null
+
     @SerializedName("BaseExcessCtrlQty")
-    val baseExcessCtrlQty: Int? = 0,
+    val baseExcessCtrlQty: Int? = null
+
     @SerializedName("BaseResStockQty")
-    val baseResStockQty: Int? = 0,
+    val baseResStockQty: Int? = null
+
     @SerializedName("BaseWastageQty")
-    val baseWastageQty: Int? = 0,
+    val baseWastageQty: Int? = null
+
     @SerializedName("BetweenFinishTime")
-    val betweenFinishTime: String? = "",
+    val betweenFinishTime: String? = null
+
     @SerializedName("BetweenStartTime")
-    val betweenStartTime: String? = "",
+    val betweenStartTime: String? = null
+
     @SerializedName("BetweenUnit")
-    val betweenUnit: String? = "",
+    val betweenUnit: String? = null
+
     @SerializedName("BetweenWorkTime")
-    val betweenWorkTime: Int? = 0,
+    val betweenWorkTime: Int? = null
+
     @SerializedName("ConvertType")
-    val convertType: String? = "",
+    val convertType: String? = null
+
     @SerializedName("ConveyDate")
-    val conveyDate: String? = "",
+    val conveyDate: String? = null
+
     @SerializedName("DefectReworkMode")
-    val defectReworkMode: String? = "",
+    val defectReworkMode: String? = null
+
     @SerializedName("DepartmentId")
-    val departmentId: DepartmentId? = null,
+    val departmentId: DepartmentId? = null
+
     @SerializedName("DepartmentId_Id")
-    val departmentIdId: Int? = 0,
+    val departmentIdId: String? = null
+
     @SerializedName("EmpId")
-    val empId: List<Any>? = null,
+    val empId: List<Any>? = null
+
     @SerializedName("EnableLocationNo")
-    val enableLocationNo: Boolean? = false,
+    val enableLocationNo: Boolean? = null
+
     @SerializedName("EquipmentId_Id")
-    val equipmentIdId: Int? = 0,
+    val equipmentIdId: String? = null
+
     @SerializedName("FinishLowerLimit")
-    val finishLowerLimit: Int? = 0,
+    val finishLowerLimit: Int? = null
+
     @SerializedName("FirstInspectControl")
-    val firstInspectControl: String? = "",
+    val firstInspectControl: String? = null
+
     @SerializedName("IPQCOperNumber")
-    val iPQCOperNumber: Int? = 0,
+    val iPQCOperNumber: Int? = null
+
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null
+
     @SerializedName("InspectCheckSchemaEntryId_Id")
-    val inspectCheckSchemaEntryIdId: Int? = 0,
+    val inspectCheckSchemaEntryIdId: String? = null
+
     @SerializedName("InspectStatus")
-    val inspectStatus: String? = "",
+    val inspectStatus: String? = null
+
     @SerializedName("IsCheckProcessInspect")
-    val isCheckProcessInspect: Boolean? = false,
+    val isCheckProcessInspect: Boolean? = null
+
     @SerializedName("IsCheckProcessRecord")
-    val isCheckProcessRecord: Boolean? = false,
+    val isCheckProcessRecord: Boolean? = null
+
     @SerializedName("IsDiscreteOperDispDetail")
-    val isDiscreteOperDispDetail: Boolean? = false,
+    val isDiscreteOperDispDetail: Boolean? = null
+
     @SerializedName("IsFirstOper")
-    val isFirstOper: Boolean? = false,
+    val isFirstOper: Boolean? = null
+
     @SerializedName("IsFirstOperPhase")
-    val isFirstOperPhase: Boolean? = false,
+    val isFirstOperPhase: Boolean? = null
+
     @SerializedName("IsFirstPieceInspect")
-    val isFirstPieceInspect: Boolean? = false,
+    val isFirstPieceInspect: Boolean? = null
+
     @SerializedName("IsIteration")
-    val isIteration: Boolean? = false,
+    val isIteration: Boolean? = null
+
     @SerializedName("IsLinkageSchedule")
-    val isLinkageSchedule: Boolean? = false,
+    val isLinkageSchedule: Boolean? = null
+
     @SerializedName("IsManualFinished")
-    val isManualFinished: Boolean? = false,
+    val isManualFinished: Boolean? = null
+
     @SerializedName("IsManualReport")
-    val isManualReport: Boolean? = false,
+    val isManualReport: Boolean? = null
+
     @SerializedName("IsOutSrc")
-    val isOutSrc: Boolean? = false,
+    val isOutSrc: Boolean? = null
+
     @SerializedName("IsProcessRecordStation")
-    val isProcessRecordStation: Boolean? = false,
+    val isProcessRecordStation: Boolean? = null
+
     @SerializedName("IsQualityInspectStation")
-    val isQualityInspectStation: Boolean? = false,
+    val isQualityInspectStation: Boolean? = null
+
     @SerializedName("IsRptCheckProcessInspect")
-    val isRptCheckProcessInspect: Boolean? = false,
+    val isRptCheckProcessInspect: Boolean? = null
+
     @SerializedName("IsRptCheckProcessRecord")
-    val isRptCheckProcessRecord: Boolean? = false,
+    val isRptCheckProcessRecord: Boolean? = null
+
     @SerializedName("IsSameTime")
-    val isSameTime: Boolean? = false,
+    val isSameTime: Boolean? = null
+
     @SerializedName("IsSplitSchedule")
-    val isSplitSchedule: Boolean? = false,
+    val isSplitSchedule: Boolean? = null
+
     @SerializedName("IsStoreInPoint")
-    val isStoreInPoint: Boolean? = false,
+    val isStoreInPoint: Boolean? = null
+
     @SerializedName("IsWorkTime")
-    val isWorkTime: Boolean? = false,
+    val isWorkTime: Boolean? = null
+
     @SerializedName("IterationMinBatch")
-    val iterationMinBatch: Int? = 0,
+    val iterationMinBatch: Int? = null
+
     @SerializedName("IterationMinTime")
-    val iterationMinTime: Int? = 0,
+    val iterationMinTime: Int? = null
+
     @SerializedName("IterationMinTimeUnit")
-    val iterationMinTimeUnit: String? = "",
+    val iterationMinTimeUnit: String? = null
+
     @SerializedName("KeyOper")
-    val keyOper: String? = "",
+    val keyOper: String? = null
+
     @SerializedName("LeadTime")
-    val leadTime: Int? = 0,
+    val leadTime: Int? = null
+
     @SerializedName("LockEquipment")
-    val lockEquipment: Boolean? = false,
+    val lockEquipment: Boolean? = null
+
     @SerializedName("MOBaseUnitId")
-    val mOBaseUnitId: MOBaseUnitId? = null,
+    val mOBaseUnitId: MOBaseUnitId? = null
+
     @SerializedName("MOBaseUnitId_Id")
-    val mOBaseUnitIdId: Int? = 0,
+    val mOBaseUnitIdId: String? = null
+
     @SerializedName("ManualAddNew")
-    val manualAddNew: Boolean? = false,
+    val manualAddNew: Boolean? = null
+
     @SerializedName("MatScrapBaseQty")
-    val matScrapBaseQty: Int? = 0,
+    val matScrapBaseQty: Int? = null
+
     @SerializedName("MatScrapHeadQty")
-    val matScrapHeadQty: Int? = 0,
+    val matScrapHeadQty: Int? = null
+
     @SerializedName("MatScrapPrice")
-    val matScrapPrice: Int? = 0,
+    val matScrapPrice: Int? = null
+
     @SerializedName("MatScrapQty")
-    val matScrapQty: Int? = 0,
+    var matScrapQty: Int? = null
+
     @SerializedName("MatScrapTaxPrice")
-    val matScrapTaxPrice: Int? = 0,
+    val matScrapTaxPrice: Int? = null
+
     @SerializedName("MinMoveTime")
-    val minMoveTime: Int? = 0,
+    val minMoveTime: Int? = null
+
     @SerializedName("MinMoveTimeUnit")
-    val minMoveTimeUnit: String? = "",
+    val minMoveTimeUnit: String? = null
+
     @SerializedName("MinQueueTime")
-    val minQueueTime: Int? = 0,
+    val minQueueTime: Int? = null
+
     @SerializedName("MinQueueTimeUnit")
-    val minQueueTimeUnit: String? = "",
+    val minQueueTimeUnit: String? = null
+
     @SerializedName("MinWaitTime")
-    val minWaitTime: Int? = 0,
+    val minWaitTime: Int? = null
+
     @SerializedName("MinWaitTimeUnit")
-    val minWaitTimeUnit: String? = "",
+    val minWaitTimeUnit: String? = null
+
     @SerializedName("MultiLanguageText")
-    val multiLanguageText: List<MultiLanguageText>? = null,
+    val multiLanguageText: List<MultiLanguageText>? = null
+
     @SerializedName("OffsetTime")
-    val offsetTime: Int? = 0,
+    val offsetTime: Int? = null
+
     @SerializedName("OperAlterEntrySeq")
-    val operAlterEntrySeq: Int? = 0,
+    val operAlterEntrySeq: Int? = null
+
     @SerializedName("OperAlterNumber")
-    val operAlterNumber: String? = "",
+    val operAlterNumber: String? = null
+
     @SerializedName("OperCancel")
-    val operCancel: String? = "",
+    val operCancel: String? = null
+
     @SerializedName("OperCheckDiffQty")
-    val operCheckDiffQty: Int? = 0,
+    val operCheckDiffQty: Int? = null
+
     @SerializedName("OperDescription")
-    val operDescription: List<OperDescription>? = null,
+    val operDescription: List<OperDescription>? = null
+
     @SerializedName("OperExcessCtrlQty")
-    val operExcessCtrlQty: Int? = 0,
+    val operExcessCtrlQty: Int? = null
+
     @SerializedName("OperFirstFinishTime")
-    val operFirstFinishTime: String? = "",
+    val operFirstFinishTime: String? = null
+
     @SerializedName("OperFirstStartTime")
-    val operFirstStartTime: String? = "",
+    val operFirstStartTime: String? = null
+
     @SerializedName("OperHeadBaseQty")
-    val operHeadBaseQty: Int? = 0,
+    val operHeadBaseQty: Int? = null
+
     @SerializedName("OperHeadQty")
-    val operHeadQty: Int? = 0,
+    val operHeadQty: Int? = null
+
     @SerializedName("OperLastFinishTime")
-    val operLastFinishTime: String? = "",
+    val operLastFinishTime: String? = null
+
     @SerializedName("OperLastStartTime")
-    val operLastStartTime: String? = "",
+    val operLastStartTime: String? = null
+
     @SerializedName("OperMOUnitId")
-    val operMOUnitId: OperMOUnitId? = null,
+    val operMOUnitId: OperMOUnitId? = null
+
     @SerializedName("OperMOUnitId_Id")
-    val operMOUnitIdId: Int? = 0,
+    val operMOUnitIdId: String? = null
+
     @SerializedName("OperNumber")
-    val operNumber: String? = "",
+    val operNumber: String? = null
+
     @SerializedName("OperPhase")
-    val operPhase: Int? = 0,
+    val operPhase: Int? = null
+
     @SerializedName("OperPickStauts")
-    val operPickStauts: String? = "",
+    val operPickStauts: String? = null
+
     @SerializedName("OperPlanFinishTime")
-    val operPlanFinishTime: String? = "",
+    val operPlanFinishTime: String? = null
+
     @SerializedName("OperPlanStartTime")
-    val operPlanStartTime: String? = "",
+    val operPlanStartTime: String? = null
+
     @SerializedName("OperQty")
-    val operQty: Int? = 0,
+    val operQty: Int? = null
+
     @SerializedName("OperResStockQty")
-    val operResStockQty: Int? = 0,
+    val operResStockQty: Int? = null
+
     @SerializedName("OperSrcDetailId")
-    val operSrcDetailId: Int? = 0,
+    val operSrcDetailId: String? = null
+
     @SerializedName("OperSrcType")
-    val operSrcType: String? = "",
+    val operSrcType: String? = null
+
     @SerializedName("OperStatus")
-    val operStatus: String? = "",
+    val operStatus: String? = null
+
     @SerializedName("OperUnitId")
-    val operUnitId: OperUnitId? = null,
+    val operUnitId: OperUnitId? = null
+
     @SerializedName("OperUnitId_Id")
-    val operUnitIdId: Int? = 0,
+    val operUnitIdId: String? = null
+
     @SerializedName("OptCtrlCodeId")
-    val optCtrlCodeId: OptCtrlCodeId? = null,
+    val optCtrlCodeId: OptCtrlCodeId? = null
+
     @SerializedName("OptCtrlCodeId_Id")
-    val optCtrlCodeIdId: Int? = 0,
+    val optCtrlCodeIdId: String? = null
+
     @SerializedName("OutSrcCurrency_Id")
-    val outSrcCurrencyId: Int? = 0,
+    val outSrcCurrencyId: String? = null
+
     @SerializedName("OutSrcLeadTime")
-    val outSrcLeadTime: Int? = 0,
+    val outSrcLeadTime: Int? = null
+
     @SerializedName("OutSrcPrice")
-    val outSrcPrice: Int? = 0,
+    val outSrcPrice: Int? = null
+
     @SerializedName("OutSrcTaxPrice")
-    val outSrcTaxPrice: Int? = 0,
+    val outSrcTaxPrice: Int? = null
+
     @SerializedName("PatrolStatus")
-    val patrolStatus: String? = "",
+    val patrolStatus: String? = null
+
     @SerializedName("PickingQty")
-    val pickingQty: Int? = 0,
+    val pickingQty: Int? = null
+
     @SerializedName("PrdCheckDiffQty")
-    val prdCheckDiffQty: Int? = 0,
+    val prdCheckDiffQty: Int? = null
+
     @SerializedName("PrdExcessCtrlQty")
-    val prdExcessCtrlQty: Int? = 0,
+    val prdExcessCtrlQty: Int? = null
+
     @SerializedName("PrdResStockQty")
-    val prdResStockQty: Int? = 0,
+    val prdResStockQty: Int? = null
+
     @SerializedName("PrdWastageQty")
-    val prdWastageQty: Int? = 0,
+    val prdWastageQty: Int? = null
+
     @SerializedName("PrepareFinishTime")
-    val prepareFinishTime: String? = "",
+    val prepareFinishTime: String? = null
+
     @SerializedName("PrepareStartTime")
-    val prepareStartTime: String? = "",
+    val prepareStartTime: String? = null
+
     @SerializedName("PrepareUnit")
-    val prepareUnit: String? = "",
+    val prepareUnit: String? = null
+
     @SerializedName("PrepareWorkTime")
-    val prepareWorkTime: Int? = 0,
+    val prepareWorkTime: Int? = null
+
     @SerializedName("PriceList_Id")
-    val priceListId: Int? = 0,
+    val priceListId: String? = null
+
     @SerializedName("ProcessCheckSchemaEntryId_Id")
-    val processCheckSchemaEntryIdId: Int? = 0,
+    val processCheckSchemaEntryIdId: String? = null
+
     @SerializedName("ProcessFinishTime")
-    val processFinishTime: String? = "",
+    val processFinishTime: String? = null
+
     @SerializedName("ProcessId")
-    val processId: ProcessId? = null,
+    val processId: ProcessId? = null
+
     @SerializedName("ProcessId_Id")
-    val processIdId: Int? = 0,
+    val processIdId: String? = null
+
     @SerializedName("ProcessOrgId")
-    val processOrgId: ProcessOrgId? = null,
+    val processOrgId: ProcessOrgId? = null
+
     @SerializedName("ProcessOrgId_Id")
-    val processOrgIdId: Int? = 0,
+    val processOrgIdId: String? = null
+
     @SerializedName("ProcessRemainWorkTime")
-    val processRemainWorkTime: Int? = 0,
+    val processRemainWorkTime: Int? = null
+
     @SerializedName("ProcessStartTime")
-    val processStartTime: String? = "",
+    val processStartTime: String? = null
+
     @SerializedName("ProcessUnit")
-    val processUnit: String? = "",
+    val processUnit: String? = null
+
     @SerializedName("ProcessWorkTime")
-    val processWorkTime: Int? = 0,
+    val processWorkTime: Int? = null
+
     @SerializedName("PurchaseGroupId_Id")
-    val purchaseGroupIdId: Int? = 0,
+    val purchaseGroupIdId: String? = null
+
     @SerializedName("PurchaseOrgId")
-    val purchaseOrgId: PurchaseOrgId? = null,
+    val purchaseOrgId: PurchaseOrgId? = null
+
     @SerializedName("PurchaseOrgId_Id")
-    val purchaseOrgIdId: Int? = 0,
+    val purchaseOrgIdId: String? = null
+
     @SerializedName("QCSchemeId_Id")
-    val qCSchemeIdId: Int? = 0,
+    val qCSchemeIdId: String? = null
+
     @SerializedName("QualifiedBaseQty")
-    val qualifiedBaseQty: Int? = 0,
+    val qualifiedBaseQty: Int? = null
+
     @SerializedName("QualifiedHeadQty")
-    val qualifiedHeadQty: Int? = 0,
+    val qualifiedHeadQty: Int? = null
+
     @SerializedName("QualifiedQty")
-    val qualifiedQty: Int? = 0,
+    var qualifiedQty: Int? = null
+
     @SerializedName("RateOperQty")
-    val rateOperQty: Int? = 0,
+    val rateOperQty: Int? = null
+
     @SerializedName("RateProQty")
-    val rateProQty: Int? = 0,
+    val rateProQty: Int? = null
+
     @SerializedName("RateValQty")
-    val rateValQty: Int? = 0,
+    val rateValQty: Int? = null
+
     @SerializedName("ReFinishBaseQty")
-    val reFinishBaseQty: Int? = 0,
+    val reFinishBaseQty: Int? = null
+
     @SerializedName("ReFinishHeadQty")
-    val reFinishHeadQty: Int? = 0,
+    val reFinishHeadQty: Int? = null
+
     @SerializedName("ReFinishQty")
-    val reFinishQty: Int? = 0,
+    val reFinishQty: Int? = null
+
     @SerializedName("ReSelBaseQty")
-    val reSelBaseQty: Int? = 0,
+    val reSelBaseQty: Int? = null
+
     @SerializedName("ReSelHeadQty")
-    val reSelHeadQty: Int? = 0,
+    val reSelHeadQty: Int? = null
+
     @SerializedName("ReSelQty")
-    val reSelQty: Int? = 0,
+    val reSelQty: Int? = null
+
     @SerializedName("ReTransOutBaseQty")
-    val reTransOutBaseQty: Int? = 0,
+    val reTransOutBaseQty: Int? = null
+
     @SerializedName("ReTransOutHeadQty")
-    val reTransOutHeadQty: Int? = 0,
+    val reTransOutHeadQty: Int? = null
+
     @SerializedName("ReTransOutQty")
-    val reTransOutQty: Int? = 0,
+    val reTransOutQty: Int? = null
+
     @SerializedName("ReWorkBaseQty")
-    val reWorkBaseQty: Int? = 0,
+    val reWorkBaseQty: Int? = null
+
     @SerializedName("ReWorkHeadQty")
-    val reWorkHeadQty: Int? = 0,
+    val reWorkHeadQty: Int? = null
+
     @SerializedName("ReWorkQty")
-    val reWorkQty: Int? = 0,
+    var reWorkQty: Int? = null
+
     @SerializedName("RealPrepareFinishTime")
-    val realPrepareFinishTime: String? = "",
+    val realPrepareFinishTime: String? = null
+
     @SerializedName("RealPrepareStartTime")
-    val realPrepareStartTime: String? = "",
+    val realPrepareStartTime: String? = null
+
     @SerializedName("RealProcessFinishTime")
-    val realProcessFinishTime: String? = "",
+    val realProcessFinishTime: String? = null
+
     @SerializedName("RealProcessStartTime")
-    val realProcessStartTime: String? = "",
+    val realProcessStartTime: String? = null
+
     @SerializedName("RealRemoveFinishTime")
-    val realRemoveFinishTime: String? = "",
+    val realRemoveFinishTime: String? = null
+
     @SerializedName("RealRemoveStartTime")
-    val realRemoveStartTime: String? = "",
+    val realRemoveStartTime: String? = null
+
     @SerializedName("RealSplitQty")
-    val realSplitQty: Int? = 0,
+    val realSplitQty: Int? = null
+
     @SerializedName("RejectionRate")
-    val rejectionRate: Int? = 0,
+    val rejectionRate: Int? = null
+
     @SerializedName("RemoveFinishTime")
-    val removeFinishTime: String? = "",
+    val removeFinishTime: String? = null
+
     @SerializedName("RemoveRemainWorkTime")
-    val removeRemainWorkTime: Int? = 0,
+    val removeRemainWorkTime: Int? = null
+
     @SerializedName("RemoveStartTime")
-    val removeStartTime: String? = "",
+    val removeStartTime: String? = null
+
     @SerializedName("RemoveUnit")
-    val removeUnit: String? = "",
+    val removeUnit: String? = null
+
     @SerializedName("RemoveWorkTime")
-    val removeWorkTime: Int? = 0,
+    val removeWorkTime: Int? = null
+
     @SerializedName("ReportBaseQty")
-    val reportBaseQty: Int? = 0,
+    val reportBaseQty: Int? = null
+
     @SerializedName("ReportHeadQty")
-    val reportHeadQty: Int? = 0,
+    val reportHeadQty: Int? = null
+
     @SerializedName("ReportQty")
-    val reportQty: Int? = 0,
+    val reportQty: Int? = null
+
     @SerializedName("ResourceId_Id")
-    val resourceIdId: Int? = 0,
+    val resourceIdId: String? = null
+
     @SerializedName("ScanFeatureCode")
-    val scanFeatureCode: String? = "",
+    val scanFeatureCode: String? = null
+
     @SerializedName("ScheduleTime")
-    val scheduleTime: String? = "",
+    val scheduleTime: String? = null
+
     @SerializedName("ScrapBaseQty")
-    val scrapBaseQty: Int? = 0,
+    val scrapBaseQty: Int? = null
+
     @SerializedName("ScrapHeadQty")
-    val scrapHeadQty: Int? = 0,
+    val scrapHeadQty: Int? = null
+
     @SerializedName("ScrapPrice")
-    val scrapPrice: Int? = 0,
+    val scrapPrice: Int? = null
+
     @SerializedName("ScrapQty")
-    val scrapQty: Int? = 0,
+    var scrapQty: Int? = null
+
     @SerializedName("ScrapTaxPrice")
-    val scrapTaxPrice: Int? = 0,
+    val scrapTaxPrice: Int? = null
+
     @SerializedName("SelMoType")
-    val selMoType: String? = "",
+    val selMoType: String? = null
+
     @SerializedName("Seq")
-    val seq: Int? = 0,
+    val seq: Int? = null
+
     @SerializedName("ShiftGroupId_Id")
-    val shiftGroupIdId: Int? = 0,
+    val shiftGroupIdId: String? = null
+
     @SerializedName("ShiftSliceId_Id")
-    val shiftSliceIdId: Int? = 0,
+    val shiftSliceIdId: String? = null
+
     @SerializedName("SplitMinWorkTime")
-    val splitMinWorkTime: Int? = 0,
+    val splitMinWorkTime: Int? = null
+
     @SerializedName("SplitMinWorkTimeUnit")
-    val splitMinWorkTimeUnit: String? = "",
+    val splitMinWorkTimeUnit: String? = null
+
     @SerializedName("SrcSubEntityId")
-    val srcSubEntityId: Int? = 0,
+    val srcSubEntityId: String? = null
+
     @SerializedName("StdMoveTime")
-    val stdMoveTime: Int? = 0,
+    val stdMoveTime: Int? = null
+
     @SerializedName("StdMoveTimeUnit")
-    val stdMoveTimeUnit: String? = "",
+    val stdMoveTimeUnit: String? = null
+
     @SerializedName("StdQueueTime")
-    val stdQueueTime: Int? = 0,
+    val stdQueueTime: Int? = null
+
     @SerializedName("StdQueueTimeUnit")
-    val stdQueueTimeUnit: String? = "",
+    val stdQueueTimeUnit: String? = null
+
     @SerializedName("StdWaitTime")
-    val stdWaitTime: Int? = 0,
+    val stdWaitTime: Int? = null
+
     @SerializedName("StdWaitTimeUnit")
-    val stdWaitTimeUnit: String? = "",
+    val stdWaitTimeUnit: String? = null
+
     @SerializedName("Supplier_Id")
-    val supplierId: Int? = 0,
+    val supplierId: String? = null
+
     @SerializedName("TaxRate")
-    val taxRate: Int? = 0,
+    val taxRate: Int? = null
+
     @SerializedName("TransInBaseQty")
-    val transInBaseQty: Int? = 0,
+    val transInBaseQty: Int? = null
+
     @SerializedName("TransInHeadQty")
-    val transInHeadQty: Int? = 0,
+    val transInHeadQty: Int? = null
+
     @SerializedName("TransInQty")
-    val transInQty: Int? = 0,
+    val transInQty: Int? = null
+
     @SerializedName("TransOutBaseQty")
-    val transOutBaseQty: Int? = 0,
+    val transOutBaseQty: Int? = null
+
     @SerializedName("TransOutHeadQty")
-    val transOutHeadQty: Int? = 0,
+    val transOutHeadQty: Int? = null
+
     @SerializedName("TransOutQty")
-    val transOutQty: Int? = 0,
+    val transOutQty: Int? = null
+
     @SerializedName("TransSelBaseQty")
-    val transSelBaseQty: Int? = 0,
+    val transSelBaseQty: Int? = null
+
     @SerializedName("TransSelHeadQty")
-    val transSelHeadQty: Int? = 0,
+    val transSelHeadQty: Int? = null
+
     @SerializedName("TransSelQty")
-    val transSelQty: Int? = 0,
+    val transSelQty: Int? = null
+
     @SerializedName("UnitTransHeadQty")
-    val unitTransHeadQty: Int? = 0,
+    val unitTransHeadQty: Int? = null
+
     @SerializedName("UnitTransOperQty")
-    val unitTransOperQty: Int? = 0,
+    val unitTransOperQty: Int? = null
+
     @SerializedName("UnqualifiedBaseQty")
-    val unqualifiedBaseQty: Int? = 0,
+    val unqualifiedBaseQty: Int? = null
+
     @SerializedName("UnqualifiedHeadQty")
-    val unqualifiedHeadQty: Int? = 0,
+    val unqualifiedHeadQty: Int? = null
+
     @SerializedName("UnqualifiedQty")
-    val unqualifiedQty: Int? = 0,
+    var unqualifiedQty: Int? = null
+
     @SerializedName("ValuationQty")
-    val valuationQty: Int? = 0,
+    val valuationQty: Int? = null
+
     @SerializedName("ValuationUnitId_Id")
-    val valuationUnitIdId: Int? = 0,
+    val valuationUnitIdId: String? = null
+
     @SerializedName("WIPQty")
-    val wIPQty: Int? = 0,
+    val wIPQty: Int? = null
+
     @SerializedName("WastageQty")
-    val wastageQty: Int? = 0,
+    var wastageQty: Int? = null
+
     @SerializedName("WorkCenterId")
-    val workCenterId: WorkCenterId? = null,
+    val workCenterId: WorkCenterId? = null
+
     @SerializedName("WorkCenterId_Id")
-    val workCenterIdId: Int? = 0,
+    val workCenterIdId: String? = null
+
     @SerializedName("WorkTimeColect")
-    val workTimeColect: String? = ""
-)
+    val workTimeColect: String? = null
+}
 
 data class DeptID(
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("msterID")
-    val msterID: Int? = 0,
+    val msterId: String? = null,
     @SerializedName("MultiLanguageText")
     val multiLanguageText: List<MultiLanguageText>? = null,
     @SerializedName("Name")
@@ -1053,7 +1308,7 @@ data class DeptID(
 
 data class UseOrgId(
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("MultiLanguageText")
     val multiLanguageText: List<MultiLanguageText>? = null,
     @SerializedName("Name")
@@ -1064,20 +1319,20 @@ data class UseOrgId(
 
 data class WorkCenterCapacity(
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("JoinScheduling")
     val joinScheduling: Boolean? = false,
     @SerializedName("RESOURCEID")
     val rESOURCEID: RESOURCEID? = null,
     @SerializedName("RESOURCEID_Id")
-    val rESOURCEIDId: Int? = 0,
+    val rESOURCEIDId: String? = null,
     @SerializedName("Seq")
     val seq: Int? = 0
 )
 
 data class WorkCenterScheduling(
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("MinCarryTime")
     val minCarryTime: Int? = 0,
     @SerializedName("MinCarryTimeUnit")
@@ -1093,13 +1348,13 @@ data class WorkCenterScheduling(
     @SerializedName("ProcessTimeFormula")
     val processTimeFormula: ProcessTimeFormula? = null,
     @SerializedName("ProcessTimeFormula_Id")
-    val processTimeFormulaId: Int? = 0,
+    val processTimeFormulaId: String? = null,
     @SerializedName("Seq")
     val seq: Int? = 0,
     @SerializedName("SetTimeFormula")
     val setTimeFormula: SetTimeFormula? = null,
     @SerializedName("SetTimeFormula_Id")
-    val setTimeFormulaId: Int? = 0,
+    val setTimeFormulaId: String? = null,
     @SerializedName("StdCarryTime")
     val stdCarryTime: Int? = 0,
     @SerializedName("StdCarryTimeUnit")
@@ -1115,14 +1370,14 @@ data class WorkCenterScheduling(
     @SerializedName("TearDownTimeFormula")
     val tearDownTimeFormula: TearDownTimeFormula? = null,
     @SerializedName("TearDownTimeFormula_Id")
-    val tearDownTimeFormulaId: Int? = 0
+    val tearDownTimeFormulaId: String? = null
 )
 
 data class RESOURCEID(
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("msterID")
-    val msterID: Int? = 0,
+    val msterId: String? = null,
     @SerializedName("MultiLanguageText")
     val multiLanguageText: List<MultiLanguageText>? = null,
     @SerializedName("Name")
@@ -1133,9 +1388,9 @@ data class RESOURCEID(
 
 data class ProcessTimeFormula(
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("msterID")
-    val msterID: Int? = 0,
+    val msterId: String? = null,
     @SerializedName("MultiLanguageText")
     val multiLanguageText: List<MultiLanguageText>? = null,
     @SerializedName("Name")
@@ -1146,9 +1401,9 @@ data class ProcessTimeFormula(
 
 data class SetTimeFormula(
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("msterID")
-    val msterID: Int? = 0,
+    val msterId: String? = null,
     @SerializedName("MultiLanguageText")
     val multiLanguageText: List<MultiLanguageText>? = null,
     @SerializedName("Name")
@@ -1159,9 +1414,9 @@ data class SetTimeFormula(
 
 data class TearDownTimeFormula(
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("msterID")
-    val msterID: Int? = 0,
+    val msterId: String? = null,
     @SerializedName("MultiLanguageText")
     val multiLanguageText: List<MultiLanguageText>? = null,
     @SerializedName("Name")
@@ -1174,9 +1429,9 @@ data class ActivityFormulaId(
     @SerializedName("FormulaUse")
     val formulaUse: String? = "",
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("msterID")
-    val msterID: Int? = 0,
+    val msterId: String? = null,
     @SerializedName("MultiLanguageText")
     val multiLanguageText: List<MultiLanguageText>? = null,
     @SerializedName("Name")
@@ -1191,11 +1446,11 @@ data class ActivityId(
     @SerializedName("FUnitID")
     val fUnitID: FUnitID? = null,
     @SerializedName("FUnitID_Id")
-    val fUnitIDId: Int? = 0,
+    val fUnitIDId: String? = null,
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("msterID")
-    val msterID: Int? = 0,
+    val msterId: String? = null,
     @SerializedName("MultiLanguageText")
     val multiLanguageText: List<MultiLanguageText>? = null,
     @SerializedName("Name")
@@ -1210,9 +1465,9 @@ data class ActivityRepFormulaId(
     @SerializedName("FormulaUse")
     val formulaUse: String? = "",
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("msterID")
-    val msterID: Int? = 0,
+    val msterId: String? = null,
     @SerializedName("MultiLanguageText")
     val multiLanguageText: List<MultiLanguageText>? = null,
     @SerializedName("Name")
@@ -1223,9 +1478,9 @@ data class ActivityRepFormulaId(
 
 data class ActivityUnitId(
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("msterID")
-    val msterID: Int? = 0,
+    val msterId: String? = null,
     @SerializedName("MultiLanguageText")
     val multiLanguageText: List<MultiLanguageText>? = null,
     @SerializedName("Name")
@@ -1242,9 +1497,9 @@ data class ActivityUnitId(
 
 data class DepartmentId(
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("msterID")
-    val msterID: Int? = 0,
+    val msterId: String? = null,
     @SerializedName("MultiLanguageText")
     val multiLanguageText: List<MultiLanguageText>? = null,
     @SerializedName("Name")
@@ -1255,9 +1510,9 @@ data class DepartmentId(
 
 data class MOBaseUnitId(
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("msterID")
-    val msterID: Int? = 0,
+    val msterId: String? = null,
     @SerializedName("MultiLanguageText")
     val multiLanguageText: List<MultiLanguageText>? = null,
     @SerializedName("Name")
@@ -1282,9 +1537,9 @@ data class OperDescription(
 
 data class OperMOUnitId(
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("msterID")
-    val msterID: Int? = 0,
+    val msterId: String? = null,
     @SerializedName("MultiLanguageText")
     val multiLanguageText: List<MultiLanguageText>? = null,
     @SerializedName("Name")
@@ -1301,9 +1556,9 @@ data class OperMOUnitId(
 
 data class OperUnitId(
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("msterID")
-    val msterID: Int? = 0,
+    val msterId: String? = null,
     @SerializedName("MultiLanguageText")
     val multiLanguageText: List<MultiLanguageText>? = null,
     @SerializedName("Name")
@@ -1323,11 +1578,11 @@ data class OptCtrlCodeId(
     @SerializedName("CheckType")
     val checkType: String? = "",
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("IsScheduling")
     val isScheduling: Boolean? = false,
     @SerializedName("msterID")
-    val msterID: Int? = 0,
+    val msterId: String? = null,
     @SerializedName("MultiLanguageText")
     val multiLanguageText: List<MultiLanguageText>? = null,
     @SerializedName("Name")
@@ -1356,9 +1611,9 @@ data class ProcessId(
     @SerializedName("ExpireDate")
     val expireDate: String? = "",
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("msterID")
-    val msterID: Int? = 0,
+    val msterId: String? = null,
     @SerializedName("MultiLanguageText")
     val multiLanguageText: List<MultiLanguageText>? = null,
     @SerializedName("Name")
@@ -1369,7 +1624,7 @@ data class ProcessId(
 
 data class ProcessOrgId(
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("MultiLanguageText")
     val multiLanguageText: List<MultiLanguageText>? = null,
     @SerializedName("Name")
@@ -1380,7 +1635,7 @@ data class ProcessOrgId(
 
 data class PurchaseOrgId(
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("MultiLanguageText")
     val multiLanguageText: List<MultiLanguageText>? = null,
     @SerializedName("Name")
@@ -1393,7 +1648,7 @@ data class WorkCenterId(
     @SerializedName("DeptID")
     val deptID: DeptID? = null,
     @SerializedName("DeptID_Id")
-    val deptIDId: Int? = 0,
+    val deptIDId: String? = null,
     @SerializedName("EffectDate")
     val effectDate: String? = "",
     @SerializedName("ExpireDate")
@@ -1401,11 +1656,11 @@ data class WorkCenterId(
     @SerializedName("FFormId")
     val fFormId: String? = "",
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("IsDiscreteOperDispDetail")
     val isDiscreteOperDispDetail: Boolean? = false,
     @SerializedName("msterID")
-    val msterID: Int? = 0,
+    val msterId: String? = null,
     @SerializedName("MultiLanguageText")
     val multiLanguageText: List<MultiLanguageText>? = null,
     @SerializedName("Name")
@@ -1415,13 +1670,13 @@ data class WorkCenterId(
     @SerializedName("OptCtrlCodeID")
     val optCtrlCodeID: OptCtrlCodeId? = null,
     @SerializedName("OptCtrlCodeID_Id")
-    val optCtrlCodeIDId: Int? = 0,
+    val optCtrlCodeIDId: String? = null,
     @SerializedName("ProcessID_Id")
-    val processIDId: Int? = 0,
+    val processIDId: String? = null,
     @SerializedName("UseOrgId")
     val useOrgId: UseOrgId? = null,
     @SerializedName("UseOrgId_Id")
-    val useOrgIdId: Int? = 0,
+    val useOrgIdId: String? = null,
     @SerializedName("WorkCenterCapacity")
     val workCenterCapacity: List<WorkCenterCapacity>? = null,
     @SerializedName("WorkCenterScheduling")
@@ -1430,9 +1685,9 @@ data class WorkCenterId(
 
 data class FUnitID(
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("msterID")
-    val msterID: Int? = 0,
+    val msterId: String? = null,
     @SerializedName("MultiLanguageText")
     val multiLanguageText: List<MultiLanguageText>? = null,
     @SerializedName("Name")
@@ -1454,9 +1709,9 @@ data class MaterialAuxPty(
     @SerializedName("AuxPropertyId")
     val auxPropertyId: AuxPropertyId? = null,
     @SerializedName("AuxPropertyId_Id")
-    val auxPropertyIdId: Int? = 0,
+    val auxPropertyIdId: String? = null,
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("IsAffectPrice")
     val isAffectPrice: Boolean? = false,
     @SerializedName("IsComControl")
@@ -1469,29 +1724,29 @@ data class MaterialBase(
     @SerializedName("BaseUnitId")
     val baseUnitId: BaseUnitId? = null,
     @SerializedName("BaseUnitId_Id")
-    val baseUnitIdId: Int? = 0,
+    val baseUnitIdId: String? = null,
     @SerializedName("Id")
-    val id: Int? = 0
+    val Id: String? = null
 )
 
 data class MaterialStock(
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("IsExpParToFlot")
     val isExpParToFlot: Boolean? = false,
     @SerializedName("StoreUnitID")
     val storeUnitID: StoreUnitID? = null,
     @SerializedName("StoreUnitID_Id")
-    val storeUnitIDId: Int? = 0
+    val storeUnitIDId: String? = null
 )
 
 data class MultiLanguageText(
     @SerializedName("LocaleId")
-    val localeId: Int? = null,
+    val localeId: String? = null,
     @SerializedName("Name")
     val name: String? = null,
     @SerializedName("PkId")
-    val pkId: Int? = null,
+    val pkId: String? = null,
     @SerializedName("Specification")
     val specification: String? = null,
     @SerializedName("Description")
@@ -1508,9 +1763,9 @@ data class Specification(
 
 data class AuxPropertyId(
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("msterID")
-    val msterID: Int? = 0,
+    val msterId: String? = null,
     @SerializedName("MultiLanguageText")
     val multiLanguageText: List<MultiLanguageText>? = null,
     @SerializedName("Name")
@@ -1522,9 +1777,9 @@ data class AuxPropertyId(
 
 data class StoreUnitID(
     @SerializedName("Id")
-    val id: Int? = 0,
+    val Id: String? = null,
     @SerializedName("msterID")
-    val msterID: Int? = 0,
+    val msterId: String? = null,
     @SerializedName("MultiLanguageText")
     val multiLanguageText: List<MultiLanguageText>? = null,
     @SerializedName("Name")
@@ -1535,7 +1790,7 @@ data class StoreUnitID(
 
 data class RouteOperSeq(
     @SerializedName("Id")
-    val id: Int? = null,
+    val Id: String? = null,
     @SerializedName("RouteOperDetail")
     val routeOperDetail: List<RouteOperDetail?>? = null,
     @SerializedName("Seq")
@@ -1546,7 +1801,7 @@ data class RouteOperSeq(
 
 data class RouteOperDetail(
     @SerializedName("Id")
-    val id: Int? = null,
+    val Id: String? = null,
     @SerializedName("OperNumber")
     val operNumber: String? = null,
     @SerializedName("ReportCeilRatio")

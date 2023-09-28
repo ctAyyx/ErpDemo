@@ -6,12 +6,17 @@ import com.ct.erp.common.Constants
 import com.ct.erp.common.LoginManager
 import com.ct.erp.base.BaseModel
 import com.ct.erp.base.BaseViewModel
+import com.ct.erp.dto.DispatchDetailListApiData
 import com.ct.erp.dto.HomeApiData
 import com.ct.erp.dto.ServiceResult
 import com.ct.erp.vo.HomeMenuViewData
 import com.ct.erp.vo.HomeTitleViewData
 import com.ct.erp.vo.HomeViewData
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
+import java.io.InputStreamReader
 import javax.inject.Inject
 
 /**
@@ -26,6 +31,7 @@ class HomeViewModel @Inject constructor(application: Application, model: BaseMod
 
     fun getHomeMenu() {
         launch {
+            delay(3000)
             val apiResult = mock()//serviceApi.getHomeMenu()
             if (isSuccess(result = apiResult)) {
                 homeMenu.value = convertHomeApiData2ViewData(apiResult.data)
@@ -34,32 +40,15 @@ class HomeViewModel @Inject constructor(application: Application, model: BaseMod
     }
 
 
-    private fun mock() = ServiceResult<List<HomeApiData>>(
-        data = listOf(
-            HomeApiData(
-                title = "标题一", children = listOf(
-                    HomeApiData(title = "分类1", icon = "https://cdn.pixabay.com/photo/2017/03/12/11/30/alishan-2136879_640.jpg", id = "111", parentId = "11"),
-                    HomeApiData(title = "分类2", icon = "https://cdn.pixabay.com/photo/2017/03/12/11/30/alishan-2136879_640.jpg", id = "222", parentId = "22"),
-                    HomeApiData(title = "分类3", icon = "https://cdn.pixabay.com/photo/2017/03/12/11/30/alishan-2136879_640.jpg", id = "333", parentId = "22"),
-                    HomeApiData(title = "分类4", icon = "https://cdn.pixabay.com/photo/2017/03/12/11/30/alishan-2136879_640.jpg", id = "444", parentId = "44"),
-                    HomeApiData(title = "分类5", icon = "https://cdn.pixabay.com/photo/2017/03/12/11/30/alishan-2136879_640.jpg", id = "555", parentId = "55"),
-                    HomeApiData(title = "分类6", icon = "https://cdn.pixabay.com/photo/2017/03/12/11/30/alishan-2136879_640.jpg", id = "666", parentId = "66")
-                )
-            ),
-            HomeApiData(
-                title = "标题二", children = listOf(
-                    HomeApiData(title = "分类1", icon = "https://cdn.pixabay.com/photo/2017/03/12/11/30/alishan-2136879_640.jpg", id = "111", parentId = "11"),
-                    HomeApiData(title = "分类2", icon = "https://cdn.pixabay.com/photo/2017/03/12/11/30/alishan-2136879_640.jpg", id = "222", parentId = "22"),
-                    HomeApiData(title = "分类3", icon = "https://cdn.pixabay.com/photo/2017/03/12/11/30/alishan-2136879_640.jpg", id = "333", parentId = "22"),
-                    HomeApiData(title = "分类4", icon = "https://cdn.pixabay.com/photo/2017/03/12/11/30/alishan-2136879_640.jpg", id = "444", parentId = "44"),
-                    HomeApiData(title = "分类5", icon = "https://cdn.pixabay.com/photo/2017/03/12/11/30/alishan-2136879_640.jpg", id = "555", parentId = "55"),
-                    HomeApiData(title = "分类6", icon = "https://cdn.pixabay.com/photo/2017/03/12/11/30/alishan-2136879_640.jpg", id = "666", parentId = "66")
-                )
-            )
-        ),
-        code = if (LoginManager.getInstance().isLogin()) "200" else Constants.HTTP_ERROR_TOKEN,
-        errorMsg = ""
-    )
+    private fun mock(): ServiceResult<List<HomeApiData>> {
+
+        val open = getApp().assets.open("home.json")
+        val ins = InputStreamReader(open)
+        val data = Gson().fromJson<List<HomeApiData>>(
+            ins, object : TypeToken<List<HomeApiData>>() {}.type
+        )
+        return ServiceResult(code = "200", errorMsg = "", data = data)
+    }
 
     private fun convertHomeApiData2ViewData(apiData: List<HomeApiData>?): List<HomeViewData> {
         val result = mutableListOf<HomeViewData>()

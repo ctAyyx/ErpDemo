@@ -20,7 +20,8 @@ class DisDetailBasicViewHolder(parent: ViewGroup) :
     ) {
     override fun onBind(adapter: BaseAdapter<*>, data: DispatchDetailViewData, position: Int) {
         binding.model = data.model
-        initDocType(data = data.model)
+        if (data.model != null)
+            initDocType(data = data.model)
     }
 
     /**

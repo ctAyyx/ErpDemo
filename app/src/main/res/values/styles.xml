@@ -61,6 +61,8 @@
         <item name="android:background">@drawable/selector_edit_outline</item>
         <item name="android:textCursorDrawable">@drawable/shape_edit_cursor</item>
         <item name="android:maxLines">1</item>
+        <item name="android:paddingStart">@dimen/dimen_4</item>
+        <item name="android:paddingEnd">@dimen/dimen_4</item>
         <item name="android:ellipsize">end</item>
     </style>
 

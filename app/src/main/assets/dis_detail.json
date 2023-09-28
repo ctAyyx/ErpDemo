@@ -1,0 +1,1726 @@
+{
+	"Entity": [
+		{
+			"SeqSrcType": "R",
+			"RptWriteBackQty": 0,
+			"RptWriteBackBaseQty": 50,
+			"SeqPlanStartTime": "2020-02-10T08:00:00",
+			"SeqIn": 0,
+			"SeqType": "M",
+			"SplitFromOper": 0,
+			"SeqNumber": "0",
+			"SchMainSeq": true,
+			"SeqQty": 10,
+			"SplitQty": 0,
+			"SeqRefer": " ",
+			"SubEntity": [
+				{
+					"Activity2Qty": 150,
+					"RemoveUnit": "20",
+					"ReFinishBaseQty": 0,
+					"SelMoType": "A",
+					"OperMOUnitId": {
+						"msterID": 10101,
+						"MultiLanguageText": [
+							{
+								"PkId": 10136,
+								"LocaleId": 2052,
+								"Name": "Pcs"
+							}
+						],
+						"Number": "Pcs",
+						"Precision": 0,
+						"UNITCONVERTRATE": [
+							{
+								"ConvertType": "0",
+								"Id": 10118
+							}
+						],
+						"Id": 10101,
+						"RoundType": "1",
+						"Name": [
+							{
+								"Value": "Pcs",
+								"Key": 2052
+							}
+						]
+					},
+					"StdQueueTimeUnit": "20",
+					"ProcessFinishTime": "2020-02-10T08:00:00",
+					"Activity1BaseQty": 10,
+					"InspectCheckSchemaEntryId_Id": 0,
+					"Activity3BaseQty": 0,
+					"BaseExcessCtrlQty": 0,
+					"Activity3Id_Id": 40382,
+					"StdQueueTime": 0,
+					"IsIteration": false,
+					"Activity3UnitId": {
+						"msterID": 80506,
+						"MultiLanguageText": [
+							{
+								"PkId": 20192,
+								"LocaleId": 2052,
+								"Name": "分"
+							}
+						],
+						"Number": "minute",
+						"Precision": 3,
+						"UNITCONVERTRATE": [
+							{
+								"ConvertType": "0",
+								"Id": 20182
+							}
+						],
+						"Id": 80506,
+						"RoundType": "1",
+						"Name": [
+							{
+								"Value": "分",
+								"Key": 2052
+							}
+						]
+					},
+					"IsQualityInspectStation": false,
+					"ReWorkBaseQty": 0,
+					"EmpId": [],
+					"OperAlterEntrySeq": 0,
+					"ReSelHeadQty": 0,
+					"OperPlanFinishTime": "2020-02-10T08:00:00",
+					"Activity2ReportQty": 0,
+					"TransOutHeadQty": 0,
+					"MatScrapTaxPrice": 0,
+					"Activity3UnitId_Id": 80506,
+					"OperCheckDiffQty": 0,
+					"PrepareUnit": "20",
+					"UnqualifiedQty": 0,
+					"OutSrcPrice": 0,
+					"Activity5Id_Id": 0,
+					"UnqualifiedHeadQty": 0,
+					"OperFirstStartTime": "2020-02-10T08:00:00",
+					"Activity5BaseQty": 0,
+					"OperSrcType": "R",
+					"MatScrapQty": 0,
+					"OperPhase": 0,
+					"QualifiedBaseQty": 0,
+					"Seq": 3,
+					"OutSrcLeadTime": 0,
+					"ConveyDate": "2020-02-10T18:15:26.017",
+					"WorkCenterId": {
+						"msterID": 100230,
+						"UseOrgId": {
+							"MultiLanguageText": [
+								{
+									"PkId": 1,
+									"LocaleId": 2052,
+									"Name": "蓝海科技"
+								},
+								{
+									"PkId": 100001,
+									"LocaleId": 1033,
+									"Name": " "
+								},
+								{
+									"PkId": 100002,
+									"LocaleId": 3076,
+									"Name": " "
+								}
+							],
+							"Number": "100",
+							"Id": 1,
+							"Name": [
+								{
+									"Value": "蓝海科技",
+									"Key": 2052
+								},
+								{
+									"Value": " ",
+									"Key": 1033
+								},
+								{
+									"Value": " ",
+									"Key": 3076
+								}
+							]
+						},
+						"OptCtrlCodeID_Id": 100177,
+						"UseOrgId_Id": 1,
+						"ExpireDate": "9999-12-31T00:00:00",
+						"IsDiscreteOperDispDetail": false,
+						"OptCtrlCodeID": {
+							"msterID": 100177,
+							"MultiLanguageText": [
+								{
+									"PkId": 100002,
+									"LocaleId": 2052,
+									"Name": "厂内+免检+直接返修"
+								}
+							],
+							"Number": "OCC000001",
+							"Id": 100177,
+							"Name": [
+								{
+									"Value": "厂内+免检+直接返修",
+									"Key": 2052
+								}
+							]
+						},
+						"DeptID": {
+							"msterID": 100152,
+							"MultiLanguageText": [
+								{
+									"PkId": 100008,
+									"LocaleId": 2052,
+									"Name": "金蝶手机装配"
+								}
+							],
+							"Number": "BM000008",
+							"Id": 100152,
+							"Name": [
+								{
+									"Value": "金蝶手机装配",
+									"Key": 2052
+								}
+							]
+						},
+						"Name": [
+							{
+								"Value": "外壳制造2",
+								"Key": 2052
+							}
+						],
+						"DeptID_Id": 100152,
+						"EffectDate": "2020-01-22T00:00:00",
+						"MultiLanguageText": [
+							{
+								"PkId": 100004,
+								"LocaleId": 2052,
+								"Name": "外壳制造2"
+							}
+						],
+						"Number": "WC000004",
+						"WorkCenterScheduling": [
+							{
+								"SetTimeFormula_Id": 40383,
+								"StdCarryTime": 0,
+								"MinQueueTime": 0,
+								"SetTimeFormula": {
+									"msterID": 40383,
+									"MultiLanguageText": [
+										{
+											"PkId": 1,
+											"LocaleId": 2052,
+											"Name": "准备工期内置公式"
+										}
+									],
+									"Number": "CJGS01_SYS",
+									"Id": 40383,
+									"Name": [
+										{
+											"Value": "准备工期内置公式",
+											"Key": 2052
+										}
+									]
+								},
+								"TearDownTimeFormula": {
+									"msterID": 40385,
+									"MultiLanguageText": [
+										{
+											"PkId": 3,
+											"LocaleId": 2052,
+											"Name": "拆卸工期内置公式"
+										}
+									],
+									"Number": "CJGS03_SYS",
+									"Id": 40385,
+									"Name": [
+										{
+											"Value": "拆卸工期内置公式",
+											"Key": 2052
+										}
+									]
+								},
+								"StdWaitTime": 0,
+								"StdCarryTimeUnit": "20",
+								"MinCarryTimeUnit": "20",
+								"ProcessTimeFormula_Id": 40384,
+								"StdWaitTimeUnit": "20",
+								"StdQueueTimeUnit": "20",
+								"MinWaitTimeUnit": "20",
+								"ProcessTimeFormula": {
+									"msterID": 40384,
+									"MultiLanguageText": [
+										{
+											"PkId": 2,
+											"LocaleId": 2052,
+											"Name": "加工工期内置公式"
+										}
+									],
+									"Number": "CJGS02_SYS",
+									"Id": 40384,
+									"Name": [
+										{
+											"Value": "加工工期内置公式",
+											"Key": 2052
+										}
+									]
+								},
+								"MinCarryTime": 0,
+								"MinQueueTimeUnit": "20",
+								"StdQueueTime": 0,
+								"TearDownTimeFormula_Id": 40385,
+								"Id": 100004,
+								"Seq": 1,
+								"MinWaitTime": 0
+							}
+						],
+						"Id": 100230,
+						"WorkCenterCapacity": [
+							{
+								"JoinScheduling": true,
+								"RESOURCEID_Id": 100223,
+								"Id": 100005,
+								"RESOURCEID": {
+									"msterID": 100223,
+									"MultiLanguageText": [
+										{
+											"PkId": 100009,
+											"LocaleId": 2052,
+											"Name": "安装组"
+										}
+									],
+									"Number": "SC000009",
+									"Id": 100223,
+									"Name": [
+										{
+											"Value": "安装组",
+											"Key": 2052
+										}
+									]
+								},
+								"Seq": 1
+							}
+						],
+						"FFormId": "ENG_WorkCenter",
+						"ProcessID_Id": 0
+					},
+					"Activity2FormulaId": {
+						"msterID": 40387,
+						"MultiLanguageText": [
+							{
+								"PkId": 5,
+								"LocaleId": 2052,
+								"Name": "加工活动总量内置公式"
+							}
+						],
+						"Number": "CJGS05_SYS",
+						"FormulaUse": "7",
+						"Id": 40387,
+						"Name": [
+							{
+								"Value": "加工活动总量内置公式",
+								"Key": 2052
+							}
+						]
+					},
+					"TransSelHeadQty": 0,
+					"PickingQty": 0,
+					"RealPrepareFinishTime": "2020-02-11T09:14:49",
+					"Activity5FormulaId_Id": 0,
+					"IsRptCheckProcessInspect": false,
+					"Activity4FormulaId_Id": 0,
+					"Supplier_Id": 0,
+					"Activity3FormulaId_Id": 40388,
+					"BetweenFinishTime": "2020-02-10T08:00:00",
+					"Activity1FormulaId_Id": 40386,
+					"ScrapQty": 0,
+					"Activity2FormulaId_Id": 40387,
+					"OperCancel": "A",
+					"TransOutQty": 0,
+					"RateValQty": 0,
+					"OperPlanStartTime": "2020-02-10T08:00:00",
+					"Activity4RepFormulaId_Id": 0,
+					"ShiftSliceId_Id": 0,
+					"Activity6RepFormulaId_Id": 0,
+					"PrdCheckDiffQty": 0,
+					"Activity6FormulaId_Id": 0,
+					"Activity2UnitId": {
+						"msterID": 80506,
+						"MultiLanguageText": [
+							{
+								"PkId": 20192,
+								"LocaleId": 2052,
+								"Name": "分"
+							}
+						],
+						"Number": "minute",
+						"Precision": 3,
+						"UNITCONVERTRATE": [
+							{
+								"ConvertType": "0",
+								"Id": 20182
+							}
+						],
+						"Id": 80506,
+						"RoundType": "1",
+						"Name": [
+							{
+								"Value": "分",
+								"Key": 2052
+							}
+						]
+					},
+					"ReSelQty": 0,
+					"ReTransOutHeadQty": 0,
+					"Activity1UnitId_Id": 80506,
+					"IsManualFinished": false,
+					"OperQty": 10,
+					"WIPQty": 0,
+					"MatScrapBaseQty": 0,
+					"PurchaseOrgId_Id": 1,
+					"PrepareWorkTime": 0,
+					"ProcessId_Id": 100186,
+					"RealRemoveFinishTime": "2020-02-11T09:14:59.407",
+					"PatrolStatus": "N",
+					"Activity6Qty": 0,
+					"ReportQty": 0,
+					"ScrapBaseQty": 0,
+					"ReTransOutQty": 0,
+					"Activity1Qty": 10,
+					"OutSrcCurrency_Id": 0,
+					"ReFinishHeadQty": 0,
+					"RateProQty": 0,
+					"StdMoveTime": 0,
+					"Activity1FormulaId": {
+						"msterID": 40386,
+						"MultiLanguageText": [
+							{
+								"PkId": 4,
+								"LocaleId": 2052,
+								"Name": "准备活动总量内置公式"
+							}
+						],
+						"Number": "CJGS04_SYS",
+						"FormulaUse": "7",
+						"Id": 40386,
+						"Name": [
+							{
+								"Value": "准备活动总量内置公式",
+								"Key": 2052
+							}
+						]
+					},
+					"Activity2RepFormulaId": {
+						"msterID": 40390,
+						"MultiLanguageText": [
+							{
+								"PkId": 8,
+								"LocaleId": 2052,
+								"Name": "加工活动汇报量内置公式"
+							}
+						],
+						"Number": "CJGS08_SYS",
+						"FormulaUse": "9",
+						"Id": 40390,
+						"Name": [
+							{
+								"Value": "加工活动汇报量内置公式",
+								"Key": 2052
+							}
+						]
+					},
+					"LeadTime": 0,
+					"MinQueueTimeUnit": "20",
+					"ProcessStartTime": "2020-02-10T08:00:00",
+					"IsRptCheckProcessRecord": false,
+					"BetweenStartTime": "2020-02-10T08:00:00",
+					"SplitMinWorkTime": 0,
+					"ReWorkHeadQty": 0,
+					"IsLinkageSchedule": false,
+					"IsStoreInPoint": false,
+					"FinishLowerLimit": 10,
+					"StdMoveTimeUnit": "20",
+					"PriceList_Id": 0,
+					"PrdExcessCtrlQty": 0,
+					"Activity2UnitId_Id": 80506,
+					"Activity5UnitId_Id": 0,
+					"Activity4ReportQty": 0,
+					"ReportHeadQty": 0,
+					"EquipmentId_Id": 0,
+					"TaxRate": 0,
+					"OperLastStartTime": "2020-02-10T08:00:00",
+					"MinQueueTime": 0,
+					"IsSplitSchedule": false,
+					"ReportBaseQty": 0,
+					"ScanFeatureCode": "N",
+					"AdviceSplitQty": 0,
+					"MultiLanguageText": [
+						{
+							"PkId": 100046,
+							"LocaleId": 2052,
+							"OperDescription": "装主板"
+						}
+					],
+					"OperHeadQty": 10,
+					"BaseCheckDiffQty": 0,
+					"Activity1ReportQty": 0,
+					"QualifiedQty": 0,
+					"ReFinishQty": 0,
+					"MinWaitTime": 0,
+					"Activity5RepFormulaId_Id": 0,
+					"RealRemoveStartTime": "2020-02-11T09:14:59.407",
+					"UnitTransOperQty": 1,
+					"OperAlterNumber": " ",
+					"RealProcessStartTime": "2020-02-11T09:14:49",
+					"OperMOUnitId_Id": 10101,
+					"Activity4Id_Id": 0,
+					"BetweenWorkTime": 0,
+					"ScrapHeadQty": 0,
+					"ProcessOrgId_Id": 1,
+					"Activity4UnitId_Id": 0,
+					"Activity2BaseQty": 15,
+					"ProcessUnit": "20",
+					"OperFirstFinishTime": "2020-02-10T08:00:00",
+					"Activity4BaseQty": 0,
+					"IsCheckProcessInspect": false,
+					"RemoveWorkTime": 0,
+					"MOBaseUnitId": {
+						"msterID": 10101,
+						"MultiLanguageText": [
+							{
+								"PkId": 10136,
+								"LocaleId": 2052,
+								"Name": "Pcs"
+							}
+						],
+						"Number": "Pcs",
+						"Precision": 0,
+						"UNITCONVERTRATE": [
+							{
+								"ConvertType": "0",
+								"Id": 10118
+							}
+						],
+						"Id": 10101,
+						"RoundType": "1",
+						"Name": [
+							{
+								"Value": "Pcs",
+								"Key": 2052
+							}
+						]
+					},
+					"IsSameTime": false,
+					"DepartmentId_Id": 100156,
+					"Activity3FormulaId": {
+						"msterID": 40388,
+						"MultiLanguageText": [
+							{
+								"PkId": 6,
+								"LocaleId": 2052,
+								"Name": "拆卸活动总量内置公式"
+							}
+						],
+						"Number": "CJGS06_SYS",
+						"FormulaUse": "7",
+						"Id": 40388,
+						"Name": [
+							{
+								"Value": "拆卸活动总量内置公式",
+								"Key": 2052
+							}
+						]
+					},
+					"OperPickStauts": "",
+					"RealPrepareStartTime": "2020-02-11T09:14:49",
+					"Activity1Id": {
+						"msterID": 40380,
+						"FUnitID_Id": 80506,
+						"DefaultValue": 0,
+						"MultiLanguageText": [
+							{
+								"PkId": 1,
+								"LocaleId": 2052,
+								"Name": "准备活动"
+							}
+						],
+						"Phase": "10",
+						"Number": "JBHD01_SYS",
+						"FUnitID": {
+							"msterID": 80506,
+							"MultiLanguageText": [
+								{
+									"PkId": 20192,
+									"LocaleId": 2052,
+									"Name": "分"
+								}
+							],
+							"Number": "minute",
+							"Id": 80506,
+							"Name": [
+								{
+									"Value": "分",
+									"Key": 2052
+								}
+							]
+						},
+						"Id": 40380,
+						"Name": [
+							{
+								"Value": "准备活动",
+								"Key": 2052
+							}
+						]
+					},
+					"ReTransOutBaseQty": 0,
+					"Activity5Qty": 0,
+					"MOBaseUnitId_Id": 10101,
+					"RealProcessFinishTime": "2020-02-11T09:14:59.407",
+					"BaseResStockQty": 0,
+					"LockEquipment": false,
+					"OperStatus": "4",
+					"StdWaitTimeUnit": "20",
+					"OptCtrlCodeId": {
+						"msterID": 100179,
+						"MultiLanguageText": [
+							{
+								"PkId": 100004,
+								"LocaleId": 2052,
+								"Name": "厂内+免检+返修工作台"
+							}
+						],
+						"Number": "OCC000003",
+						"CheckType": "1",
+						"ProcessingMode": "10",
+						"ReworkType": "1",
+						"ReportMode": "10",
+						"ReportSequenceControl": " ",
+						"Id": 100179,
+						"OptTimeUnit": "20",
+						"IsScheduling": false,
+						"Name": [
+							{
+								"Value": "厂内+免检+返修工作台",
+								"Key": 2052
+							}
+						]
+					},
+					"IsManualReport": false,
+					"RejectionRate": 0,
+					"Activity2Id_Id": 40381,
+					"InspectStatus": " ",
+					"WorkTimeColect": "C",
+					"Activity1RepFormulaId_Id": 40389,
+					"MatScrapHeadQty": 0,
+					"ScheduleTime": "A",
+					"SrcSubEntityId": 0,
+					"Activity3ReportQty": 0,
+					"IsProcessRecordStation": false,
+					"Id": 100046,
+					"ManualAddNew": false,
+					"IterationMinTime": 0,
+					"Activity4Qty": 0,
+					"BaseBatch": 1,
+					"ProcessCheckSchemaEntryId_Id": 0,
+					"TransOutBaseQty": 0,
+					"Activity2RepFormulaId_Id": 40390,
+					"ReSelBaseQty": 0,
+					"Activity1UnitId": {
+						"msterID": 80506,
+						"MultiLanguageText": [
+							{
+								"PkId": 20192,
+								"LocaleId": 2052,
+								"Name": "分"
+							}
+						],
+						"Number": "minute",
+						"Precision": 3,
+						"UNITCONVERTRATE": [
+							{
+								"ConvertType": "0",
+								"Id": 20182
+							}
+						],
+						"Id": 80506,
+						"RoundType": "1",
+						"Name": [
+							{
+								"Value": "分",
+								"Key": 2052
+							}
+						]
+					},
+					"SplitMinWorkTimeUnit": "20",
+					"PrepareFinishTime": "2020-02-10T08:00:00",
+					"ProcessWorkTime": 0,
+					"IterationMinBatch": 0,
+					"Activity6Id_Id": 0,
+					"MinMoveTime": 0,
+					"ScrapTaxPrice": 0,
+					"Activity5ReportQty": 0,
+					"IPQCOperNumber": 0,
+					"IsFirstOper": false,
+					"Activity6BaseQty": 0,
+					"OperExcessCtrlQty": 0,
+					"QCSchemeId_Id": 0,
+					"IsFirstPieceInspect": false,
+					"PurchaseGroupId_Id": 0,
+					"IsWorkTime": false,
+					"Activity6UnitId_Id": 0,
+					"WastageQty": 0,
+					"UnqualifiedBaseQty": 0,
+					"UnitTransHeadQty": 1,
+					"OperDescription": [
+						{
+							"Value": "装主板",
+							"Key": 2052
+						}
+					],
+					"MatScrapPrice": 0,
+					"MinMoveTimeUnit": "20",
+					"FirstInspectControl": " ",
+					"OperUnitId": {
+						"msterID": 10101,
+						"MultiLanguageText": [
+							{
+								"PkId": 10136,
+								"LocaleId": 2052,
+								"Name": "Pcs"
+							}
+						],
+						"Number": "Pcs",
+						"Precision": 0,
+						"UNITCONVERTRATE": [
+							{
+								"ConvertType": "0",
+								"Id": 10118
+							}
+						],
+						"Id": 10101,
+						"RoundType": "1",
+						"Name": [
+							{
+								"Value": "Pcs",
+								"Key": 2052
+							}
+						]
+					},
+					"RemoveStartTime": "2020-02-10T08:00:00",
+					"BetweenUnit": "20",
+					"ResourceId_Id": 0,
+					"Activity3RepFormulaId_Id": 40391,
+					"TransSelQty": 0,
+					"ScrapPrice": 0,
+					"ConvertType": " ",
+					"Activity3Id": {
+						"msterID": 40382,
+						"FUnitID_Id": 80506,
+						"DefaultValue": 0,
+						"MultiLanguageText": [
+							{
+								"PkId": 3,
+								"LocaleId": 2052,
+								"Name": "拆卸活动"
+							}
+						],
+						"Phase": "30",
+						"Number": "JBHD03_SYS",
+						"FUnitID": {
+							"msterID": 80506,
+							"MultiLanguageText": [
+								{
+									"PkId": 20192,
+									"LocaleId": 2052,
+									"Name": "分"
+								}
+							],
+							"Number": "minute",
+							"Id": 80506,
+							"Name": [
+								{
+									"Value": "分",
+									"Key": 2052
+								}
+							]
+						},
+						"Id": 40382,
+						"Name": [
+							{
+								"Value": "拆卸活动",
+								"Key": 2052
+							}
+						]
+					},
+					"IsFirstOperPhase": false,
+					"StdWaitTime": 0,
+					"ProcessOrgId": {
+						"MultiLanguageText": [
+							{
+								"PkId": 1,
+								"LocaleId": 2052,
+								"Name": "蓝海科技"
+							},
+							{
+								"PkId": 100001,
+								"LocaleId": 1033,
+								"Name": " "
+							},
+							{
+								"PkId": 100002,
+								"LocaleId": 3076,
+								"Name": " "
+							}
+						],
+						"Number": "100",
+						"Id": 1,
+						"Name": [
+							{
+								"Value": "蓝海科技",
+								"Key": 2052
+							},
+							{
+								"Value": " ",
+								"Key": 1033
+							},
+							{
+								"Value": " ",
+								"Key": 3076
+							}
+						]
+					},
+					"PurchaseOrgId": {
+						"MultiLanguageText": [
+							{
+								"PkId": 1,
+								"LocaleId": 2052,
+								"Name": "蓝海科技"
+							},
+							{
+								"PkId": 100001,
+								"LocaleId": 1033,
+								"Name": " "
+							},
+							{
+								"PkId": 100002,
+								"LocaleId": 3076,
+								"Name": " "
+							}
+						],
+						"Number": "100",
+						"Id": 1,
+						"Name": [
+							{
+								"Value": "蓝海科技",
+								"Key": 2052
+							},
+							{
+								"Value": " ",
+								"Key": 1033
+							},
+							{
+								"Value": " ",
+								"Key": 3076
+							}
+						]
+					},
+					"MinWaitTimeUnit": "20",
+					"ValuationQty": 0,
+					"DefectReworkMode": " ",
+					"WorkCenterId_Id": 100230,
+					"RateOperQty": 0,
+					"IsCheckProcessRecord": false,
+					"KeyOper": "N",
+					"Activity1RepFormulaId": {
+						"msterID": 40389,
+						"MultiLanguageText": [
+							{
+								"PkId": 7,
+								"LocaleId": 2052,
+								"Name": "准备活动汇报量内置公式"
+							}
+						],
+						"Number": "CJGS07_SYS",
+						"FormulaUse": "8",
+						"Id": 40389,
+						"Name": [
+							{
+								"Value": "准备活动汇报量内置公式",
+								"Key": 2052
+							}
+						]
+					},
+					"IsOutSrc": false,
+					"OperLastFinishTime": "2020-02-10T08:00:00",
+					"Activity3RepFormulaId": {
+						"msterID": 40391,
+						"MultiLanguageText": [
+							{
+								"PkId": 9,
+								"LocaleId": 2052,
+								"Name": "拆卸活动汇报量内置公式"
+							}
+						],
+						"Number": "CJGS09_SYS",
+						"FormulaUse": "10",
+						"Id": 40391,
+						"Name": [
+							{
+								"Value": "拆卸活动汇报量内置公式",
+								"Key": 2052
+							}
+						]
+					},
+					"TransInHeadQty": 10,
+					"TransSelBaseQty": 0,
+					"Activity1Id_Id": 40380,
+					"RealSplitQty": 1,
+					"TransInBaseQty": 10,
+					"BarCode": "OP000006-0-30",
+					"OperHeadBaseQty": 10,
+					"OperUnitId_Id": 10101,
+					"ShiftGroupId_Id": 0,
+					"OptCtrlCodeId_Id": 100179,
+					"IterationMinTimeUnit": "20",
+					"RemoveRemainWorkTime": 0,
+					"OperResStockQty": 0,
+					"OffsetTime": -1,
+					"RemoveFinishTime": "2020-02-10T08:00:00",
+					"ValuationUnitId_Id": 0,
+					"OperNumber": "30",
+					"Activity2Id": {
+						"msterID": 40381,
+						"FUnitID_Id": 80506,
+						"DefaultValue": 0,
+						"MultiLanguageText": [
+							{
+								"PkId": 2,
+								"LocaleId": 2052,
+								"Name": "加工活动"
+							}
+						],
+						"Phase": "20",
+						"Number": "JBHD02_SYS",
+						"FUnitID": {
+							"msterID": 80506,
+							"MultiLanguageText": [
+								{
+									"PkId": 20192,
+									"LocaleId": 2052,
+									"Name": "分"
+								}
+							],
+							"Number": "minute",
+							"Id": 80506,
+							"Name": [
+								{
+									"Value": "分",
+									"Key": 2052
+								}
+							]
+						},
+						"Id": 40381,
+						"Name": [
+							{
+								"Value": "加工活动",
+								"Key": 2052
+							}
+						]
+					},
+					"Activity3Qty": 0,
+					"PrdWastageQty": 0,
+					"IsDiscreteOperDispDetail": true,
+					"BaseWastageQty": 0,
+					"PrepareStartTime": "2020-02-10T08:00:00",
+					"TransInQty": 10,
+					"OutSrcTaxPrice": 0,
+					"ReWorkQty": 0,
+					"QualifiedHeadQty": 0,
+					"EnableLocationNo": false,
+					"PrdResStockQty": 0,
+					"ProcessRemainWorkTime": 0,
+					"Activity6ReportQty": 0,
+					"ProcessId": {
+						"msterID": 100186,
+						"EffectDate": "2020-01-22T00:00:00",
+						"MultiLanguageText": [
+							{
+								"PkId": 100012,
+								"LocaleId": 2052,
+								"Description": " ",
+								"Name": "装主板"
+							}
+						],
+						"Description": [
+							{
+								"Value": " ",
+								"Key": 2052
+							}
+						],
+						"Number": "PRC000012",
+						"ExpireDate": "9999-12-31T00:00:00",
+						"DataAcOrder": "E",
+						"Id": 100186,
+						"Name": [
+							{
+								"Value": "装主板",
+								"Key": 2052
+							}
+						]
+					},
+					"DepartmentId": {
+						"msterID": 100156,
+						"MultiLanguageText": [
+							{
+								"PkId": 100011,
+								"LocaleId": 2052,
+								"Name": "金蝶主板加工"
+							}
+						],
+						"Number": "BM000011",
+						"Id": 100156,
+						"Name": [
+							{
+								"Value": "金蝶主板加工",
+								"Key": 2052
+							}
+						]
+					},
+					"OperSrcDetailId": 100024
+				}
+			],
+			"SrcEntityId": 0,
+			"SeqWorkCenterId_Id": 100227,
+			"SeqOut": 0,
+			"SeqAlignment": " ",
+			"SplitToOper": 0,
+			"SeqPlanFinishTime": "2020-02-10T08:00:00",
+			"SeqName": [
+				{
+					"Value": "主序列",
+					"Key": 2052
+				}
+			],
+			"MultiLanguageText": [
+				{
+					"SeqName": "主序列",
+					"PkId": 100012,
+					"LocaleId": 2052
+				}
+			],
+			"SeqSrcEntryId": 100007,
+			"Id": 100012,
+			"SeqWorkCenterId": {
+				"msterID": 100227,
+				"UseOrgId": {
+					"MultiLanguageText": [
+						{
+							"PkId": 1,
+							"LocaleId": 2052,
+							"Name": "蓝海科技"
+						},
+						{
+							"PkId": 100001,
+							"LocaleId": 1033,
+							"Name": " "
+						},
+						{
+							"PkId": 100002,
+							"LocaleId": 3076,
+							"Name": " "
+						}
+					],
+					"Number": "100",
+					"Id": 1,
+					"Name": [
+						{
+							"Value": "蓝海科技",
+							"Key": 2052
+						},
+						{
+							"Value": " ",
+							"Key": 1033
+						},
+						{
+							"Value": " ",
+							"Key": 3076
+						}
+					]
+				},
+				"OptCtrlCodeID_Id": 100177,
+				"UseOrgId_Id": 1,
+				"ExpireDate": "9999-12-31T00:00:00",
+				"IsDiscreteOperDispDetail": false,
+				"OptCtrlCodeID": {
+					"msterID": 100177,
+					"MultiLanguageText": [
+						{
+							"PkId": 100002,
+							"LocaleId": 2052,
+							"Name": "厂内+免检+直接返修"
+						}
+					],
+					"Number": "OCC000001",
+					"Id": 100177,
+					"Name": [
+						{
+							"Value": "厂内+免检+直接返修",
+							"Key": 2052
+						}
+					]
+				},
+				"DeptID": {
+					"msterID": 100152,
+					"MultiLanguageText": [
+						{
+							"PkId": 100008,
+							"LocaleId": 2052,
+							"Name": "金蝶手机装配"
+						}
+					],
+					"Number": "BM000008",
+					"Id": 100152,
+					"Name": [
+						{
+							"Value": "金蝶手机装配",
+							"Key": 2052
+						}
+					]
+				},
+				"Name": [
+					{
+						"Value": "主板制造",
+						"Key": 2052
+					}
+				],
+				"DeptID_Id": 100152,
+				"EffectDate": "2020-01-22T00:00:00",
+				"MultiLanguageText": [
+					{
+						"PkId": 100001,
+						"LocaleId": 2052,
+						"Name": "主板制造"
+					}
+				],
+				"Number": "WC000001",
+				"WorkCenterScheduling": [
+					{
+						"SetTimeFormula_Id": 40383,
+						"StdCarryTime": 0,
+						"MinQueueTime": 0,
+						"SetTimeFormula": {
+							"msterID": 40383,
+							"MultiLanguageText": [
+								{
+									"PkId": 1,
+									"LocaleId": 2052,
+									"Name": "准备工期内置公式"
+								}
+							],
+							"Number": "CJGS01_SYS",
+							"Id": 40383,
+							"Name": [
+								{
+									"Value": "准备工期内置公式",
+									"Key": 2052
+								}
+							]
+						},
+						"TearDownTimeFormula": {
+							"msterID": 40385,
+							"MultiLanguageText": [
+								{
+									"PkId": 3,
+									"LocaleId": 2052,
+									"Name": "拆卸工期内置公式"
+								}
+							],
+							"Number": "CJGS03_SYS",
+							"Id": 40385,
+							"Name": [
+								{
+									"Value": "拆卸工期内置公式",
+									"Key": 2052
+								}
+							]
+						},
+						"StdWaitTime": 0,
+						"StdCarryTimeUnit": "20",
+						"MinCarryTimeUnit": "20",
+						"ProcessTimeFormula_Id": 40384,
+						"StdWaitTimeUnit": "20",
+						"StdQueueTimeUnit": "20",
+						"MinWaitTimeUnit": "20",
+						"ProcessTimeFormula": {
+							"msterID": 40384,
+							"MultiLanguageText": [
+								{
+									"PkId": 2,
+									"LocaleId": 2052,
+									"Name": "加工工期内置公式"
+								}
+							],
+							"Number": "CJGS02_SYS",
+							"Id": 40384,
+							"Name": [
+								{
+									"Value": "加工工期内置公式",
+									"Key": 2052
+								}
+							]
+						},
+						"MinCarryTime": 0,
+						"MinQueueTimeUnit": "20",
+						"StdQueueTime": 0,
+						"TearDownTimeFormula_Id": 40385,
+						"Id": 100001,
+						"Seq": 1,
+						"MinWaitTime": 0
+					}
+				],
+				"Id": 100227,
+				"WorkCenterCapacity": [
+					{
+						"JoinScheduling": false,
+						"RESOURCEID_Id": 100189,
+						"Id": 100001,
+						"RESOURCEID": {
+							"msterID": 100189,
+							"MultiLanguageText": [
+								{
+									"PkId": 100005,
+									"LocaleId": 2052,
+									"Name": "主板组"
+								}
+							],
+							"Number": "SC000005",
+							"Id": 100189,
+							"Name": [
+								{
+									"Value": "主板组",
+									"Key": 2052
+								}
+							]
+						},
+						"Seq": 1
+					},
+					{
+						"JoinScheduling": true,
+						"RESOURCEID_Id": 100191,
+						"Id": 100002,
+						"RESOURCEID": {
+							"msterID": 100191,
+							"MultiLanguageText": [
+								{
+									"PkId": 100007,
+									"LocaleId": 2052,
+									"Name": "切割组"
+								}
+							],
+							"Number": "SC000007",
+							"Id": 100191,
+							"Name": [
+								{
+									"Value": "切割组",
+									"Key": 2052
+								}
+							]
+						},
+						"Seq": 2
+					}
+				],
+				"FFormId": "ENG_WorkCenter",
+				"ProcessID_Id": 0
+			},
+			"Seq": 1
+		}
+	],
+	"DecuctionTime": "",
+	"ProjectNo": " ",
+	"AutoInStore": "C",
+	"ProductId": {
+		"msterID": 100069,
+		"UseOrgId": {
+			"MultiLanguageText": [
+				{
+					"PkId": 1,
+					"LocaleId": 2052,
+					"Name": "蓝海科技"
+				},
+				{
+					"PkId": 100001,
+					"LocaleId": 1033,
+					"Name": " "
+				},
+				{
+					"PkId": 100002,
+					"LocaleId": 3076,
+					"Name": " "
+				}
+			],
+			"Number": "100",
+			"Id": 1,
+			"Name": [
+				{
+					"Value": "蓝海科技",
+					"Key": 2052
+				},
+				{
+					"Value": " ",
+					"Key": 1033
+				},
+				{
+					"Value": " ",
+					"Key": 3076
+				}
+			]
+		},
+		"UseOrgId_Id": 1,
+		"ForbidStatus": "A",
+		"Specification": [
+			{
+				"Value": " ",
+				"Key": 2052
+			}
+		],
+		"Name": [
+			{
+				"Value": "智能手机-6S",
+				"Key": 2052
+			}
+		],
+		"DocumentStatus": "C",
+		"MaterialBase": [
+			{
+				"BaseUnitId_Id": 10101,
+				"BaseUnitId": {
+					"msterID": 10101,
+					"MultiLanguageText": [
+						{
+							"PkId": 10136,
+							"LocaleId": 2052,
+							"Name": "Pcs"
+						}
+					],
+					"Number": "Pcs",
+					"Id": 10101,
+					"Name": [
+						{
+							"Value": "Pcs",
+							"Key": 2052
+						}
+					]
+				},
+				"Id": 100030
+			}
+		],
+		"MultiLanguageText": [
+			{
+				"PkId": 100030,
+				"LocaleId": 2052,
+				"Specification": " ",
+				"Name": "智能手机-6S"
+			}
+		],
+		"Number": "S1.06",
+		"MaterialStock": [
+			{
+				"StoreUnitID": {
+					"msterID": 10101,
+					"MultiLanguageText": [
+						{
+							"PkId": 10136,
+							"LocaleId": 2052,
+							"Name": "Pcs"
+						}
+					],
+					"Number": "Pcs",
+					"Id": 10101,
+					"Name": [
+						{
+							"Value": "Pcs",
+							"Key": 2052
+						}
+					]
+				},
+				"StoreUnitID_Id": 10101,
+				"IsExpParToFlot": false,
+				"Id": 100030
+			}
+		],
+		"MaterialAuxPty": [
+			{
+				"AuxPropertyId_Id": 100001,
+				"IsEnable1": false,
+				"Id": 100022,
+				"IsAffectPrice": false,
+				"AuxPropertyId": {
+					"msterID": 0,
+					"MultiLanguageText": [
+						{
+							"PkId": 100001,
+							"LocaleId": 2052,
+							"Name": "等级"
+						}
+					],
+					"Number": "等级",
+					"Id": 100001,
+					"Name": [
+						{
+							"Value": "等级",
+							"Key": 2052
+						}
+					]
+				},
+				"IsComControl": false
+			}
+		],
+		"Id": 100069
+	},
+	"BomId_Id": 104991,
+	"MOEntrySeq": 1,
+	"Lot_Id": 0,
+	"CreateDate": "2020-02-10T18:11:09.14",
+	"MTONo": " ",
+	"BomId": {
+		"msterID": 104991,
+		"MultiLanguageText": [],
+		"Number": "S1.06_V1.0",
+		"Id": 104991,
+		"Name": []
+	},
+	"MONumber": "MO000013",
+	"BaseUnitId_Id": 10101,
+	"MOUnitId": {
+		"msterID": 10101,
+		"MultiLanguageText": [
+			{
+				"PkId": 10136,
+				"LocaleId": 2052,
+				"Name": "Pcs"
+			}
+		],
+		"Number": "Pcs",
+		"Precision": 0,
+		"UNITCONVERTRATE": [
+			{
+				"ConvertType": "0",
+				"Id": 10118
+			}
+		],
+		"Id": 10101,
+		"RoundType": "1",
+		"Name": [
+			{
+				"Value": "Pcs",
+				"Key": 2052
+			}
+		]
+	},
+	"SourceBillNo": "MO000013",
+	"SaleOrderEntrySeq": 0,
+	"PlanType": "A",
+	"Lot_Text": " ",
+	"DemandBillEntryId": 0,
+	"IsEntrust": false,
+	"AuxPropId_Id": 0,
+	"DemandBillId": 0,
+	"PlanStartTime": "2020-02-10T00:00:00",
+	"ProductType": "1",
+	"CANCELER_Id": 0,
+	"ApproveDate": "2020-02-10T18:14:21.14",
+	"StockInOrgId": {
+		"MultiLanguageText": [
+			{
+				"PkId": 1,
+				"LocaleId": 2052,
+				"Name": "蓝海科技"
+			},
+			{
+				"PkId": 100001,
+				"LocaleId": 1033,
+				"Name": " "
+			},
+			{
+				"PkId": 100002,
+				"LocaleId": 3076,
+				"Name": " "
+			}
+		],
+		"Number": "100",
+		"Id": 1,
+		"Name": [
+			{
+				"Value": "蓝海科技",
+				"Key": 2052
+			},
+			{
+				"Value": " ",
+				"Key": 1033
+			},
+			{
+				"Value": " ",
+				"Key": 3076
+			}
+		]
+	},
+	"SourceBillType": "PRD_MO",
+	"ProduceType": "C",
+	"IsWastageInStock": true,
+	"BaseUnitId": {
+		"msterID": 10101,
+		"MultiLanguageText": [
+			{
+				"PkId": 10136,
+				"LocaleId": 2052,
+				"Name": "Pcs"
+			}
+		],
+		"Number": "Pcs",
+		"Precision": 0,
+		"UNITCONVERTRATE": [
+			{
+				"ConvertType": "0",
+				"Id": 10118
+			}
+		],
+		"Id": 10101,
+		"RoundType": "1",
+		"Name": [
+			{
+				"Value": "Pcs",
+				"Key": 2052
+			}
+		]
+	},
+	"ProcessCheckSchemaId_Id": 0,
+	"PlanFinishTime": "2020-02-10T00:00:00",
+	"MOUnitId_Id": 10101,
+	"StockInOrgId_Id": 1,
+	"DemandType": " ",
+	"FBillHead_Link": [
+		{
+			"FlowId": " ",
+			"BaseQty": 10,
+			"RuleId": "SFC_MO2OPTPLN",
+			"FlowLineId": 0,
+			"SBillId": "100013",
+			"Id": 100006,
+			"STableId": 0,
+			"STableName": "T_PRD_MOENTRY",
+			"SId": "100026",
+			"BaseQtyOld": 10
+		}
+	],
+	"Id": 100006,
+	"ApproverId_Id": 100001,
+	"ModifierId_Id": 100001,
+	"ProDepartmentId": {
+		"msterID": 100148,
+		"MultiLanguageText": [
+			{
+				"PkId": 100005,
+				"LocaleId": 2052,
+				"Name": "金蝶手机车间"
+			}
+		],
+		"Number": "BM000005",
+		"Id": 100148,
+		"Name": [
+			{
+				"Value": "金蝶手机车间",
+				"Key": 2052
+			}
+		]
+	},
+	"OwnerId_Id": 1,
+	"PrintTimes": 0,
+	"ScheduleModelId": {
+		"msterID": 40402,
+		"MultiLanguageText": [
+			{
+				"PkId": 2,
+				"LocaleId": 2052,
+				"Name": "标准正排"
+			}
+		],
+		"Number": "PCMX02_SYS",
+		"SchedulingWay": "F",
+		"Id": 40402,
+		"Name": [
+			{
+				"Value": "标准正排",
+				"Key": 2052
+			}
+		]
+	},
+	"InspectCheckSchemaId_Id": 0,
+	"Description": [],
+	"ScheduleModelId_Id": 40402,
+	"MOIsSuspend": "0",
+	"MOEntryId": 100026,
+	"OutSrcWay": "1",
+	"MOStatus": "",
+	"RouteId_Id": 105128,
+	"FailAutoInStore": "A",
+	"ProOrgId": {
+		"MultiLanguageText": [
+			{
+				"PkId": 1,
+				"LocaleId": 2052,
+				"Name": "蓝海科技"
+			},
+			{
+				"PkId": 100001,
+				"LocaleId": 1033,
+				"Name": " "
+			},
+			{
+				"PkId": 100002,
+				"LocaleId": 3076,
+				"Name": " "
+			}
+		],
+		"Number": "100",
+		"Id": 1,
+		"Name": [
+			{
+				"Value": "蓝海科技",
+				"Key": 2052
+			},
+			{
+				"Value": " ",
+				"Key": 1033
+			},
+			{
+				"Value": " ",
+				"Key": 3076
+			}
+		]
+	},
+	"ProductLine_Id": 0,
+	"ScheduleSeq": 0,
+	"BillNo": "OP000006",
+	"OwnerId": {
+		"msterID": 1,
+		"MultiLanguageText": [
+			{
+				"PkId": 1,
+				"LocaleId": 2052,
+				"Name": "蓝海科技"
+			},
+			{
+				"PkId": 100001,
+				"LocaleId": 1033,
+				"Name": " "
+			},
+			{
+				"PkId": 100002,
+				"LocaleId": 3076,
+				"Name": " "
+			}
+		],
+		"Number": "100",
+		"Id": 1,
+		"Name": [
+			{
+				"Value": "蓝海科技",
+				"Key": 2052
+			},
+			{
+				"Value": " ",
+				"Key": 1033
+			},
+			{
+				"Value": " ",
+				"Key": 3076
+			}
+		]
+	},
+	"ModifyDate": "2020-02-10T18:14:21.233",
+	"ProductId_Id": 100069,
+	"MOQty": 10,
+	"ApproverId": {
+		"Id": 100001,
+		"UserAccount": "demo02",
+		"Name": "demo02"
+	},
+	"OwnerTypeId": "BD_OwnerOrg",
+	"BFLowId_Id": " ",
+	"ProOrgId_Id": 1,
+	"FFormId": "SFC_OperationPlanning",
+	"ModifierId": {
+		"Id": 100001,
+		"UserAccount": "demo02",
+		"Name": "demo02"
+	},
+	"BaseQty": 10,
+	"BillType": {
+		"MultiLanguageText": [
+			{
+				"PkId": "5e40f605e53b8c",
+				"LocaleId": 2052,
+				"Name": "派工工序计划"
+			}
+		],
+		"Number": "GXJHPG01",
+		"Id": "5e40f605e53b8b",
+		"Name": [
+			{
+				"Value": "派工工序计划",
+				"Key": 2052
+			}
+		]
+	},
+	"ParentId": 0,
+	"RootBillId": 100006,
+	"CreatorId_Id": 100001,
+	"CreatorId": {
+		"Id": 100001,
+		"UserAccount": "demo02",
+		"Name": "demo02"
+	},
+	"RouteId": {
+		"msterID": 105128,
+		"RouteOperSeq": [
+			{
+				"Id": 100007,
+				"SeqNumber": "0",
+				"RouteOperDetail": [
+					{
+						"ReportFloorRatio": 0,
+						"OperNumber": "30",
+						"ReportCeilRatio": 0,
+						"Id": 100024,
+						"Seq": 3
+					}
+				],
+				"Seq": 1
+			}
+		],
+		"MultiLanguageText": [
+			{
+				"PkId": 100005,
+				"LocaleId": 2052,
+				"Name": "智能手机-6S-2"
+			}
+		],
+		"Number": "RT000005",
+		"ProduceType": "C",
+		"IsWastageInStock": false,
+		"Id": 105128,
+		"FFormId": "ENG_Route",
+		"Name": [
+			{
+				"Value": "智能手机-6S-2",
+				"Key": 2052
+			}
+		]
+	},
+	"BillType_Id": "5e40f605e53b8b",
+	"DocumentStatus": "C",
+	"MultiLanguageText": [],
+	"ProDepartmentId_Id": 100148,
+	"SaleOrderNumber": " ",
+	"CancelStatus": "A",
+	"MOId": 100013
+}

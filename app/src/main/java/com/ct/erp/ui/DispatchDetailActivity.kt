@@ -26,8 +26,11 @@ class DispatchDetailActivity : BaseActivity<DispatchViewModel, ActivityDispatchD
         mAdapter = DispatchDetailVpAdapter()
         binding.rvDispatchPlant.adapter = mAdapter
         binding.rvDispatchPlant.layoutManager = LinearLayoutManager(this)
-        val data = DispatchDetailViewData("1", model = DispatchPlanApiData())
-        mAdapter?.submitList(listOf(data, data, data, data))
+
+        viewModel.dispatchDetail.observe(this) {
+            mAdapter?.submitList(it)
+        }
+        viewModel.loadDispatchDetail()
 
     }
 

@@ -153,7 +153,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/dimen_4"
                 style="@style/DispatchDetailTextView"
-                android:text="@{model.MONumber}"
                 app:layout_constraintBottom_toBottomOf="@+id/tvNum01"
                 app:layout_constraintEnd_toStartOf="@+id/tvItemQuantityNum"
                 app:layout_constraintStart_toEndOf="@+id/tvNum01"
@@ -289,6 +288,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvNum05" />
 
         <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNum06Str"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/dimen_4"
@@ -311,6 +311,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvNum06" />
 
         <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNum07Str"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/dimen_4"
@@ -334,10 +335,10 @@
         <androidx.appcompat.widget.AppCompatEditText
                 style="@style/CommonEdit"
                 android:layout_width="0dp"
+                android:id="@+id/tvNum08Str"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/dimen_4"
                 android:gravity="center_vertical"
-                android:text="@{model.MTONo}"
                 app:layout_constraintBottom_toBottomOf="@+id/tvNum08"
                 app:layout_constraintEnd_toStartOf="@+id/guideStart"
                 app:layout_constraintStart_toEndOf="@+id/tvNum08"
@@ -380,6 +381,7 @@
         <androidx.appcompat.widget.AppCompatEditText
                 style="@style/CommonEdit"
                 android:layout_width="0dp"
+                android:id="@+id/tvNum10Str"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/dimen_4"
                 android:gravity="center_vertical"
@@ -457,7 +459,7 @@
                 android:layout_width="@dimen/dimen_48"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/dimen_4"
-                android:text="1"
+                android:text="Pcs"
                 style="@style/DispatchDetailTextView"
                 app:layout_constraintBottom_toBottomOf="@+id/tvQuantity01"
                 app:layout_constraintEnd_toStartOf="@+id/guideEnd"
@@ -491,7 +493,7 @@
                 android:layout_width="@dimen/dimen_48"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/dimen_4"
-                android:text="1"
+                android:text="Pcs"
                 style="@style/DispatchDetailTextView"
                 app:layout_constraintBottom_toBottomOf="@+id/tvQuantity02"
                 app:layout_constraintEnd_toStartOf="@+id/guideEnd"
@@ -524,7 +526,7 @@
                 android:layout_width="@dimen/dimen_48"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/dimen_4"
-                android:text="1"
+                android:text="Pcs"
                 style="@style/DispatchDetailTextView"
                 app:layout_constraintBottom_toBottomOf="@+id/tvQuantity03"
                 app:layout_constraintEnd_toStartOf="@+id/guideEnd"
@@ -557,7 +559,7 @@
                 android:layout_width="@dimen/dimen_48"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/dimen_4"
-                android:text="1"
+                android:text="Pcs"
                 style="@style/DispatchDetailTextView"
                 app:layout_constraintBottom_toBottomOf="@+id/tvQuantity04"
                 app:layout_constraintEnd_toStartOf="@+id/guideEnd"
@@ -590,7 +592,7 @@
                 style="@style/DispatchDetailTextView"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/dimen_4"
-                android:text="1"
+                android:text="Pcs"
                 android:textSize="@dimen/text_14"
                 app:layout_constraintBottom_toBottomOf="@+id/tvQuantity05"
                 app:layout_constraintEnd_toStartOf="@+id/guideEnd"
@@ -625,7 +627,7 @@
                 android:layout_marginHorizontal="@dimen/dimen_4"
                 android:background="@color/grey01"
                 android:gravity="center"
-                android:text="1"
+                android:text="Pcs"
                 android:textColor="@color/any_black"
                 android:textSize="@dimen/text_14"
                 app:layout_constraintBottom_toBottomOf="@+id/tvQuantity06"
@@ -668,7 +670,7 @@
                 android:layout_marginHorizontal="@dimen/dimen_4"
                 android:background="@color/grey01"
                 android:gravity="center"
-                android:text="1"
+                android:text="Pcs"
                 android:textColor="@color/any_black"
                 android:textSize="@dimen/text_14"
                 app:layout_constraintBottom_toBottomOf="@+id/tvQuantity07"
@@ -687,7 +689,7 @@
                 app:layout_constraintStart_toStartOf="@+id/checkQuantity2"
                 app:layout_constraintTop_toBottomOf="@+id/tvQuantity07" />
 
-        <androidx.appcompat.widget.AppCompatEditText
+        <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvItemQuantity08NumStr"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -711,7 +713,7 @@
                 android:layout_marginHorizontal="@dimen/dimen_4"
                 android:background="@color/grey01"
                 android:gravity="center"
-                android:text="1"
+                android:text="CN"
                 android:textColor="@color/any_black"
                 android:textSize="@dimen/text_14"
                 app:layout_constraintBottom_toBottomOf="@+id/tvQuantity08"
@@ -730,7 +732,7 @@
                 app:layout_constraintStart_toStartOf="@+id/checkQuantity2"
                 app:layout_constraintTop_toBottomOf="@+id/tvQuantity08" />
 
-        <androidx.appcompat.widget.AppCompatEditText
+        <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvItemQuantity09NumStr"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -754,7 +756,7 @@
                 android:layout_marginHorizontal="@dimen/dimen_4"
                 android:background="@color/grey01"
                 android:gravity="center"
-                android:text="1"
+                android:text="CN"
                 android:textColor="@color/any_black"
                 android:textSize="@dimen/text_14"
                 app:layout_constraintBottom_toBottomOf="@+id/tvQuantity09"
@@ -1074,9 +1076,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/dimen_4"
-                android:background="@color/grey01"
+                android:background="@drawable/shape_line_black"
                 android:gravity="center_vertical"
                 android:maxLines="1"
+                android:drawableEnd="@drawable/ic_search"
                 android:paddingHorizontal="@dimen/dimen_4"
                 android:textColor="@color/any_black"
                 android:textSize="@dimen/text_14"
@@ -1118,9 +1121,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/dimen_4"
-                android:background="@color/grey01"
+                android:background="@drawable/shape_line_black"
                 android:gravity="center_vertical"
                 android:maxLines="1"
+                android:drawableEnd="@drawable/ic_search"
                 android:paddingHorizontal="@dimen/dimen_4"
                 android:textColor="@color/any_black"
                 android:textSize="@dimen/text_14"
@@ -1162,12 +1166,13 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/dimen_4"
-                android:background="@color/grey01"
+                android:background="@drawable/shape_line_black"
                 android:gravity="center_vertical"
                 android:maxLines="1"
                 android:paddingHorizontal="@dimen/dimen_4"
                 android:textColor="@color/any_black"
                 android:textSize="@dimen/text_14"
+                android:drawableEnd="@drawable/ic_date"
                 app:layout_constraintBottom_toBottomOf="@+id/tvItemQuality03"
                 app:layout_constraintEnd_toStartOf="@+id/tvItemQuality03Num"
                 app:layout_constraintStart_toEndOf="@+id/tvItemQuality03"
@@ -1183,6 +1188,7 @@
                 android:gravity="center"
                 android:textColor="@color/any_black"
                 android:textSize="@dimen/text_14"
+                android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="@+id/tvItemQuality03"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/tvItemQuality03" />
@@ -1200,7 +1206,7 @@
                 app:layout_constraintStart_toStartOf="@+id/tvSubTitle05"
                 app:layout_constraintTop_toBottomOf="@+id/tvItemQuality03" />
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatSpinner
                 android:id="@+id/tvItemQuality04Str"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -1226,6 +1232,7 @@
                 android:gravity="center"
                 android:textColor="@color/any_black"
                 android:textSize="@dimen/text_14"
+                android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="@+id/tvItemQuality04"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/tvItemQuality04" />
@@ -1267,6 +1274,7 @@
                 android:layout_marginHorizontal="@dimen/dimen_4"
                 android:background="@color/grey01"
                 android:gravity="center"
+                android:text="Pcs"
                 android:textColor="@color/any_black"
                 android:textSize="@dimen/text_14"
                 app:layout_constraintBottom_toBottomOf="@+id/tvItemQuality05"
@@ -1312,6 +1320,7 @@
                 android:gravity="center"
                 android:textColor="@color/any_black"
                 android:textSize="@dimen/text_14"
+                android:text="Pcs"
                 app:layout_constraintBottom_toBottomOf="@+id/tvItemQuality06"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/tvItemQuality06" />
@@ -1355,6 +1364,7 @@
                 android:gravity="center"
                 android:textColor="@color/any_black"
                 android:textSize="@dimen/text_14"
+                android:text="Pcs"
                 app:layout_constraintBottom_toBottomOf="@+id/tvItemQuality07"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/tvItemQuality07" />

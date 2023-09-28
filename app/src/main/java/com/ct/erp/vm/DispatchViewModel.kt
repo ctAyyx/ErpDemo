@@ -5,12 +5,19 @@ import androidx.lifecycle.MutableLiveData
 import com.ct.erp.base.BaseModel
 import com.ct.erp.base.BaseViewModel
 import com.ct.erp.dto.DispatchDetailListApiData
+import com.ct.erp.dto.DispatchPlanApiData
 import com.ct.erp.dto.ServiceResult
+import com.ct.erp.vo.DispatchDetailViewData
 import com.ct.erp.vo.DispatchTabCellViewData
 import com.ct.erp.vo.DispatchTableViewData
 import com.ct.erp.vo.TabColumnHeaderViewData
 import com.ct.erp.vo.TabRowHeaderViewData
+import com.ct.utils.LogUtils
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
+import java.io.InputStreamReader
 import javax.inject.Inject
 
 @HiltViewModel
@@ -53,9 +60,20 @@ class DispatchViewModel @Inject constructor(application: Application, model: Bas
         loadDispatchList(filter = filter, startRow = startRow, limit = limit)
     }
 
+    val dispatchDetail by lazy { MutableLiveData<List<DispatchDetailViewData>>() }
 
     fun loadDispatchDetail() {
-
+        launch {
+            delay(3000)
+            val open = getApp().assets.open("dis_detail.json")
+            val ins = InputStreamReader(open)
+            val data = Gson().fromJson(ins, DispatchPlanApiData::class.java)
+            val response = ServiceResult(code = "200", errorMsg = "", data = data)
+            if (isSuccess(response)) {
+                val viewData = DispatchDetailViewData(id = "0", model = response.data)
+                dispatchDetail.value = listOf(viewData, viewData, viewData, viewData)
+            }
+        }
     }
 
 
@@ -64,6 +82,7 @@ class DispatchViewModel @Inject constructor(application: Application, model: Bas
             loadAllColumnHeader()
             loadDefaultShowColumnHeader()
             //记载数据
+            delay(3000)
             val response = mock()//serviceApi.getDispatchList()
             if (isSuccess(response)) {
                 saveTableResponse(startRow == 0, response.data)
@@ -132,32 +151,14 @@ class DispatchViewModel @Inject constructor(application: Application, model: Bas
     }
 
 
-    private fun mock() = ServiceResult(
-        code = "200", errorMsg = "", data = listOf(
-            DispatchDetailListApiData(
-                fBarCode = "XXX", fBaseUnitIDFName = "ffffffffffff"
-            ),
-            DispatchDetailListApiData(),
-            DispatchDetailListApiData(),
-            DispatchDetailListApiData(),
-            DispatchDetailListApiData(),
-            DispatchDetailListApiData(),
-            DispatchDetailListApiData(),
-            DispatchDetailListApiData(),
-            DispatchDetailListApiData(),
-            DispatchDetailListApiData(),
-            DispatchDetailListApiData(),
-            DispatchDetailListApiData(),
-            DispatchDetailListApiData(),
-            DispatchDetailListApiData(),
-            DispatchDetailListApiData(),
-            DispatchDetailListApiData(),
-            DispatchDetailListApiData(),
-            DispatchDetailListApiData(),
-            DispatchDetailListApiData(),
-            DispatchDetailListApiData(),
+    private fun mock(): ServiceResult<List<DispatchDetailListApiData>> {
+        val open = getApp().assets.open("dis_list.json")
+        val ins = InputStreamReader(open)
+        val data = Gson().fromJson<List<DispatchDetailListApiData>>(
+            ins, object : TypeToken<List<DispatchDetailListApiData>>() {}.type
         )
-    )
+        return ServiceResult(code = "200", errorMsg = "", data = data)
+    }
 
     private fun convertDispatchApiData2ViewData(apiData: List<DispatchDetailListApiData>?): DispatchTableViewData {
 
@@ -179,7 +180,7 @@ class DispatchViewModel @Inject constructor(application: Application, model: Bas
     private fun buildCell(
         header: TabColumnHeaderViewData, data: DispatchDetailListApiData
     ): DispatchTabCellViewData {
-        return DispatchTabCellViewData("$filter-$startRow ${matchKey(header.getFieldKey(), data)}")
+        return DispatchTabCellViewData("${matchKey(header.getFieldKey(), data)}")
     }
 
 

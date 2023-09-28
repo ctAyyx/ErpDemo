@@ -16,6 +16,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isVisible
 import androidx.databinding.BindingAdapter
 import com.ct.erp.adapter.CommonSpinnerAdapter
+import com.ct.utils.LogUtils
 import com.ct.utils.image.ImageManager
 
 
@@ -122,19 +123,18 @@ fun TextView.onEndDrawableClick(onClick: () -> Unit) {
     try {
         setOnTouchListener { v, event ->
             val endDrawable = compoundDrawables[2]
-            if (endDrawable != null && event.action == MotionEvent.ACTION_UP) {
-                val downX = event.x
+            if (endDrawable != null && event.action == MotionEvent.ACTION_DOWN) {
+                val downX = v.left + event.x
                 val endBound = v.right - v.paddingEnd - endDrawable.bounds.width()
                 if (downX >= endBound) {
                     onClick.invoke()
                     return@setOnTouchListener true
                 }
             }
-
-
             return@setOnTouchListener false
         }
     } catch (e: Exception) {
+        e.printStackTrace()
     }
 }
 
@@ -145,6 +145,7 @@ fun Spinner.setCommonAdapter(data: List<String>, onItemSelect: ((Int) -> Unit)? 
         override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
             onItemSelect?.invoke(position)
         }
+
         override fun onNothingSelected(parent: AdapterView<*>?) {
         }
     }
