@@ -16,6 +16,7 @@ import com.king.frame.mvvmframe.base.BaseModel
 import com.king.frame.mvvmframe.base.DataViewModel
 import com.king.frame.mvvmframe.base.livedata.SingleLiveEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.net.ConnectException
 import java.net.SocketTimeoutException
@@ -69,6 +70,7 @@ open class BaseViewModel @Inject constructor(application: Application, model: Ba
                 if (showLoading) {
                     showLoading()
                 }
+                delay(2000)
                 block()
             } catch (e: Throwable) {
                 error(e)

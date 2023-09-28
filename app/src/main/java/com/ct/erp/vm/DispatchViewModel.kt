@@ -64,7 +64,6 @@ class DispatchViewModel @Inject constructor(application: Application, model: Bas
 
     fun loadDispatchDetail() {
         launch {
-            delay(3000)
             val open = getApp().assets.open("dis_detail.json")
             val ins = InputStreamReader(open)
             val data = Gson().fromJson(ins, DispatchPlanApiData::class.java)
@@ -82,7 +81,6 @@ class DispatchViewModel @Inject constructor(application: Application, model: Bas
             loadAllColumnHeader()
             loadDefaultShowColumnHeader()
             //记载数据
-            delay(3000)
             val response = mock()//serviceApi.getDispatchList()
             if (isSuccess(response)) {
                 saveTableResponse(startRow == 0, response.data)

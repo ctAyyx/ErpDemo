@@ -2,6 +2,8 @@ package com.ct.erp.vh
 
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.widget.addTextChangedListener
+import androidx.core.widget.doAfterTextChanged
 import com.ct.erp.R
 import com.ct.erp.base.adapter.BaseAdapter
 import com.ct.erp.base.adapter.BaseDataBindingViewHolder
@@ -37,6 +39,10 @@ class DisDetailQuantityViewHolder(parent: ViewGroup) :
 
         binding.tvItemQuantityNumStr.text = model.mONumber ?: ""
         binding.tvItemQuantityNum.text = model.mOEntrySeq ?: ""
+
+        binding.tvItemQuantityNum2Str.text = "未知字段"
+        binding.tvItemQuantityNum2.text = subEntity?.operNumber ?: ""
+
         binding.tvItemQuantityWork.text = subEntity?.processId?.name?.firstOrNull()?.value ?: ""
         binding.tvItemOperDescription.text = subEntity?.operDescription?.firstOrNull()?.value ?: ""
         binding.tvItemSeqWorkCenterId.text = entity?.seqWorkCenterId?.name?.firstOrNull()?.value ?: ""
@@ -44,7 +50,7 @@ class DisDetailQuantityViewHolder(parent: ViewGroup) :
         binding.tvNum07Str.text = subEntity?.operSrcType
         binding.tvNum08Str.setText(model.mTONo ?: "")
         binding.tvItemSeqNumber.text = entity?.seqNumber ?: ""
-        // binding.tvNum10Str.text = ""//model.description
+        binding.tvNum10Str.setText("未知字段") //model.description
     }
 
     /**
@@ -63,6 +69,34 @@ class DisDetailQuantityViewHolder(parent: ViewGroup) :
         binding.tvItemQuantity07NumStr.setText("${subEntity?.reFinishQty ?: 0}")
         binding.tvItemQuantity08NumStr.text = entity?.seqRefer ?: ""
         binding.tvItemQuantity09NumStr.text = subEntity?.operDescription?.firstOrNull()?.value ?: ""
+
+        binding.tvItemQuantity01NumStr.doAfterTextChanged {
+            allCount()
+        }
+        binding.tvItemQuantity02NumStr.doAfterTextChanged {
+            allCount()
+        }
+        binding.tvItemQuantity03NumStr.doAfterTextChanged {
+            allCount()
+        }
+        binding.tvItemQuantity04NumStr.doAfterTextChanged {
+            allCount()
+        }
+        binding.tvItemQuantity06NumStr.doAfterTextChanged {
+            allCount()
+        }
+    }
+
+
+    private fun allCount() {
+        val num1 = binding.tvItemQuantity01NumStr.text.toString().toIntOrNull() ?: 0
+        val num2 = binding.tvItemQuantity02NumStr.text.toString().toIntOrNull() ?: 0
+        val num3 = binding.tvItemQuantity03NumStr.text.toString().toIntOrNull() ?: 0
+        val num4 = binding.tvItemQuantity04NumStr.text.toString().toIntOrNull() ?: 0
+        val num5 = binding.tvItemQuantity06NumStr.text.toString().toIntOrNull() ?: 0
+
+        binding.tvItemQuantity05NumStr.text = "${num2 + num3 + num4}"
+        binding.tvItemQuantity07NumStr.text = "${num1 + num2 + num3 + num4 + num5}"
     }
 
     /**
@@ -71,6 +105,11 @@ class DisDetailQuantityViewHolder(parent: ViewGroup) :
     private fun initRepair(model: DispatchPlanApiData) {
         val entity = model.entity?.firstOrNull()
         val subEntity = entity?.subEntity?.firstOrNull()
+
+        binding.tvItemBack01Str.text = "未知字段"
+        binding.tvItemBack02Str.text = "未知字段"
+        binding.tvItemBack03Str.text = "未知字段"
+
     }
 
     /**
@@ -91,6 +130,15 @@ class DisDetailQuantityViewHolder(parent: ViewGroup) :
     private fun initQuality(model: DispatchPlanApiData) {
         val entity = model.entity?.firstOrNull()
         val subEntity = entity?.subEntity?.firstOrNull()
+
+        binding.tvItemQuality01Str.text = "未知字段"
+        binding.tvItemQuality02Str.text = "未知字段"
+        binding.tvItemQuality03Str.text = "未知字段"
+
+        binding.tvItemQuality05Str.text = "未知字段"
+        binding.tvItemQuality06Str.text = "未知字段"
+        binding.tvItemQuality07Str.text = "未知字段"
+        binding.tvItemQuality08Str.text = "未知字段"
 
         binding.tvItemQuality08Num.isChecked = subEntity?.isFirstPieceInspect ?: false
         showCalender(binding.tvItemQuality03Str)

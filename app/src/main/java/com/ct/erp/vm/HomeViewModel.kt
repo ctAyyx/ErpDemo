@@ -31,7 +31,7 @@ class HomeViewModel @Inject constructor(application: Application, model: BaseMod
 
     fun getHomeMenu() {
         launch {
-            delay(3000)
+
             val apiResult = mock()//serviceApi.getHomeMenu()
             if (isSuccess(result = apiResult)) {
                 homeMenu.value = convertHomeApiData2ViewData(apiResult.data)

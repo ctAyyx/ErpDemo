@@ -6,6 +6,7 @@ import com.ct.erp.base.adapter.BaseAdapter
 import com.ct.erp.base.adapter.BaseDataBindingViewHolder
 import com.ct.erp.databinding.ItemDisDetailCollectBinding
 import com.ct.erp.vo.DispatchDetailViewData
+import com.ct.erp.vo.TabColumnHeaderViewData
 
 class DisDetailCollectViewHolder(parent: ViewGroup) :
     BaseDataBindingViewHolder<ItemDisDetailCollectBinding, DispatchDetailViewData>(

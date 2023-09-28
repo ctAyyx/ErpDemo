@@ -445,6 +445,8 @@
                 android:id="@+id/tvItemQuantity01NumStr"
                 style="@style/CommonEdit"
                 android:layout_width="0dp"
+
+                android:inputType="numberDecimal"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/dimen_4"
                 android:gravity="center_vertical"
@@ -479,6 +481,7 @@
                 android:id="@+id/tvItemQuantity02NumStr"
                 style="@style/CommonEdit"
                 android:layout_width="0dp"
+                android:inputType="numberDecimal"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/dimen_4"
                 android:gravity="center_vertical"
@@ -515,6 +518,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/dimen_4"
                 android:gravity="center_vertical"
+                android:inputType="numberDecimal"
                 app:layout_constraintBottom_toBottomOf="@+id/tvQuantity03"
                 app:layout_constraintEnd_toStartOf="@+id/tvItemQuantity03Num"
                 app:layout_constraintStart_toEndOf="@+id/tvQuantity03"
@@ -548,6 +552,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/dimen_4"
                 android:gravity="center_vertical"
+                android:inputType="numberDecimal"
                 app:layout_constraintBottom_toBottomOf="@+id/tvQuantity04"
                 app:layout_constraintEnd_toStartOf="@+id/tvItemQuantity04Num"
                 app:layout_constraintStart_toEndOf="@+id/tvQuantity04"
@@ -614,6 +619,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/dimen_4"
                 android:gravity="center_vertical"
+                android:inputType="numberDecimal"
                 app:layout_constraintBottom_toBottomOf="@+id/tvQuantity06"
                 app:layout_constraintEnd_toStartOf="@+id/tvItemQuantity06Num"
                 app:layout_constraintStart_toEndOf="@+id/tvQuantity06"
@@ -646,7 +652,7 @@
                 app:layout_constraintStart_toStartOf="@+id/checkQuantity2"
                 app:layout_constraintTop_toBottomOf="@+id/tvQuantity06" />
 
-        <androidx.appcompat.widget.AppCompatEditText
+        <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvItemQuantity07NumStr"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
