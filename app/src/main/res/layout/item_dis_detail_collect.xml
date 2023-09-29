@@ -156,304 +156,333 @@
                 android:layout_height="@dimen/dimen_36" />
 
         <HorizontalScrollView
-                android:layout_width="0dp"
-                app:layout_constraintStart_toEndOf="@+id/tvTab01"
-                app:layout_constraintTop_toTopOf="@+id/tvTab01"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="@+id/tvTabItem01"
-                android:layout_height="0dp"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintVertical_bias="0.0">
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTabItem01"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/tvTab01"
+            app:layout_constraintTop_toTopOf="@+id/tvTab01"
+            app:layout_constraintVertical_bias="0.0">
 
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_height="wrap_content">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:orientation="horizontal"
-                        android:layout_height="@dimen/dimen_36">
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_36"
+                    android:orientation="horizontal">
 
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:gravity="center"
-                            android:text="生成订单编号"
-                            style="@style/ErpText.Bold"
-                            android:maxLines="1"
-                            android:ellipsize="end"
-                            android:textSize="@dimen/text_14"
-                            android:textColor="@color/any_black"
-                            android:layout_height="match_parent" />
+                        style="@style/ErpText.Bold"
+                        android:layout_width="@dimen/dimen_96"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="生成订单编号"
+                        android:textColor="@color/any_black"
+                        android:textSize="@dimen/text_14" />
+
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:gravity="center"
-                            android:text="生成订单行号"
-                            style="@style/ErpText.Bold"
-                            android:maxLines="1"
-                            android:ellipsize="end"
-                            android:textSize="@dimen/text_14"
-                            android:textColor="@color/any_black"
-                            android:layout_height="match_parent" />
+                        style="@style/ErpText.Bold"
+                        android:layout_width="@dimen/dimen_96"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="生成订单行号"
+                        android:textColor="@color/any_black"
+                        android:textSize="@dimen/text_14" />
+
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:gravity="center"
-                            android:text="生成订单编号"
-                            style="@style/ErpText.Bold"
-                            android:maxLines="1"
-                            android:ellipsize="end"
-                            android:textSize="@dimen/text_14"
-                            android:textColor="@color/any_black"
-                            android:layout_height="match_parent" />
+                        style="@style/ErpText.Bold"
+                        android:layout_width="@dimen/dimen_96"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="工序号"
+                        android:textColor="@color/any_black"
+                        android:textSize="@dimen/text_14" />
+
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:gravity="center"
-                            android:text="生成订单编号"
-                            style="@style/ErpText.Bold"
-                            android:maxLines="1"
-                            android:ellipsize="end"
-                            android:textSize="@dimen/text_14"
-                            android:textColor="@color/any_black"
-                            android:layout_height="match_parent" />
+                        style="@style/ErpText.Bold"
+                        android:layout_width="@dimen/dimen_96"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="工序号"
+                        android:textColor="@color/any_black"
+                        android:textSize="@dimen/text_14" />
+
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:gravity="center"
-                            android:text="生成订单编号"
-                            style="@style/ErpText.Bold"
-                            android:maxLines="1"
-                            android:ellipsize="end"
-                            android:textSize="@dimen/text_14"
-                            android:textColor="@color/any_black"
-                            android:layout_height="match_parent" />
+                        style="@style/ErpText.Bold"
+                        android:layout_width="@dimen/dimen_96"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="产品编码"
+                        android:textColor="@color/any_black"
+                        android:textSize="@dimen/text_14" />
+
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:gravity="center"
-                            android:text="生成订单编号"
-                            style="@style/ErpText.Bold"
-                            android:maxLines="1"
-                            android:ellipsize="end"
-                            android:textSize="@dimen/text_14"
-                            android:textColor="@color/any_black"
-                            android:layout_height="match_parent" />
+                        style="@style/ErpText.Bold"
+                        android:layout_width="@dimen/dimen_96"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="工序单位"
+                        android:textColor="@color/any_black"
+                        android:textSize="@dimen/text_14" />
+
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:gravity="center"
-                            android:text="生成订单编号"
-                            style="@style/ErpText.Bold"
-                            android:maxLines="1"
-                            android:ellipsize="end"
-                            android:textSize="@dimen/text_14"
-                            android:textColor="@color/any_black"
-                            android:layout_height="match_parent" />
+                        style="@style/ErpText.Bold"
+                        android:layout_width="@dimen/dimen_96"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="合格数量"
+                        android:textColor="@color/any_black"
+                        android:textSize="@dimen/text_14" />
+
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:gravity="center"
-                            android:text="生成订单编号"
-                            style="@style/ErpText.Bold"
-                            android:maxLines="1"
-                            android:ellipsize="end"
-                            android:textSize="@dimen/text_14"
-                            android:textColor="@color/any_black"
-                            android:layout_height="match_parent" />
+                        style="@style/ErpText.Bold"
+                        android:layout_width="@dimen/dimen_96"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="损耗数量"
+                        android:textColor="@color/any_black"
+                        android:textSize="@dimen/text_14" />
+
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:gravity="center"
-                            android:text="生成订单编号"
-                            style="@style/ErpText.Bold"
-                            android:maxLines="1"
-                            android:ellipsize="end"
-                            android:textSize="@dimen/text_14"
-                            android:textColor="@color/any_black"
-                            android:layout_height="match_parent" />
+                        style="@style/ErpText.Bold"
+                        android:layout_width="@dimen/dimen_96"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="工废数量"
+                        android:textColor="@color/any_black"
+                        android:textSize="@dimen/text_14" />
+
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:gravity="center"
-                            android:text="生成订单编号"
-                            style="@style/ErpText.Bold"
-                            android:maxLines="1"
-                            android:ellipsize="end"
-                            android:textSize="@dimen/text_14"
-                            android:textColor="@color/any_black"
-                            android:layout_height="match_parent" />
+                        style="@style/ErpText.Bold"
+                        android:layout_width="@dimen/dimen_96"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="料废数量"
+                        android:textColor="@color/any_black"
+                        android:textSize="@dimen/text_14" />
+
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:gravity="center"
-                            android:text="生成订单编号"
-                            style="@style/ErpText.Bold"
-                            android:maxLines="1"
-                            android:ellipsize="end"
-                            android:textSize="@dimen/text_14"
-                            android:textColor="@color/any_black"
-                            android:layout_height="match_parent" />
+                        style="@style/ErpText.Bold"
+                        android:layout_width="@dimen/dimen_96"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="待返修数量"
+                        android:textColor="@color/any_black"
+                        android:textSize="@dimen/text_14" />
+
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:gravity="center"
-                            android:text="生成订单编号"
-                            style="@style/ErpText.Bold"
-                            android:maxLines="1"
-                            android:ellipsize="end"
-                            android:textSize="@dimen/text_14"
-                            android:textColor="@color/any_black"
-                            android:layout_height="match_parent" />
+                        style="@style/ErpText.Bold"
+                        android:layout_width="@dimen/dimen_96"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="完工数量"
+                        android:textColor="@color/any_black"
+                        android:textSize="@dimen/text_14" />
+
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:gravity="center"
-                            android:text="生成订单编号"
-                            style="@style/ErpText.Bold"
-                            android:maxLines="1"
-                            android:ellipsize="end"
-                            android:textSize="@dimen/text_14"
-                            android:textColor="@color/any_black"
-                            android:layout_height="match_parent" />
+                        style="@style/ErpText.Bold"
+                        android:layout_width="@dimen/dimen_96"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="产品类型"
+                        android:textColor="@color/any_black"
+                        android:textSize="@dimen/text_14" />
+
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:gravity="center"
-                            android:text="生成订单编号"
-                            style="@style/ErpText.Bold"
-                            android:maxLines="1"
-                            android:ellipsize="end"
-                            android:textSize="@dimen/text_14"
-                            android:textColor="@color/any_black"
-                            android:layout_height="match_parent" />
+                        style="@style/ErpText.Bold"
+                        android:layout_width="@dimen/dimen_96"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="工序说明"
+                        android:textColor="@color/any_black"
+                        android:textSize="@dimen/text_14" />
+
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:gravity="center"
-                            android:text="生成订单编号"
-                            style="@style/ErpText.Bold"
-                            android:maxLines="1"
-                            android:ellipsize="end"
-                            android:textSize="@dimen/text_14"
-                            android:textColor="@color/any_black"
-                            android:layout_height="match_parent" />
+                        style="@style/ErpText.Bold"
+                        android:layout_width="@dimen/dimen_96"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="产品名称"
+                        android:textColor="@color/any_black"
+                        android:textSize="@dimen/text_14" />
 
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
                 <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:orientation="horizontal"
-                        android:layout_height="@dimen/dimen_36">
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_36"
+                    android:orientation="horizontal">
 
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:gravity="center"
-                            tools:text="MO000017"
-                            android:textSize="@dimen/text_14"
-                            android:textColor="@color/any_black"
-                            android:layout_height="match_parent" />
+                        android:id="@+id/tvItemCollect01"
+                        android:layout_width="@dimen/dimen_96"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textColor="@color/any_black"
+                        android:textSize="@dimen/text_14"
+                        tools:text="MO000017" />
 
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:gravity="center"
-                            tools:text="MO000017"
-                            android:textSize="@dimen/text_14"
-                            android:textColor="@color/any_black"
-                            android:layout_height="match_parent" />
+                        android:id="@+id/tvItemCollect02"
+                        android:layout_width="@dimen/dimen_96"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textColor="@color/any_black"
+                        android:textSize="@dimen/text_14"
+                        tools:text="MO000017" />
 
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:gravity="center"
-                            tools:text="MO000017"
-                            android:textSize="@dimen/text_14"
-                            android:textColor="@color/any_black"
-                            android:layout_height="match_parent" />
+                        android:id="@+id/tvItemCollect03"
+                        android:layout_width="@dimen/dimen_96"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textColor="@color/any_black"
+                        android:textSize="@dimen/text_14"
+                        tools:text="MO000017" />
 
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:gravity="center"
-                            tools:text="MO000017"
-                            android:textSize="@dimen/text_14"
-                            android:textColor="@color/any_black"
-                            android:layout_height="match_parent" />
+                        android:id="@+id/tvItemCollect04"
+                        android:layout_width="@dimen/dimen_96"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textColor="@color/any_black"
+                        android:textSize="@dimen/text_14"
+                        tools:text="MO000017" />
 
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:gravity="center"
-                            tools:text="MO000017"
-                            android:textSize="@dimen/text_14"
-                            android:textColor="@color/any_black"
-                            android:layout_height="match_parent" />
+                        android:id="@+id/tvItemCollect05"
+                        android:layout_width="@dimen/dimen_96"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textColor="@color/any_black"
+                        android:textSize="@dimen/text_14"
+                        tools:text="MO000017" />
 
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:gravity="center"
-                            tools:text="MO000017"
-                            android:textSize="@dimen/text_14"
-                            android:textColor="@color/any_black"
-                            android:layout_height="match_parent" />
+                        android:id="@+id/tvItemCollect06"
+                        android:layout_width="@dimen/dimen_96"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textColor="@color/any_black"
+                        android:textSize="@dimen/text_14"
+                        tools:text="MO000017" />
 
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:gravity="center"
-                            tools:text="MO000017"
-                            android:textSize="@dimen/text_14"
-                            android:textColor="@color/any_black"
-                            android:layout_height="match_parent" />
+                        android:id="@+id/tvItemCollect07"
+                        android:layout_width="@dimen/dimen_96"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textColor="@color/any_black"
+                        android:textSize="@dimen/text_14"
+                        tools:text="MO000017" />
 
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:gravity="center"
-                            tools:text="MO000017"
-                            android:textSize="@dimen/text_14"
-                            android:textColor="@color/any_black"
-                            android:layout_height="match_parent" />
+                        android:id="@+id/tvItemCollect08"
+                        android:layout_width="@dimen/dimen_96"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textColor="@color/any_black"
+                        android:textSize="@dimen/text_14"
+                        tools:text="MO000017" />
 
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:gravity="center"
-                            tools:text="MO000017"
-                            android:textSize="@dimen/text_14"
-                            android:textColor="@color/any_black"
-                            android:layout_height="match_parent" />
+                        android:id="@+id/tvItemCollect09"
+                        android:layout_width="@dimen/dimen_96"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textColor="@color/any_black"
+                        android:textSize="@dimen/text_14"
+                        tools:text="MO000017" />
 
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:gravity="center"
-                            tools:text="MO000017"
-                            android:textSize="@dimen/text_14"
-                            android:textColor="@color/any_black"
-                            android:layout_height="match_parent" />
+                        android:id="@+id/tvItemCollect10"
+                        android:layout_width="@dimen/dimen_96"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textColor="@color/any_black"
+                        android:textSize="@dimen/text_14"
+                        tools:text="MO000017" />
 
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:gravity="center"
-                            tools:text="MO000017"
-                            android:textSize="@dimen/text_14"
-                            android:textColor="@color/any_black"
-                            android:layout_height="match_parent" />
+                        android:id="@+id/tvItemCollect11"
+                        android:layout_width="@dimen/dimen_96"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textColor="@color/any_black"
+                        android:textSize="@dimen/text_14"
+                        tools:text="MO000017" />
 
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:gravity="center"
-                            tools:text="MO000017"
-                            android:textSize="@dimen/text_14"
-                            android:textColor="@color/any_black"
-                            android:layout_height="match_parent" />
+                        android:id="@+id/tvItemCollect12"
+                        android:layout_width="@dimen/dimen_96"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textColor="@color/any_black"
+                        android:textSize="@dimen/text_14"
+                        tools:text="MO000017" />
 
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:gravity="center"
-                            tools:text="MO000017"
-                            android:textSize="@dimen/text_14"
-                            android:textColor="@color/any_black"
-                            android:layout_height="match_parent" />
+                        android:id="@+id/tvItemCollect13"
+                        android:layout_width="@dimen/dimen_96"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textColor="@color/any_black"
+                        android:textSize="@dimen/text_14"
+                        tools:text="MO000017" />
 
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:gravity="center"
-                            tools:text="MO000017"
-                            android:textSize="@dimen/text_14"
-                            android:textColor="@color/any_black"
-                            android:layout_height="match_parent" />
+                        android:id="@+id/tvItemCollect14"
+                        android:layout_width="@dimen/dimen_96"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textColor="@color/any_black"
+                        android:textSize="@dimen/text_14"
+                        tools:text="MO000017" />
 
                     <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="@dimen/dimen_96"
-                            android:gravity="center"
-                            tools:text="MO000017"
-                            android:textSize="@dimen/text_14"
-                            android:textColor="@color/any_black"
-                            android:layout_height="match_parent" />
+                        android:id="@+id/tvItemCollect15"
+                        android:layout_width="@dimen/dimen_96"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textColor="@color/any_black"
+                        android:textSize="@dimen/text_14"
+                        tools:text="MO000017" />
 
 
                 </androidx.appcompat.widget.LinearLayoutCompat>

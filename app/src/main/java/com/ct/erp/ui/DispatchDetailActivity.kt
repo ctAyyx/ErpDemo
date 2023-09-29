@@ -54,7 +54,8 @@ class DispatchDetailActivity : BaseActivity<DispatchViewModel, ActivityDispatchD
 
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
-                val manager = binding.rvDispatchPlant.layoutManager as? LinearLayoutManager ?: return
+                val manager =
+                    binding.rvDispatchPlant.layoutManager as? LinearLayoutManager ?: return
                 val position = if (dy > 0) {
                     manager.findLastVisibleItemPosition()
                 } else {
@@ -74,6 +75,11 @@ class DispatchDetailActivity : BaseActivity<DispatchViewModel, ActivityDispatchD
                 }
             }
         })
+
+
+        binding.btnDetailPush.click {
+            viewModel.pushData()
+        }
     }
 
     private fun location(position: Int) {

@@ -41,4 +41,7 @@ interface ServiceApi {
         @Query("operNumber") operNumber: String
     ): ServiceResult<DispatchPlanApiData>
 
+    @POST("")
+    suspend fun pushDispatchPlan(@Body body:DispatchPlanApiData)
+
 }

@@ -2,6 +2,7 @@ package com.ct.erp.dto
 
 import androidx.databinding.BaseObservable
 import com.google.gson.annotations.SerializedName
+import java.lang.ref.WeakReference
 
 
 data class DispatchPlanApiData(
@@ -169,6 +170,20 @@ data class DispatchPlanApiData(
     val stockInOrgIdId: String? = null
 ) : BaseObservable() {
 
+
+    private var callback: WeakReference<OnDispatchCallback>? = null
+
+    fun addCallback(callback: OnDispatchCallback) {
+        this.callback = WeakReference(callback)
+    }
+
+    fun removeCallback(callback: OnDispatchCallback) {
+        this.callback?.clear()
+    }
+
+    fun notifyDataChanged() {
+        this.callback?.get()?.invoke()
+    }
 
     /**
      * 获取产品序列号
@@ -1001,10 +1016,10 @@ class SubEntity {
     val prdWastageQty: Int? = null
 
     @SerializedName("PrepareFinishTime")
-    val prepareFinishTime: String? = null
+    var prepareFinishTime: String? = null
 
     @SerializedName("PrepareStartTime")
-    val prepareStartTime: String? = null
+    var prepareStartTime: String? = null
 
     @SerializedName("PrepareUnit")
     val prepareUnit: String? = null
@@ -1019,7 +1034,7 @@ class SubEntity {
     val processCheckSchemaEntryIdId: String? = null
 
     @SerializedName("ProcessFinishTime")
-    val processFinishTime: String? = null
+    var processFinishTime: String? = null
 
     @SerializedName("ProcessId")
     val processId: ProcessId? = null
@@ -1037,7 +1052,7 @@ class SubEntity {
     val processRemainWorkTime: Int? = null
 
     @SerializedName("ProcessStartTime")
-    val processStartTime: String? = null
+    var processStartTime: String? = null
 
     @SerializedName("ProcessUnit")
     val processUnit: String? = null
@@ -1082,7 +1097,7 @@ class SubEntity {
     val reFinishHeadQty: Int? = null
 
     @SerializedName("ReFinishQty")
-    val reFinishQty: Int? = null
+    var reFinishQty: Int? = null
 
     @SerializedName("ReSelBaseQty")
     val reSelBaseQty: Int? = null
@@ -1136,13 +1151,13 @@ class SubEntity {
     val rejectionRate: Int? = null
 
     @SerializedName("RemoveFinishTime")
-    val removeFinishTime: String? = null
+    var removeFinishTime: String? = null
 
     @SerializedName("RemoveRemainWorkTime")
     val removeRemainWorkTime: Int? = null
 
     @SerializedName("RemoveStartTime")
-    val removeStartTime: String? = null
+    var removeStartTime: String? = null
 
     @SerializedName("RemoveUnit")
     val removeUnit: String? = null

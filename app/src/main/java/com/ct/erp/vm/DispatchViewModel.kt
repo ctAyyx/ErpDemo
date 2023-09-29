@@ -76,6 +76,12 @@ class DispatchViewModel @Inject constructor(application: Application, model: Bas
     }
 
 
+    fun pushData() {
+        launch {
+            val model = dispatchDetail.value
+        }
+    }
+
     private fun loadDispatchList(filter: String, startRow: Int, limit: Int) {
         launch {
             loadAllColumnHeader()
@@ -115,7 +121,10 @@ class DispatchViewModel @Inject constructor(application: Application, model: Bas
     /**
      * 保存数据
      */
-    private suspend fun saveTableResponse(isRefresh: Boolean, result: List<DispatchDetailListApiData>?) {
+    private suspend fun saveTableResponse(
+        isRefresh: Boolean,
+        result: List<DispatchDetailListApiData>?
+    ) {
         if (isRefresh) tableAllCell.clear()
         if (!result.isNullOrEmpty()) tableAllCell.addAll(result)
 
@@ -171,7 +180,11 @@ class DispatchViewModel @Inject constructor(application: Application, model: Bas
             }
             cellList.add(rowList)
         }
-        return DispatchTableViewData(rowHeader = rowHeaderList, columnHeader = checkedTabColumn, cells = cellList)
+        return DispatchTableViewData(
+            rowHeader = rowHeaderList,
+            columnHeader = checkedTabColumn,
+            cells = cellList
+        )
     }
 
 
