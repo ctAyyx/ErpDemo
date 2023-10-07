@@ -16,6 +16,7 @@ import com.ct.utils.FragmentUtils
 import com.ct.utils.LogUtils
 import com.ct.utils.click
 import com.evrencoskun.tableview.listener.ITableViewListener
+import com.evrencoskun.tableview.listener.SimpleTableViewListener
 import com.king.camera.scan.CameraScan
 import dagger.hilt.android.AndroidEntryPoint
 import es.dmoral.toasty.Toasty
@@ -81,42 +82,15 @@ class DispatchListActivity : BaseActivity<DispatchViewModel, ActivityDispatchLis
         viewModel.doRefresh(LoginManager.getInstance().xkUserName)
     }
 
-    private val tabListener = object : ITableViewListener {
-        override fun onCellClicked(cellView: RecyclerView.ViewHolder, column: Int, row: Int) {
-            Toasty.normal(this@DispatchListActivity, "被点击了:$column-$row").show()
-        }
-
-        override fun onCellDoubleClicked(cellView: RecyclerView.ViewHolder, column: Int, row: Int) {
-        }
-
-        override fun onCellLongPressed(cellView: RecyclerView.ViewHolder, column: Int, row: Int) {
-        }
-
-        override fun onColumnHeaderClicked(columnHeaderView: RecyclerView.ViewHolder, column: Int) {
-        }
-
-        override fun onColumnHeaderDoubleClicked(columnHeaderView: RecyclerView.ViewHolder, column: Int) {
-        }
-
-        override fun onColumnHeaderLongPressed(columnHeaderView: RecyclerView.ViewHolder, column: Int) {
-        }
-
+    private val tabListener = object : SimpleTableViewListener() {
         override fun onRowHeaderClicked(rowHeaderView: RecyclerView.ViewHolder, row: Int, isRowEnd: Boolean) {
             LogUtils.e("onRowHeaderClicked $row  $isRowEnd ${viewModel.tableAllCell[row]}")
             if (isRowEnd) {
                 ActivityUtils.startActivitySafe(
-                    this@DispatchListActivity,
-                    Intent(this@DispatchListActivity, DispatchDetailActivity::class.java)
+                    this@DispatchListActivity, Intent(this@DispatchListActivity, DispatchDetailActivity::class.java)
                 )
             }
 
         }
-
-        override fun onRowHeaderDoubleClicked(rowHeaderView: RecyclerView.ViewHolder, row: Int) {
-        }
-
-        override fun onRowHeaderLongPressed(rowHeaderView: RecyclerView.ViewHolder, row: Int) {
-        }
-
     }
 }

@@ -41,4 +41,7 @@ interface ServiceApi {
         @Query("operNumber") operNumber: String
     ): ServiceResult<DispatchPlanApiData>
 
+    @POST("/biz/k3cloud/process-report/build")
+    suspend fun postDispatchPlan(@Body data: DispatchPlanApiData): ServiceResult<String>
+
 }

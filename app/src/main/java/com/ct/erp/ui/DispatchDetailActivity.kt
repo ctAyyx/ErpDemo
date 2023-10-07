@@ -74,6 +74,10 @@ class DispatchDetailActivity : BaseActivity<DispatchViewModel, ActivityDispatchD
                 }
             }
         })
+
+        binding.btnDetailPush.click {
+            viewModel.postDispatchPlan()
+        }
     }
 
     private fun location(position: Int) {

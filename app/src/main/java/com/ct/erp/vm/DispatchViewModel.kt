@@ -76,6 +76,21 @@ class DispatchViewModel @Inject constructor(application: Application, model: Bas
     }
 
 
+    fun postDispatchPlan() {
+        val data = dispatchDetail.value?.firstOrNull()?.model
+        if (data == null) {
+            sendMessage("数据异常,请重试!")
+            return
+        }
+        launch {
+            val response = serviceApi.postDispatchPlan(data)
+            if (isSuccess(response)) {
+                sendMessage("数据提交成功")
+            }
+        }
+    }
+
+
     private fun loadDispatchList(filter: String, startRow: Int, limit: Int) {
         launch {
             loadAllColumnHeader()
