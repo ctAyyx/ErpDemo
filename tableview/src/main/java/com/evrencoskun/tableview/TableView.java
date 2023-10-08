@@ -254,7 +254,6 @@ public class TableView extends FrameLayout implements ITableView {
         mCellRecyclerView.setId(R.id.CellRecyclerView);
 
         mRowEndRecyclerView.setId(R.id.CellRowEndRecyclerView);
-        mRowEndRecyclerView.setBackgroundColor(Color.RED);
 
         // Add Views
         addView(mColumnHeaderRecyclerView);

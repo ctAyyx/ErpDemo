@@ -36,7 +36,8 @@ class DispatchListActivity : BaseActivity<DispatchViewModel, ActivityDispatchLis
     private val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
         val result = it.data?.getStringExtra(CameraScan.SCAN_RESULT)
         LogUtils.e("二维码数据:$result")
-        Toasty.error(this, "二维码数据:$result").show()
+//        Toasty.error(this, "二维码数据:$result").show()
+        doFilter(result)
     }
 
     override fun initView(binding: ActivityDispatchListBinding) {
@@ -59,13 +60,13 @@ class DispatchListActivity : BaseActivity<DispatchViewModel, ActivityDispatchLis
         }
 
         binding.btnTableFilter.click {
-            doFilter()
+            val filter = binding.etTableFilter.text.toString().trim()
+            doFilter(filter)
         }
     }
 
-    private fun doFilter() {
-        val filter = binding.etTableFilter.text.toString().trim()
-        if (filter.isBlank()) {
+    private fun doFilter(filter: String?) {
+        if (filter.isNullOrBlank()) {
             showToast("筛选条件不能为空!")
             return
         }

@@ -49,6 +49,7 @@ import java.util.List;
  */
 
 public class CellRecyclerViewAdapter<C> extends AbstractRecyclerViewAdapter<C> {
+
     @NonNull
     private final ITableView mTableView;
 
@@ -58,7 +59,8 @@ public class CellRecyclerViewAdapter<C> extends AbstractRecyclerViewAdapter<C> {
     // This is for testing purpose
     private int mRecyclerViewId = 0;
 
-    public CellRecyclerViewAdapter(@NonNull Context context, @Nullable List<C> itemList, @NonNull ITableView tableView) {
+    public CellRecyclerViewAdapter(@NonNull Context context, @Nullable List<C> itemList,
+            @NonNull ITableView tableView) {
         super(context, itemList);
         this.mTableView = tableView;
 
@@ -99,7 +101,9 @@ public class CellRecyclerViewAdapter<C> extends AbstractRecyclerViewAdapter<C> {
         // and it also helps to locate the scroll position of the horizontal recyclerView
         // which is row recyclerView
         ColumnLayoutManager mColumnLayoutManager = new ColumnLayoutManager(mContext, mTableView);
-        if (mTableView.getReverseLayout()) mColumnLayoutManager.setReverseLayout(true);
+        if (mTableView.getReverseLayout()) {
+            mColumnLayoutManager.setReverseLayout(true);
+        }
         recyclerView.setLayoutManager(mColumnLayoutManager);
 
         // Create CellRow adapter
@@ -107,6 +111,7 @@ public class CellRecyclerViewAdapter<C> extends AbstractRecyclerViewAdapter<C> {
 
         // This is for testing purpose to find out which recyclerView is displayed.
         recyclerView.setId(mRecyclerViewId);
+        recyclerView.setItemAnimator(null);
 
         mRecyclerViewId++;
 
@@ -185,6 +190,7 @@ public class CellRecyclerViewAdapter<C> extends AbstractRecyclerViewAdapter<C> {
     }
 
     static class CellRowViewHolder extends AbstractViewHolder {
+
         final CellRecyclerView recyclerView;
 
         CellRowViewHolder(@NonNull View itemView) {
@@ -283,7 +289,6 @@ public class CellRecyclerViewAdapter<C> extends AbstractRecyclerViewAdapter<C> {
             ((AbstractRecyclerViewAdapter) cellRowRecyclerView.getAdapter()).addItem(column,
                     cellColumnItems.get(i));
         }
-
 
         // Lets change the model list silently
         List<List<C>> cellItems = new ArrayList<>();
