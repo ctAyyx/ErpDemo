@@ -76,7 +76,7 @@ class DispatchViewModel @Inject constructor(application: Application, model: Bas
     }
 
 
-    fun postDispatchPlan() {
+    fun pushData() {
         val data = dispatchDetail.value?.firstOrNull()?.model
         if (data == null) {
             sendMessage("数据异常,请重试!")
@@ -130,7 +130,10 @@ class DispatchViewModel @Inject constructor(application: Application, model: Bas
     /**
      * 保存数据
      */
-    private suspend fun saveTableResponse(isRefresh: Boolean, result: List<DispatchDetailListApiData>?) {
+    private suspend fun saveTableResponse(
+        isRefresh: Boolean,
+        result: List<DispatchDetailListApiData>?
+    ) {
         if (isRefresh) tableAllCell.clear()
         if (!result.isNullOrEmpty()) tableAllCell.addAll(result)
 
@@ -186,7 +189,11 @@ class DispatchViewModel @Inject constructor(application: Application, model: Bas
             }
             cellList.add(rowList)
         }
-        return DispatchTableViewData(rowHeader = rowHeaderList, columnHeader = checkedTabColumn, cells = cellList)
+        return DispatchTableViewData(
+            rowHeader = rowHeaderList,
+            columnHeader = checkedTabColumn,
+            cells = cellList
+        )
     }
 
 

@@ -10,6 +10,7 @@ import com.ct.erp.dto.DispatchPlanApiData
 import com.ct.erp.ext.onEndDrawableClick
 import com.ct.erp.popup.PopupHelper
 import com.ct.erp.vo.DispatchDetailViewData
+import com.ct.utils.TimeUtils
 
 class DisDetailDateViewHolder(parent: ViewGroup) :
     BaseDataBindingViewHolder<ItemDisDetailDateBinding, DispatchDetailViewData>(
@@ -50,15 +51,28 @@ class DisDetailDateViewHolder(parent: ViewGroup) :
      * 初始化 日期模块
      */
     private fun initDate(model: DispatchPlanApiData) {
-        showCalender(binding.tvItemDateReal01Date)
-        showCalender(binding.tvItemDateReal02Date)
-        showCalender(binding.tvItemDateReal03Date)
-        showCalender(binding.tvItemDateReal04Date)
-        showCalender(binding.tvItemDateReal05Date)
-        showCalender(binding.tvItemDateReal06Date)
 
         val entity = model.entity?.firstOrNull()
         val subEntity = entity?.subEntity?.firstOrNull()
+        showCalender(binding.tvItemDateReal01Date) {
+            subEntity?.prepareStartTime = it
+        }
+        showCalender(binding.tvItemDateReal02Date) {
+            subEntity?.prepareFinishTime = it
+        }
+        showCalender(binding.tvItemDateReal03Date) {
+            subEntity?.processStartTime = it
+        }
+        showCalender(binding.tvItemDateReal04Date) {
+            subEntity?.processFinishTime = it
+        }
+        showCalender(binding.tvItemDateReal05Date) {
+            subEntity?.removeStartTime = it
+        }
+        showCalender(binding.tvItemDateReal06Date) {
+            subEntity?.removeFinishTime = it
+        }
+
 
         binding.tvItemDateReal01Date.text = subEntity?.prepareStartTime ?: ""
         binding.tvItemDateReal02Date.text = subEntity?.prepareFinishTime ?: ""
@@ -69,10 +83,12 @@ class DisDetailDateViewHolder(parent: ViewGroup) :
 
     }
 
-    private fun showCalender(tv: TextView) {
+    private fun showCalender(tv: TextView, callback: (String) -> Unit) {
         tv.onEndDrawableClick {
-            PopupHelper.showDateChooseDialog(context = tv.context) { year, month, day ->
-                tv.text = "$year-${month + 1}-$day"
+            PopupHelper.showDateChooseDialog(context = tv.context) { year, month, day, hour, minute ->
+                val newTime = TimeUtils.getFormatTimeBy01(year, month, day, hour, minute)
+                tv.text = newTime
+                callback.invoke(newTime)
             }
         }
     }

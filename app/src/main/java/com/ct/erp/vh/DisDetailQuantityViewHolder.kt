@@ -1,5 +1,6 @@
 package com.ct.erp.vh
 
+import android.provider.ContactsContract.Data
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.widget.addTextChangedListener
@@ -9,9 +10,16 @@ import com.ct.erp.base.adapter.BaseAdapter
 import com.ct.erp.base.adapter.BaseDataBindingViewHolder
 import com.ct.erp.databinding.ItemDisDetailQuantityBinding
 import com.ct.erp.dto.DispatchPlanApiData
+import com.ct.erp.dto.SubEntity
 import com.ct.erp.ext.onEndDrawableClick
 import com.ct.erp.popup.PopupHelper
 import com.ct.erp.vo.DispatchDetailViewData
+import com.ct.utils.LogUtils
+import com.ct.utils.TimeUtils
+import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.util.Calendar
+import java.util.Date
 
 class DisDetailQuantityViewHolder(parent: ViewGroup) :
     BaseDataBindingViewHolder<ItemDisDetailQuantityBinding, DispatchDetailViewData>(
@@ -45,7 +53,8 @@ class DisDetailQuantityViewHolder(parent: ViewGroup) :
 
         binding.tvItemQuantityWork.text = subEntity?.processId?.name?.firstOrNull()?.value ?: ""
         binding.tvItemOperDescription.text = subEntity?.operDescription?.firstOrNull()?.value ?: ""
-        binding.tvItemSeqWorkCenterId.text = entity?.seqWorkCenterId?.name?.firstOrNull()?.value ?: ""
+        binding.tvItemSeqWorkCenterId.text =
+            entity?.seqWorkCenterId?.name?.firstOrNull()?.value ?: ""
         binding.tvNum06Str.text = subEntity?.operStatus
         binding.tvNum07Str.text = subEntity?.operSrcType
         binding.tvNum08Str.setText(model.mTONo ?: "")
@@ -66,37 +75,48 @@ class DisDetailQuantityViewHolder(parent: ViewGroup) :
         binding.tvItemQuantity04NumStr.setText("${subEntity?.wastageQty ?: 0}")
         binding.tvItemQuantity05NumStr.text = "${subEntity?.unqualifiedQty ?: 0}"
         binding.tvItemQuantity06NumStr.setText("${subEntity?.reWorkQty ?: 0}")
-        binding.tvItemQuantity07NumStr.setText("${subEntity?.reFinishQty ?: 0}")
+        binding.tvItemQuantity07NumStr.text = "${subEntity?.reFinishQty ?: 0}"
         binding.tvItemQuantity08NumStr.text = entity?.seqRefer ?: ""
         binding.tvItemQuantity09NumStr.text = subEntity?.operDescription?.firstOrNull()?.value ?: ""
 
         binding.tvItemQuantity01NumStr.doAfterTextChanged {
-            allCount()
+            allCount(model, subEntity)
         }
         binding.tvItemQuantity02NumStr.doAfterTextChanged {
-            allCount()
+            allCount(model, subEntity)
         }
         binding.tvItemQuantity03NumStr.doAfterTextChanged {
-            allCount()
+            allCount(model, subEntity)
         }
         binding.tvItemQuantity04NumStr.doAfterTextChanged {
-            allCount()
+            allCount(model, subEntity)
         }
         binding.tvItemQuantity06NumStr.doAfterTextChanged {
-            allCount()
+            allCount(model, subEntity)
         }
     }
 
 
-    private fun allCount() {
+    private fun allCount(model: DispatchPlanApiData, subEntity: SubEntity?) {
         val num1 = binding.tvItemQuantity01NumStr.text.toString().toIntOrNull() ?: 0
         val num2 = binding.tvItemQuantity02NumStr.text.toString().toIntOrNull() ?: 0
         val num3 = binding.tvItemQuantity03NumStr.text.toString().toIntOrNull() ?: 0
         val num4 = binding.tvItemQuantity04NumStr.text.toString().toIntOrNull() ?: 0
         val num5 = binding.tvItemQuantity06NumStr.text.toString().toIntOrNull() ?: 0
 
-        binding.tvItemQuantity05NumStr.text = "${num2 + num3 + num4}"
-        binding.tvItemQuantity07NumStr.text = "${num1 + num2 + num3 + num4 + num5}"
+        subEntity?.qualifiedQty = num1
+        subEntity?.scrapQty = num2
+        subEntity?.matScrapQty = num3
+        subEntity?.wastageQty = num4
+        subEntity?.reWorkQty = num5
+
+        subEntity?.unqualifiedQty = num2 + num3 + num4
+        subEntity?.reFinishQty = num1 + num2 + num3 + num4 + num5
+
+        binding.tvItemQuantity05NumStr.text = "${subEntity?.unqualifiedQty}"
+        binding.tvItemQuantity07NumStr.text = "${subEntity?.reFinishQty}"
+
+        model.notifyDataChanged()
     }
 
     /**
@@ -141,14 +161,22 @@ class DisDetailQuantityViewHolder(parent: ViewGroup) :
         binding.tvItemQuality08Str.text = "未知字段"
 
         binding.tvItemQuality08Num.isChecked = subEntity?.isFirstPieceInspect ?: false
-        showCalender(binding.tvItemQuality03Str)
+        showCalender(binding.tvItemQuality03Str) {
+
+        }
     }
 
 
-    private fun showCalender(tv: TextView) {
+    private fun showCalender(tv: TextView, callback: (String) -> Unit) {
         tv.onEndDrawableClick {
-            PopupHelper.showDateChooseDialog(context = tv.context) { year, month, day ->
-                tv.text = "$year-${month + 1}-$day"
+            PopupHelper.showDateChooseDialog(context = tv.context) { year, month, day, hour, minute ->
+                val newTime = TimeUtils.getFormatTimeBy01(year, month, day, hour, minute)
+                tv.text = newTime
+                callback.invoke(newTime)
+
+
+
+
             }
         }
     }
